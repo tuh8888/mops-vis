@@ -9,25 +9,29 @@
 ;;;;;;;;; Site ;;;;;;;;;
 
 (setq cl-who:*attribute-quote-char* #\")
-(defvar server)
+(defvar *mops-server*)
+(defvar local-dir "~/code/common-lisp/mops-vis/")
+(defvar index-file  (merge-pathnames "index.html" local-dir))
+(defvar display-file (merge-pathnames "display.js" local-dir))
+(defvar stylesheet-file (merge-pathnames "stylesheet.css" local-dir))
 
 (defun start-website (&key (page-uri "index") (port 8080))
   (let ((ajax-processor (initialize-ajax)))
-    (setq server (make-instance 'easy-acceptor :port port))
-    (start server)
+    (setq *mops-server* (make-instance 'easy-acceptor :port port))
+    (start *mops-server*)
     (make-page page-uri ajax-processor)
     server))
 
 (defun make-page (page-uri ajax-processor)
   (push (create-static-file-dispatcher-and-handler
-         "/stylesheet.css" (merge-pathnames "stylesheet.css" *load-truename*))
+         "/stylesheet.css" stylesheet-file)
         *dispatch-table*)
   (push (create-static-file-dispatcher-and-handler
-         "/display.js" (merge-pathnames "display.js" *load-truename*))
+         "/display.js" display-file)
         *dispatch-table*)
 
   (push (create-static-file-dispatcher-and-handler
-         "/index" (merge-pathnames "index.html" *load-truename*))
+         "/index" index-file)
         *dispatch-table*)
   
   
@@ -43,7 +47,7 @@
   ;;         (:h1 (str title))
   ;;         (:script :src "https://d3js.org/d3.v4.min.js")
   ;;         (:script :src "display.js"))))))
-  (format t "Page: ~a~%Using: ~a~%" page-uri (merge-pathnames "index.html" *load-truename*))
+  (format t "Page: ~a~%Using: ~a~%" page-uri index-file))
   )
 
 ;;;;;;;;; JSON ;;;;;;;;
@@ -63,13 +67,14 @@
 ;;;;;;;; AJAX ;;;;;;;;
 
 ;;; Client side methods (calling methods)
+;;; They need to be capitalized because Smackjack uses Parenscript which capitalizes everything
 (defun initialize-ajax ()
   (let ((ajax-processor (make-instance 'ajax-processor :server-uri "/ajax-process")))
 
-    (defun-ajax get-node (node-name) (ajax-processor :callback-data :json)
+    (defun-ajax GET-NODE (node-name) (ajax-processor :callback-data :json)
       (send-links node-name))
 
-    (defun-ajax get-initial-graph () (ajax-processor :callback-data :json)
+    (defun-ajax GET-INITIAL-GRAPH () (ajax-processor :callback-data :json)
       (send-initial-graph))
 
     (setq *dispatch-table* (list 'dispatch-easy-handlers
