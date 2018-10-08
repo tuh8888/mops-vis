@@ -1,10 +1,10 @@
 (ql:quickload '("hunchentoot" "cl-who" "smackjack"))
 
-(defpackage :web-net
+(defpackage :net-vis
   (:use :hunchentoot :cl-who :cl-json :cl :smackjack)
   (:export :start-website :make-node :make-link :make-json-graph))
 
-(in-package :web-net)
+(in-package :net-vis)
 
 ;;;;;;;;; Site ;;;;;;;;;
 
