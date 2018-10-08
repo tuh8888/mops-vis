@@ -48,24 +48,115 @@ const svg = d3.select('body')
 
 let nodes = [];
 let links = [];
+let fullGraph = {};
+let smackjackExists = false;
+
+// Make some extensions to Array to prevent adding if items are already in the graph
+Array.prototype.inArray = function (comparer) {
+    for(let i=0; i < this.length; i++) {
+        if (comparer(this[i])) return true;
+    }
+    return false;
+};
+Array.prototype.pushIfDoesNotExist = function(element, comparer) {
+    if (!this.inArray(comparer)) {
+        this.push(element);
+    }
+};
+
+function checkIfSmackjackExists() {
+    const request = new XMLHttpRequest();
+    request.open('GET', "http://" + location.hostname + ":" + location.port + "/ajax-process", true);
+    request.onreadystatechange = function () {
+        if (request.readyState === 4) {
+            smackjackExists = request.status !== 404;
+        }
+    };
+    request.send();
+    return smackjackExists;
+}
 
 function addGraphData(graphData) {
     console.log("graph received");
-    nodes = nodes.concat(graphData.nodes);
-    links = links.concat(graphData.links);
+    let node;
+    for (let i=0; i < graphData.nodes.length; i++) {
+        node = graphData.nodes[i];
+        nodes.pushIfDoesNotExist(node, function(e) {
+            return e.id === node.id;
+        })
+    }
+    let link;
+    for (let i=0; i < graphData.links.length; i++) {
+        link = graphData.links[i];
+        links.pushIfDoesNotExist(link, function (e) {
+            return e.source === link.source && e.target === link.target;
+        })
+    }
     console.log(graphData)
 }
 
 function getInitialGraph() {
-    console.log("graph requested");
-    smackjack.getInitialGraph(addGraphData);
+    console.log("Graph requested");
+    if (checkIfSmackjackExists()) {
+        console.log("Using server data");
+        smackjack.getInitialGraph(addGraphData);
+    } else {
+        console.log("Using default data");
+        nodes = [
+            {"id": 1},
+            {"id": 2},
+            {"id": 3},
+            {"id": 4},
+            {"id": 5}
+        ];
+        links = [
+            {"source": 1, "target": 2},
+            {"source": 1, "target": 3},
+            {"source": 2, "target": 4},
+            {"source": 2, "target": 5},
+            {"source": 5, "target": 1}
+        ];
+        fullGraph = {
+            "nodes": [
+                {"id": 1},
+                {"id": 2},
+                {"id": 3},
+                {"id": 4},
+                {"id": 5},
+                {"id": 6},
+                {"id": 7}
+            ],
+            "links": [
+                {"source": 1, "target": 2},
+                {"source": 1, "target": 3},
+                {"source": 2, "target": 4},
+                {"source": 2, "target": 5},
+                {"source": 5, "target": 1},
+                {"source": 5, "target": 6},
+                {"source": 6, "target": 7}
+            ]
+        }
+    }
     restart();
 }
 
 //TODO Either send nodes that are known or process what is rerturned
 function getNode(nodeId) {
-    smackjack.getNode(nodeId, addGraphData);
-    restart()
+    if (smackjackExists) {
+        smackjack.getNode(nodeId, addGraphData);
+    } else {
+        const linksToReturn = fullGraph.links.filter(link => link.source === nodeId);
+        class Node {
+            constructor(id) {
+                this.id = id;
+            }
+        }
+        const graphToReturn = {
+            "links": linksToReturn,
+            "nodes": linksToReturn.map(link => new Node(link.target))
+        };
+        addGraphData(graphToReturn);
+    }
 }
 
 // init D3 force layout
@@ -161,7 +252,8 @@ function tick() {
 // update graph (called when needed)
 function restart() {
     if (selectedNode) {
-        getNode(selectedNode.id)
+        getNode(selectedNode.id);
+        selectedNode = null;
     }
 
     circle.call(drag);
@@ -297,3 +389,4 @@ svg.on('mousedown', mousedown)
     .on('mouseup', mouseup);
 restart();
 getInitialGraph();
+
