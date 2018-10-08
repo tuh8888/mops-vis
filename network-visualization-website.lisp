@@ -9,11 +9,14 @@
 ;;;;;;;;; Site ;;;;;;;;;
 
 (setq cl-who:*attribute-quote-char* #\")
+(defvar server)
 
-(defun start-website (&optional (page-uri "index"))
+(defun start-website (&key (page-uri "index") (port 8080))
   (let ((ajax-processor (initialize-ajax)))
-    (start (make-instance 'easy-acceptor :port 8080))
-    (make-page page-uri ajax-processor)))
+    (setq server (make-instance 'easy-acceptor :port port))
+    (start server)
+    (make-page page-uri ajax-processor)
+    server))
 
 (defun make-page (page-uri ajax-processor)
   (push (create-static-file-dispatcher-and-handler
@@ -40,7 +43,7 @@
   ;;         (:h1 (str title))
   ;;         (:script :src "https://d3js.org/d3.v4.min.js")
   ;;         (:script :src "display.js"))))))
-  page-uri
+  (format t "Page: ~a~%Using: ~a~%" page-uri (merge-pathnames "index.html" *load-truename*))
   )
 
 ;;;;;;;;; JSON ;;;;;;;;
