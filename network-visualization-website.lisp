@@ -2,7 +2,7 @@
 
 (defpackage :web-net
   (:use :hunchentoot :cl-who :cl-json :cl :smackjack)
-  (:export :start-website :get-node :get-graph))
+  (:export :start-website :make-node :make-link :make-json-graph))
 
 (in-package :web-net)
 
@@ -17,25 +17,31 @@
 
 (defun make-page (page-uri ajax-processor)
   (push (create-static-file-dispatcher-and-handler
-         "/stylesheet.css" "stylesheet.css")
+         "/stylesheet.css" (merge-pathnames "stylesheet.css" *load-truename*))
         *dispatch-table*)
   (push (create-static-file-dispatcher-and-handler
-         "/display.js" "display.js")
+         "/display.js" (merge-pathnames "display.js" *load-truename*))
+        *dispatch-table*)
+
+  (push (create-static-file-dispatcher-and-handler
+         "/index" (merge-pathnames "index.html" *load-truename*))
         *dispatch-table*)
   
-  (let ((title "Network Visualization"))
-    (define-easy-handler (network-display :uri (concatenate 'string "/" page-uri)) ()
-      (with-html-output-to-string (s)
-        (:html
-         (:head
-          (:link :rel "stylesheet" :href "stylesheet.css")
-          (:title (str title))
-          (str (generate-prologue ajax-processor)))
+  
+  ;; (let ((title "Network Visualization"))
+  ;;   (define-easy-handler (network-display :uri (concatenate 'string "/" page-uri)) ()
+  ;;     (with-html-output-to-string (s)
+  ;;       (:html
+  ;;        (:head
+  ;;         (:link :rel "stylesheet" :href "stylesheet.css")
+  ;;         (:title (str title)))
 
-         (:body
-          (:h1 (str title))
-          (:script :src "https://d3js.org/d3.v4.min.js")
-          (:script :src "display.js")))))))
+  ;;        (:body
+  ;;         (:h1 (str title))
+  ;;         (:script :src "https://d3js.org/d3.v4.min.js")
+  ;;         (:script :src "display.js"))))))
+  page-uri
+  )
 
 ;;;;;;;;; JSON ;;;;;;;;
 
@@ -58,7 +64,7 @@
   (let ((ajax-processor (make-instance 'ajax-processor :server-uri "/ajax-process")))
 
     (defun-ajax get-node (node-name) (ajax-processor :callback-data :json)
-      (send-node node-name))
+      (send-links node-name))
 
     (defun-ajax get-initial-graph () (ajax-processor :callback-data :json)
       (send-initial-graph))
@@ -78,8 +84,20 @@
                        (4 ())
                        (5 (1))))
 
-(defun send-node (node-name)
-  node-name)
+(defvar full-data '((1 (2 3))
+                    (2 (4 5))
+                    (3 ())
+                    (4 ())
+                    (5 (1 6))
+                    (6 (7))))
+
+;;; TODO I need to know what links and nodes already exist
+(defun send-links (node-name)
+  (let ((node-data (assoc node-name full-data)))
+    (make-json-graph (list (make-node (car node-data))) (mapcar (lambda (target) (make-link :source (first node-data)
+                                                                                            :label ""
+                                                                                            :target target))
+                                                                (second node-data)))))
 
 (defun send-initial-graph ()
   (format t "graph requested~%")
