@@ -118,13 +118,3 @@
                                  (second pair)))
                        initial-data)))
     (make-json-graph nodes links)))
-
-(start-website)
-
-
-
-
-
-
-
-
