@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7f07c80c-61d4-4c22-aa47-151c0e2fe143" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/display.js" beforeDir="false" afterPath="$PROJECT_DIR$/display.js" afterDir="false" />
-    </list>
+    <list default="true" id="7f07c80c-61d4-4c22-aa47-151c0e2fe143" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -106,7 +104,7 @@
           <entry key="html" value="572" />
           <entry key="js" value="4214" />
           <entry key="lisp" value="28" />
-          <entry key="txt" value="249" />
+          <entry key="txt" value="260" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -114,7 +112,7 @@
           <entry key="CSS" value="272" />
           <entry key="HTML" value="571" />
           <entry key="JavaScript" value="4263" />
-          <entry key="PLAIN_TEXT" value="277" />
+          <entry key="PLAIN_TEXT" value="288" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -314,7 +312,7 @@
       <workItem from="1539033737424" duration="89000" />
       <workItem from="1539033893680" duration="328000" />
       <workItem from="1539034455680" duration="2334000" />
-      <workItem from="1539130231207" duration="19033000" />
+      <workItem from="1539130231207" duration="19284000" />
     </task>
     <task id="LOCAL-00001" summary="Search and delete">
       <created>1539135148013</created>
@@ -414,11 +412,25 @@
       <option name="project" value="LOCAL" />
       <updated>1539151837830</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="minor fixes">
+      <created>1539152068679</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1539152068679</updated>
+    </task>
+    <task id="LOCAL-00016" summary="minor fixes">
+      <created>1539152125162</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1539152125162</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48806000" />
+    <option name="totallyTimeSpent" value="49057000" />
   </component>
   <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
@@ -489,14 +501,14 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Search and delete" />
     <MESSAGE value="Toggle ID display" />
-    <MESSAGE value="minor fixes" />
     <MESSAGE value="Match link source and target to nodes" />
     <MESSAGE value="Make all nodes of links" />
     <MESSAGE value="minor fix" />
     <MESSAGE value="Initial graph waits for smackjack to connect" />
     <MESSAGE value="checking for smackjack is asynchronous" />
     <MESSAGE value="Wait for smackjack check" />
-    <option name="LAST_COMMIT_MESSAGE" value="Wait for smackjack check" />
+    <MESSAGE value="minor fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="minor fixes" />
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">

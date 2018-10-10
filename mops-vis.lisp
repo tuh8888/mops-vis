@@ -56,5 +56,3 @@
 
 (defun get-graph ()
   "")
-
-(start-website)
