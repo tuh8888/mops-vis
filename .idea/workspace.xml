@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="7f07c80c-61d4-4c22-aa47-151c0e2fe143" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/display.js" beforeDir="false" afterPath="$PROJECT_DIR$/display.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -104,17 +105,17 @@
           <entry key="JavaScript Console" value="49" />
           <entry key="css" value="271" />
           <entry key="html" value="572" />
-          <entry key="js" value="4058" />
+          <entry key="js" value="4107" />
           <entry key="lisp" value="28" />
-          <entry key="txt" value="119" />
+          <entry key="txt" value="179" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="272" />
           <entry key="HTML" value="571" />
-          <entry key="JavaScript" value="4107" />
-          <entry key="PLAIN_TEXT" value="147" />
+          <entry key="JavaScript" value="4156" />
+          <entry key="PLAIN_TEXT" value="207" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -122,6 +123,7 @@
           <entry key="css" value="1" />
           <entry key="js" value="1" />
           <entry key="lisp" value="4" />
+          <entry key="ts" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts" />
@@ -130,6 +132,7 @@
           <entry key="CSS" value="1" />
           <entry key="JavaScript" value="1" />
           <entry key="PLAIN_TEXT" value="4" />
+          <entry key="TypeScript" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages" />
@@ -158,10 +161,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/display.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-3771">
+            <state relative-caret-position="238">
+              <caret line="68" column="110" selection-start-line="68" selection-start-column="110" selection-end-line="68" selection-end-column="110" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
-                <element signature="e#3338#4626#0" />
               </folding>
             </state>
           </provider>
@@ -312,7 +315,7 @@
       <workItem from="1539033737424" duration="89000" />
       <workItem from="1539033893680" duration="328000" />
       <workItem from="1539034455680" duration="2334000" />
-      <workItem from="1539130231207" duration="17276000" />
+      <workItem from="1539130231207" duration="17951000" />
     </task>
     <task id="LOCAL-00001" summary="Search and delete">
       <created>1539135148013</created>
@@ -377,11 +380,25 @@
       <option name="project" value="LOCAL" />
       <updated>1539149646579</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="minor fix">
+      <created>1539150422586</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1539150422586</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Initial graph waits for smackjack to connect">
+      <created>1539150792001</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1539150792001</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47049000" />
+    <option name="totallyTimeSpent" value="47724000" />
   </component>
   <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
@@ -455,19 +472,9 @@
     <MESSAGE value="minor fixes" />
     <MESSAGE value="Match link source and target to nodes" />
     <MESSAGE value="Make all nodes of links" />
-    <option name="LAST_COMMIT_MESSAGE" value="Make all nodes of links" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/display.js</url>
-          <line>277</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="46" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="minor fix" />
+    <MESSAGE value="Initial graph waits for smackjack to connect" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial graph waits for smackjack to connect" />
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">
@@ -534,13 +541,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.dom.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="9332" column="13" selection-start-line="9332" selection-start-column="13" selection-end-line="9332" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/network-visualization-website.lisp" />
     <entry file="file://$APPLICATION_CONFIG_DIR$/javascript/extLibs/http_d3js.org_d3.v4.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -570,12 +570,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.dom.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="17110" column="17" selection-start-line="17110" selection-start-column="17" selection-end-line="17110" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/display.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3771">
+        <state relative-caret-position="238">
+          <caret line="68" column="110" selection-start-line="68" selection-start-column="110" selection-end-line="68" selection-end-column="110" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
-            <element signature="e#3338#4626#0" />
           </folding>
         </state>
       </provider>

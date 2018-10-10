@@ -66,7 +66,7 @@ Array.prototype.pushIfDoesNotExist = function (element, comparer) {
 
 function checkIfSmackjackExists() {
     const request = new XMLHttpRequest();
-    request.open('GET', "http://" + location.hostname + ":" + location.port + "/ajax-process", true);
+    request.open('GET', "http://" + location.hostname + ":" + location.port + "/ajax-process/GET-INITIAL-GRAPH", true);
     request.onreadystatechange = function () {
         if (request.readyState === 4) {
             smackjackExists = request.status !== 404;
