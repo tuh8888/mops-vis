@@ -69,11 +69,10 @@ function checkIfSmackjackExists() {
     request.open('GET', "http://" + location.hostname + ":" + location.port + "/ajax-process/GET-INITIAL-GRAPH", true);
     request.onreadystatechange = function () {
         if (request.readyState === 4) {
-            smackjackExists = request.status !== 404;
+            return request.status !== 404;
         }
     };
     request.send();
-    return smackjackExists;
 }
 
 function addGraphData(newGraphData) {
@@ -98,9 +97,9 @@ function addGraphData(newGraphData) {
     restart();
 }
 
-function getInitialGraph() {
+async function getInitialGraph() {
     console.log("Graph requested");
-    if (checkIfSmackjackExists()) {
+    if (await checkIfSmackjackExists()) {
         console.log("Using server data");
         smackjack.getInitialGraph(addGraphData);
     } else {
@@ -431,6 +430,7 @@ d3.select("body").on('keydown', () => {
         console.log(d3.event.key);
     }
 });
-setTimeout(getInitialGraph, 2000);
+
+getInitialGraph();
 
 
