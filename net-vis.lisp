@@ -84,18 +84,18 @@
 ;;; These should be overridden by the implementation
 ;;; They are provided here as an example
 
-(defvar initial-data '((1 (2 3))
-                       (2 (4 5))
-                       (3 ())
-                       (4 ())
-                       (5 (1))))
+(defvar initial-data '(("1" ("2" "3"))
+                       ("2" ("4" "5"))
+                       ("3" ())
+                       ("4" ())
+                       ("5" ("1"))))
 
-(defvar full-data '((1 (2 3))
-                    (2 (4 5))
-                    (3 ())
-                    (4 ())
-                    (5 (1 6))
-                    (6 (7))))
+(defvar full-data '(("1" ("2" "3"))
+                    ("2" ("4" "5"))
+                    ("3" ())
+                    ("4" ())
+                    ("5" ("1" "6"))
+                    ("6" ("7"))))
 
 ;;; TODO I need to know what links and nodes already exist
 (defun send-links (node-name)
