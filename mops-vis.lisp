@@ -19,7 +19,7 @@
   (let ((string-filler (cond ((mop-p filler) (mop-name filler))
                              ((listp filler) (mapcar #'mop-name filler))
                              (t filler))))
-    (web-net:make-link :source mop
+    (net-vis:make-link :source mop
                :label (slot-role slot)
                :target string-filler)))
 
@@ -30,7 +30,7 @@
   (mapcan (lambda (slot) (make-slot-links mop slot)) (mop-slots mop)))
 
 (defun make-mop-node (mop)
-  (web-net:make-node (mop-name mop)))
+  (net-vis:make-node (mop-name mop)))
 
 (defun make-mop-nodes (mop)
   (cons (make-mop-node mop)
@@ -39,7 +39,7 @@
 (defun mops-to-json (mops)
   (let ((nodes (mapcan #'make-mop-nodes mops))
         (links (mapcan #'make-mop-links mops)))
-    (web-net:make-json-graph nodes links)))
+    (net-vis:make-json-graph nodes links)))
 
 ;;; Testing JSON conversion
 
