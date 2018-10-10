@@ -1,7 +1,7 @@
 (asdf:load-system "KaBOB")
 
 
-(defpackage :kabob-display
+(defpackage :mops-vis
   (:use :cl :net-vis :KaBOB)
   (:export :start-website))
 
