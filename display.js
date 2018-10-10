@@ -76,23 +76,23 @@ function checkIfSmackjackExists() {
     return smackjackExists;
 }
 
-function addGraphData(graphData) {
+function addGraphData(newGraphData) {
     console.log("graph received");
-    let node;
-    for (let i = 0; i < graphData.nodes.length; i++) {
-        node = graphData.nodes[i];
-        nodes.pushIfDoesNotExist(node, function (e) {
-            return e.id === node.id;
+    let newNode;
+    for (let i = 0; i < newGraphData.nodes.length; i++) {
+        newNode = newGraphData.nodes[i];
+        nodes.pushIfDoesNotExist(newNode, function (e) {
+            return e.id === newNode.id;
         })
     }
-    let link;
-    for (let i = 0; i < graphData.links.length; i++) {
-        link = graphData.links[i];
-        links.pushIfDoesNotExist(link, function (e) {
-            return e.source === link.source && e.target === link.target;
+    let newLink;
+    for (let i = 0; i < newGraphData.links.length; i++) {
+        newLink = newGraphData.links[i];
+        links.pushIfDoesNotExist(newLink, function (e) {
+            return (e.source === newLink.source && e.target === newLink.target) || (e.source.id === newLink.source && e.target.id === newLink.target);
         })
     }
-    console.log(graphData)
+    console.log(newGraphData)
 }
 
 function getInitialGraph() {
