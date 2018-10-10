@@ -88,6 +88,8 @@ function addGraphData(newGraphData) {
     let newLink;
     for (let i = 0; i < newGraphData.links.length; i++) {
         newLink = newGraphData.links[i];
+        newLink.source = typeof newLink.source === 'string' ? nodes.find(node => node.id === newLink.source) : newLink.source;
+        newLink.target = typeof newLink.target === 'string' ? nodes.find(node => node.id === newLink.target) : newLink.target;
         links.pushIfDoesNotExist(newLink, function (e) {
             return (e.source === newLink.source && e.target === newLink.target) || (e.source.id === newLink.source && e.target.id === newLink.target);
         })
