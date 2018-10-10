@@ -94,7 +94,8 @@ function addGraphData(newGraphData) {
             return (e.source === newLink.source && e.target === newLink.target) || (e.source.id === newLink.source && e.target.id === newLink.target);
         })
     }
-    console.log(newGraphData)
+    console.log(newGraphData);
+    restart();
 }
 
 function getInitialGraph() {
