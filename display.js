@@ -431,6 +431,6 @@ d3.select("body").on('keydown', () => {
         console.log(d3.event.key);
     }
 });
-restart();
-getInitialGraph();
+setTimeout(getInitialGraph, 2000);
+
 

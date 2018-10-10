@@ -113,6 +113,6 @@
 (defun send-initial-graph ()
   (format t "graph requested~%")
 
-  (let ((nodes (mapcar #'make-nodes initial-data))
+  (let ((nodes (mapcan #'make-nodes initial-data))
         (links (mapcan #'make-links initial-data)))
     (make-json-graph nodes links)))
