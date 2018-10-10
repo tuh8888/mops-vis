@@ -116,11 +116,11 @@ function getInitialGraph() {
                 {"id": "5"}
             ];
             links = [
-                {"source": "1", "target": "2"},
-                {"source": "1", "target": "3"},
-                {"source": "2", "target": "4"},
-                {"source": "2", "target": "5"},
-                {"source": "5", "target": "1"}
+                {"source": "1", "target": "2", "label": "A"},
+                {"source": "1", "target": "3", "label": "B"},
+                {"source": "2", "target": "4", "label": "C"},
+                {"source": "2", "target": "5", "label": "D"},
+                {"source": "5", "target": "1", "label": "E"}
             ];
             fullGraph = {
                 "nodes": [
@@ -133,13 +133,13 @@ function getInitialGraph() {
                     {"id": "7"}
                 ],
                 "links": [
-                    {"source": "1", "target": "2"},
-                    {"source": "1", "target": "3"},
-                    {"source": "2", "target": "4"},
-                    {"source": "2", "target": "5"},
-                    {"source": "5", "target": "1"},
-                    {"source": "5", "target": "6"},
-                    {"source": "6", "target": "7"}
+                    {"source": "1", "target": "2", "label": "A"},
+                    {"source": "1", "target": "3", "label": "B"},
+                    {"source": "2", "target": "4", "label": "C"},
+                    {"source": "2", "target": "5", "label": "D"},
+                    {"source": "5", "target": "1", "label": "E"},
+                    {"source": "5", "target": "6", "label": "F"},
+                    {"source": "6", "target": "7", "label": "G"}
                 ]
             }
         }
@@ -241,7 +241,7 @@ svg.append('svg:defs').append('svg:marker')
 
 // handles to link and node element groups
 let path = svg.append('svg:g').selectAll('path');
-let circle = svg.append('svg:g').selectAll('g');
+let node = svg.append('svg:g').selectAll('g.node');
 
 // mouse event vars
 let selectedNode = null;
@@ -276,30 +276,31 @@ function tick() {
         return `M${sourceX},${sourceY}L${targetX},${targetY}`;
     });
 
-    circle.attr('transform', (d) => `translate(${d.x},${d.y})`);
+    node.attr('transform', (d) => `translate(${d.x},${d.y})`);
 }
 
 // update graph (called when needed)
 function restart() {
-    circle.call(drag);
-
     // path (link) group
     path = path.data(links);
 
     // update existing links
     path.classed('selected', (d) => d === selectedLink)
         .style('marker-start', (d) => d.left ? 'url(#start-arrow)' : '')
-        .style('marker-end', (d) => d.right ? 'url(#end-arrow)' : '');
+        .style('marker-end', (d) => d.right ? 'url(#arrowhead)' : '');
 
     // remove old links
     path.exit().remove();
 
     // add new links
-    path = path.enter().append('svg:path')
-        .attr('class', 'link')
+    const gLink = path.enter().append('svg:g')
+        .attr('class', 'link');
+
+    const paths = gLink.append('path')
+        // .attr('class', 'link')
         .classed('selected', (d) => d === selectedLink)
-        .style('marker-start', (d) => d.left ? 'url(#start-arrow)' : '')
-        .style('marker-end', (d) => d.right ? 'url(#end-arrow)' : '')
+        .style('marker-start', 'url(#start-arrow)')
+        .attr('marker-end','url(#arrowhead)')
         .on('mousedown', (d) => {
             if (d3.event.ctrlKey) return;
 
@@ -308,27 +309,35 @@ function restart() {
             selectedLink = (mousedownLink === selectedLink) ? null : mousedownLink;
             selectedNode = null;
             restart();
-        })
-        .merge(path);
+        });
+
+    gLink.append('text')
+        .attr("dx", 80)
+        .attr("dy", 0)
+        .text((d) => d.label);
+
+    path = paths.merge(path);
+
+
 
     // circle (node) group
     // NB: the function arg is crucial here! nodes are known by id, not by index!
-    circle = circle.data(nodes, (d) => d.id);
+    node = node.data(nodes, (d) => d.id);
 
     // update existing nodes (reflexive & selected visual states)
-    circle.selectAll('circle')
+    node.selectAll('circle')
         .style('fill', (d) => (d === selectedNode) ? d3.rgb(colors(d.id)).brighter().toString() : colors(d.id))
         .classed('reflexive', (d) => d.reflexive)
         .classed('selected', (d) => d === selectedNode);
 
-    circle.selectAll('text')
+    node.selectAll('text')
         .classed('display', (d) => d.display);
 
     // remove old nodes
-    circle.exit().remove();
+    node.exit().remove();
 
     // add new nodes
-    const g = circle.enter().append('svg:g')
+    const g = node.enter().append('svg:g')
         .attr('class', 'node');
 
     g.append('svg:circle')
@@ -347,7 +356,7 @@ function restart() {
             // d3.select(this).attr('transform', '');
         })
         .on('mousedown', (d) => {
-            if (d3.event.ctrlKey) getNode(d.id);
+            if (!d3.event.ctrlKey) getNode(d.id);
 
             // select node
             mousedownNode = d;
@@ -378,12 +387,6 @@ function restart() {
         });
 
     // show node IDs
-    // g.append('svg:text')
-    //     .attr('x', 0)
-    //     .attr('y', 4)
-    //     .attr('class', 'id')
-    //     .text((d) => d.id);
-
     g.append('text')
         .attr('x', 0)
         .attr('y', 4)
@@ -391,7 +394,7 @@ function restart() {
             return d.id;
         });
 
-    circle = g.merge(circle);
+    node = g.merge(node);
 
     // set the graph in motion
     force
@@ -428,12 +431,41 @@ function mouseup() {
 svg.on('mousedown', mousedown)
     .on('mousemove', mousemove)
     .on('mouseup', mouseup);
+d3.select(window)
+    .on('keydown', keydown)
+    .on('keyup', keyup);
 
-d3.select("body").on('keydown', () => {
-    if (d3.event.key === "Delete" && selectedNode) {
-        removeNode(selectedNode.id)
+
+let lastKeyDown = -1;
+function keydown() {
+    d3.event.preventDefault();
+
+    if (lastKeyDown !== -1) return;
+    lastKeyDown = d3.event.key;
+    if (d3.event.key === "Delete") {
+        if (selectedNode) {
+            removeNode(selectedNode.id)
+        } else if (selectedLink) {
+            // TODO: Delete links
+            // links.splice(links.indexOf(selectedLink), 1);
+        }
     }
-});
+    if (d3.event.ctrlKey) {
+        node.call(drag);
+        svg.classed('ctrl', true)
+    }
+}
+
+
+function keyup() {
+    lastKeyDown = -1;
+
+    // ctrl
+    if (d3.event.ctrlKey) {
+        circle.on('.drag', null);
+        svg.classed('ctrl', false);
+    }
+}
 
 getInitialGraph();
 

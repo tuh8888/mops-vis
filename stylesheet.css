@@ -14,26 +14,31 @@ svg:not(.active):not(.ctrl) {
     cursor: crosshair;
 }
 
-path.link {
+g.link path {
     fill: none;
     stroke: #000;
     stroke-width: 4px;
     cursor: default;
 }
 
-svg:not(.active):not(.ctrl) path.link {
+g.link text {
+    font-size: 10px;
+    fill: #000000;
+}
+
+svg:not(.active):not(.ctrl) g.link path {
     cursor: pointer;
 }
 
-path.link.selected {
+g.link path.selected {
     stroke-dasharray: 10,2;
 }
 
-path.link.dragline {
+g.link path.dragline {
     pointer-events: none;
 }
 
-path.link.hidden {
+g.link path.hidden {
     stroke-width: 0;
 }
 
