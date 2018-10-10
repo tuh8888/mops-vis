@@ -1,0 +1,24 @@
+{
+  "width": 960,
+  "height": 500,
+  "link": {
+    "func": "forceLink",
+    "distance": 150
+  },
+  "charge": {
+    "func": "forceManyBody",
+    "strength": -500
+  },
+  "x": {
+    "func": "forceX",
+    "scale": 0.5
+  },
+  "y": {
+    "func": "forceY",
+    "scale": 0.5
+  },
+  "alphaTarget": {
+    "hot": 0.3,
+    "cool": 0
+  }
+}
