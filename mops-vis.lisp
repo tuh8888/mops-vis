@@ -9,7 +9,7 @@
 
 (KaBOB:open-KaBOB)
 ;(KaBOB:enable-!-reader)
-(KaBOB:mopify (bio *p53*))
+;(KaBOB:mopify (bio *p53*))
 
 ;;;;;;;;; JSON ;;;;;;;;;;
 
