@@ -70,7 +70,7 @@
   (let ((ajax-processor (make-instance 'ajax-processor :server-uri "/ajax-process")))
 
     (defun-ajax GET-NODE (node-name) (ajax-processor :callback-data :json)
-      (send-links node-name))
+      (send-node-data node-name))
 
     (defun-ajax GET-INITIAL-GRAPH () (ajax-processor :callback-data :json)
       (send-initial-graph))
@@ -97,24 +97,22 @@
                     ("5" ("1" "6"))
                     ("6" ("7"))))
 
-;;; TODO I need to know what links and nodes already exist
-(defun send-links (node-name)
-  (let ((node-data (assoc node-name full-data)))
-    (make-json-graph (list (make-node (car node-data))) (mapcar (lambda (target) (make-link :source (first node-data)
-                                                                                            :label ""
-                                                                                            :target target))
-                                                                (second node-data)))))
+(defun make-nodes (node-data)
+  (cons (make-node (car node-data)) (mapcar #'make-node (car (cdr node-data)))))
+
+(defun make-links (node-data)
+  (mapcar (lambda (target) (make-link :source (first node-data)
+                                      :label ""
+                                      :target target))
+          (second node-data)))
+
+(defun send-node-data (node-name)
+  (let ((node-data (assoc node-name full-data :test #'string=)))
+    (make-json-graph (make-nodes node-data) (make-links node-data))))
 
 (defun send-initial-graph ()
   (format t "graph requested~%")
-  (let ((nodes (mapcar #'(lambda (node)
-                               (make-node (first node)))
-                           initial-data))
-        (links (mapcan (lambda (pair)
-                         (mapcar (lambda (target)
-                                   (make-link :source (first pair)
-                                              :label ""
-                                              :target target))
-                                 (second pair)))
-                       initial-data)))
+
+  (let ((nodes (mapcar #'make-nodes initial-data))
+        (links (mapcan #'make-links initial-data)))
     (make-json-graph nodes links)))
