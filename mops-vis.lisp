@@ -5,54 +5,50 @@
   (:use :cl :net-vis :KaBOB)
   (:export :start-website))
 
-(in-package :KaBOB)
+(in-package :mops-vis)
 
-(open-KaBOB)
-(enable-!-reader)
-(mopify (bio *p53*))
+(KaBOB:open-KaBOB)
+(KaBOB:enable-!-reader)
+(KaBOB:mopify (bio *p53*))
 
 ;;;;;;;;; JSON ;;;;;;;;;;
 
 ;;; Conversion of MOPs to JSON
 
 (defun make-filler-link (mop slot filler)
-  (let ((string-filler (cond ((mop-p filler) (mop-name filler))
-                             ((listp filler) (mapcar #'mop-name filler))
+  (let ((string-filler (cond ((KaBOB:mop-p filler) (KaBOB:mop-name filler))
+                             ((listp filler) (mapcar #'KaBOB:mop-name filler))
                              (t filler))))
     (net-vis:make-link :source mop
-               :label (slot-role slot)
+               :label (KaBOB:slot-role slot)
                :target string-filler)))
 
 (defun make-slot-links (mop slot)
-  (mapcar (lambda (filler) (make-filler-link mop slot filler)) (slot-filler slot)))
+  (mapcar (lambda (filler) (make-filler-link mop slot filler)) (KaBOB:slot-filler slot)))
 
 (defun make-mop-links (mop)
-  (mapcan (lambda (slot) (make-slot-links mop slot)) (mop-slots mop)))
+  (mapcan (lambda (slot) (make-slot-links mop slot)) (KaBOB:mop-slots mop)))
 
 (defun make-mop-node (mop)
-  (net-vis:make-node (mop-name mop)))
+  (net-vis:make-node (KaBOB:mop-name mop)))
 
 (defun make-mop-nodes (mop)
   (cons (make-mop-node mop)
-        (mapcar (lambda (abstraction) (make-mop-node abstraction)) (mop-abstractions mop))))
+        (mapcar (lambda (abstraction) (make-mop-node abstraction)) (KaBOB:mop-abstractions mop))))
 
 (defun mops-to-json (mops)
   (let ((nodes (mapcan #'make-mop-nodes mops))
         (links (mapcan #'make-mop-links mops)))
     (net-vis:make-json-graph nodes links)))
 
-;;; Testing JSON conversion
+;;; Overriding methods
+(in-package :net-vis)
 
-
-(defun get-initial-graph ()
+(defun send-initial-graph ()
   (format t "graph requested~%")
-  (let ((mop (lookup-mop-by-uniprot-id 'P04637)))
-    (mops-to-json (list mop))))
+  (let ((mop (KaBOB:lookup-mop-by-uniprot-id 'P04637)))
+    (mops-vis:mops-to-json (list mop))))
 
-(defun get-node (node-name)
-  (let ((mop (find-mop (format nil "|~a|" node-name))))
-    (mops-to-json (list mop))))
-
-
-(defun get-graph ()
-  "")
+(defun send-node-data (node-name)
+  (let ((mop (KaBOB:find-mop (format nil "|~a|" node-name))))
+    (mops-vis:mops-to-json (list mop))))
