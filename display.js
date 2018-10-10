@@ -69,7 +69,7 @@ function checkIfSmackjackExists() {
     request.open('GET', "http://" + location.hostname + ":" + location.port + "/ajax-process/GET-INITIAL-GRAPH", true);
     request.onreadystatechange = function () {
         if (request.readyState === 4) {
-            return request.status !== 404;
+            smackjackExists = request.status !== 404;
         }
     };
     request.send();
@@ -97,49 +97,53 @@ function addGraphData(newGraphData) {
     restart();
 }
 
-async function getInitialGraph() {
+function getInitialGraph() {
     console.log("Graph requested");
-    if (await checkIfSmackjackExists()) {
-        console.log("Using server data");
-        smackjack.getInitialGraph(addGraphData);
-    } else {
-        console.log("Using default data");
-        nodes = [
-            {"id": "1"},
-            {"id": "2"},
-            {"id": "3"},
-            {"id": "4"},
-            {"id": "5"}
-        ];
-        links = [
-            {"source": "1", "target": "2"},
-            {"source": "1", "target": "3"},
-            {"source": "2", "target": "4"},
-            {"source": "2", "target": "5"},
-            {"source": "5", "target": "1"}
-        ];
-        fullGraph = {
-            "nodes": [
+    checkIfSmackjackExists();
+    setTimeout(function () {
+        if (smackjackExists) {
+            console.log("Using server data");
+            smackjack.getInitialGraph(addGraphData);
+        } else {
+            console.log("Using default data");
+            nodes = [
                 {"id": "1"},
                 {"id": "2"},
                 {"id": "3"},
                 {"id": "4"},
-                {"id": "5"},
-                {"id": "6"},
-                {"id": "7"}
-            ],
-            "links": [
+                {"id": "5"}
+            ];
+            links = [
                 {"source": "1", "target": "2"},
                 {"source": "1", "target": "3"},
                 {"source": "2", "target": "4"},
                 {"source": "2", "target": "5"},
-                {"source": "5", "target": "1"},
-                {"source": "5", "target": "6"},
-                {"source": "6", "target": "7"}
-            ]
+                {"source": "5", "target": "1"}
+            ];
+            fullGraph = {
+                "nodes": [
+                    {"id": "1"},
+                    {"id": "2"},
+                    {"id": "3"},
+                    {"id": "4"},
+                    {"id": "5"},
+                    {"id": "6"},
+                    {"id": "7"}
+                ],
+                "links": [
+                    {"source": "1", "target": "2"},
+                    {"source": "1", "target": "3"},
+                    {"source": "2", "target": "4"},
+                    {"source": "2", "target": "5"},
+                    {"source": "5", "target": "1"},
+                    {"source": "5", "target": "6"},
+                    {"source": "6", "target": "7"}
+                ]
+            }
         }
-    }
-    restart();
+        restart();
+    }, 2000)
+
 }
 
 //TODO Either send nodes that are known or process what is rerturned
