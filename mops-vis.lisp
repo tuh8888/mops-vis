@@ -8,7 +8,7 @@
 (in-package :mops-vis)
 
 (KaBOB:open-KaBOB)
-(KaBOB:enable-!-reader)
+;(KaBOB:enable-!-reader)
 (KaBOB:mopify (bio *p53*))
 
 ;;;;;;;;; JSON ;;;;;;;;;;
