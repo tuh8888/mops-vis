@@ -1,18 +1,16 @@
 (asdf:load-system "KaBOB")
 
-
-(defpackage :mops-vis
-  (:use :cl :net-vis :KaBOB :mops)
-  (:export :start-website :mops-to-json :initial-mop))
+;; (defpackage :mops-vis
+;;   (:use :cl :net-vis :KaBOB :mops)
+;;   (:export :start-website :mops-to-json :initial-mop))
 
 (in-package :KaBOB)
-(defun KaBOB:lookup-mop (name)
-  (lookup-mop-by-uniprot-id name))
-(defvar mops-vis:initial-mop (KaBOB:lookup-mop 'P04637))
 
-(in-package :mops-vis)
+(defvar initial-mop (lookup-mop-by-uniprot-id 'P04637))
 
-(KaBOB:open-KaBOB)
+;(in-package :mops-vis)
+
+(open-KaBOB)
 ;(enable-!-reader)
 ;(mopify (bio *p53*))
 
@@ -64,15 +62,16 @@
         (links (mapcan #'make-mop-links mops)))
     (net-vis:make-json-graph nodes links)))
 
-
+(defun find-node-data (node-name)
+  (mops-to-json (list (lookup-mop (intern node-name :KaBOB)))))
 
 ;;; Overriding methods
 (in-package :net-vis)
 
 (defun send-initial-graph ()
   (format t "graph requested~%")
-  (mops-vis:mops-to-json (list mops-vis:initial-mop)))
+  (KaBOB::mops-to-json (list KaBOB::initial-mop)))
 
 (defun send-node-data (node-name)
-  (let ((mop (KaBOB:lookup-mop (format nil "|~a|" node-name))))
-    (mops-vis:mops-to-json (list mop))))
+  (format t "node requested: ~a~%" node-name)
+  (KaBOB::find-node-data node-name))
