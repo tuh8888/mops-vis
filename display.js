@@ -465,8 +465,8 @@ function keyup() {
     lastKeyDown = -1;
 
     // ctrl
-    if (d3.event.ctrlKey) {
-        circle.on('.drag', null);
+    if (d3.event.key === "Control") {
+        node.on('.drag', null);
         svg.classed('ctrl', false);
     }
 }
