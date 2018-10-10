@@ -19,3 +19,10 @@ Visualization for KaBOB Mops interface
 4. load net-vis.lisp and mops-vis.lisp
 5. Execute `(net-vis:start-website :port port-number)` with an open port number (8080 or 8081 are good choices)
 6. Open the display by going to hostname:port/index in a browser
+
+
+## TODO
+- Expand all nodes on click (for some reason not all of the mop IDs are cooperative)
+- Edge labeling (d3 makes this harder than it should be)
+- Search bar
+- Sliders for layout management
