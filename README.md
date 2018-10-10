@@ -26,3 +26,4 @@ Visualization for KaBOB Mops interface
 - Edge labeling (d3 makes this harder than it should be)
 - Search bar
 - Sliders for layout management
+- Get inverse slots
