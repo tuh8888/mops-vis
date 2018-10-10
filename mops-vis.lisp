@@ -2,7 +2,7 @@
 
 
 (defpackage :kabob-display
-  (:use :cl :web-net :KaBOB)
+  (:use :cl :net-vis :KaBOB)
   (:export :start-website))
 
 (in-package :KaBOB)

@@ -77,24 +77,26 @@ function checkIfSmackjackExists() {
 
 function addGraphData(newGraphData) {
     console.log("graph received");
-    let newNode;
-    for (let i = 0; i < newGraphData.nodes.length; i++) {
-        newNode = newGraphData.nodes[i];
-        nodes.pushIfDoesNotExist(newNode, function (e) {
-            return e.id === newNode.id;
-        })
+    if (newGraphData.nodes && newGraphData.links) {
+        let newNode;
+        for (let i = 0; i < newGraphData.nodes.length; i++) {
+            newNode = newGraphData.nodes[i];
+            nodes.pushIfDoesNotExist(newNode, function (e) {
+                return e.id === newNode.id;
+            })
+        }
+        let newLink;
+        for (let i = 0; i < newGraphData.links.length; i++) {
+            newLink = newGraphData.links[i];
+            newLink.source = typeof newLink.source === 'string' ? nodes.find(node => node.id === newLink.source) : newLink.source;
+            newLink.target = typeof newLink.target === 'string' ? nodes.find(node => node.id === newLink.target) : newLink.target;
+            links.pushIfDoesNotExist(newLink, function (e) {
+                return (e.source === newLink.source && e.target === newLink.target) || (e.source.id === newLink.source && e.target.id === newLink.target);
+            })
+        }
+        console.log(newGraphData);
+        restart();
     }
-    let newLink;
-    for (let i = 0; i < newGraphData.links.length; i++) {
-        newLink = newGraphData.links[i];
-        newLink.source = typeof newLink.source === 'string' ? nodes.find(node => node.id === newLink.source) : newLink.source;
-        newLink.target = typeof newLink.target === 'string' ? nodes.find(node => node.id === newLink.target) : newLink.target;
-        links.pushIfDoesNotExist(newLink, function (e) {
-            return (e.source === newLink.source && e.target === newLink.target) || (e.source.id === newLink.source && e.target.id === newLink.target);
-        })
-    }
-    console.log(newGraphData);
-    restart();
 }
 
 function getInitialGraph() {
@@ -430,8 +432,6 @@ svg.on('mousedown', mousedown)
 d3.select("body").on('keydown', () => {
     if (d3.event.key === "Delete" && selectedNode) {
         removeNode(selectedNode.id)
-    } else {
-        console.log(d3.event.key);
     }
 });
 
