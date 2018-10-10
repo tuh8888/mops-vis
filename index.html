@@ -135,6 +135,7 @@
                 return ajaxCall('GET-NODE', [nodeName], 'GET', callback, errorHandler, responseJson);  //arguments go in the brackets
             }
 
+            smackjack.ajaxCall = ajaxCall;
             smackjack.getInitialGraph = getInitialGraph;
             smackjack.getNode = getNode;
             return null;
