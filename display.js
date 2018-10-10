@@ -239,6 +239,10 @@ svg.append('svg:defs').append('svg:marker')
     .attr('d', 'M10,-5L0,0L10,5')
     .attr('fill', '#000');
 
+svg.append("defs").append("path")
+    .attr("id", "textPath")
+    .attr("d", 'M10,-5L0,0L10,5');
+
 // handles to link and node element groups
 let path = svg.append('svg:g').selectAll('path');
 let node = svg.append('svg:g').selectAll('g.node');
@@ -286,8 +290,8 @@ function restart() {
 
     // update existing links
     path.classed('selected', (d) => d === selectedLink)
-        .style('marker-start', (d) => d.left ? 'url(#start-arrow)' : '')
-        .style('marker-end', (d) => d.right ? 'url(#arrowhead)' : '');
+        .style('marker-start', '')
+        .style('marker-end', 'url(#arrowhead)');
 
     // remove old links
     path.exit().remove();
@@ -311,10 +315,10 @@ function restart() {
             restart();
         });
 
-    gLink.append('text')
-        .attr("dx", 80)
-        .attr("dy", 0)
-        .text((d) => d.label);
+    //TODO: figure out why paths aren't showing
+    gLink.append("text").append("textPath")
+        .attr("xlink:href", "#textPath")
+        .text((d) => d.id);
 
     path = paths.merge(path);
 
