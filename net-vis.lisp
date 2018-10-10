@@ -16,7 +16,7 @@
 (defvar display-file (merge-pathnames "display.js" local-dir))
 (defvar stylesheet-file (merge-pathnames "stylesheet.css" local-dir))
 
-(defun start-website (&key (page-uri "index") (port 8080))
+(defun start-website (&key (page-uri "index") (port 8081))
   (let ((ajax-processor (initialize-ajax)))
     (setq *server* (make-instance 'easy-acceptor :port port))
     (start *server*)
