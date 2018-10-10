@@ -2,14 +2,14 @@
 
 (defpackage :net-vis
   (:use :hunchentoot :cl-who :cl-json :cl :smackjack)
-  (:export :start-website :make-node :make-link :make-json-graph))
+  (:export :start-website :make-node :make-link :make-json-graph :*server*))
 
 (in-package :net-vis)
 
 ;;;;;;;;; Site ;;;;;;;;;
 
 (setq cl-who:*attribute-quote-char* #\")
-(defvar *mops-server*)
+(defvar *server*)
 (defvar local-dir "~/code/common-lisp/mops-vis/")
 (defvar index-file  (merge-pathnames "index.html" local-dir))
 (defvar display-file (merge-pathnames "display.js" local-dir))
@@ -17,10 +17,9 @@
 
 (defun start-website (&key (page-uri "index") (port 8080))
   (let ((ajax-processor (initialize-ajax)))
-    (setq *mops-server* (make-instance 'easy-acceptor :port port))
-    (start *mops-server*)
-    (make-page page-uri ajax-processor)
-    server))
+    (setq *server* (make-instance 'easy-acceptor :port port))
+    (start *server*)
+    (make-page page-uri ajax-processor)))
 
 (defun make-page (page-uri ajax-processor)
   (push (create-static-file-dispatcher-and-handler
@@ -48,7 +47,6 @@
   ;;         (:script :src "https://d3js.org/d3.v4.min.js")
   ;;         (:script :src "display.js"))))))
   (format t "Page: ~a~%Using: ~a~%" page-uri index-file))
-  )
 
 ;;;;;;;;; JSON ;;;;;;;;
 
