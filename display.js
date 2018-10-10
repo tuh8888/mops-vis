@@ -291,7 +291,7 @@ function restart() {
     // update existing links
     path.classed('selected', (d) => d === selectedLink)
         .style('marker-start', '')
-        .style('marker-end', 'url(#arrowhead)');
+        .style('marker-end', 'url(#end-arrow)');
 
     // remove old links
     path.exit().remove();
@@ -303,8 +303,8 @@ function restart() {
     const paths = gLink.append('path')
         // .attr('class', 'link')
         .classed('selected', (d) => d === selectedLink)
-        .style('marker-start', 'url(#start-arrow)')
-        .attr('marker-end','url(#arrowhead)')
+        .style('marker-start', '')
+        .attr('marker-end','url(#end-arrow)')
         .on('mousedown', (d) => {
             if (d3.event.ctrlKey) return;
 

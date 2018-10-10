@@ -8,12 +8,14 @@
 (in-package :KaBOB)
 (defun KaBOB:lookup-mop (name)
   (lookup-mop-by-uniprot-id name))
+(defvar mops-vis:initial-mop (KaBOB:lookup-mop 'P04637))
 
 (in-package :mops-vis)
 
 (KaBOB:open-KaBOB)
 ;(enable-!-reader)
 ;(mopify (bio *p53*))
+
 
 ;;;;;;;;; JSON ;;;;;;;;;;
 
@@ -62,7 +64,7 @@
         (links (mapcan #'make-mop-links mops)))
     (net-vis:make-json-graph nodes links)))
 
-(defvar initial-mop (KaBOB:lookup-mop 'P04637))
+
 
 ;;; Overriding methods
 (in-package :net-vis)
