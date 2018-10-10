@@ -310,36 +310,42 @@ function restart() {
     // update existing nodes (reflexive & selected visual states)
     circle.selectAll('circle')
         .style('fill', (d) => (d === selectedNode) ? d3.rgb(colors(d.id)).brighter().toString() : colors(d.id))
-        .classed('reflexive', (d) => d.reflexive);
+        .classed('reflexive', (d) => d.reflexive)
+        .classed('selected', (d) => d === selectedNode);
+
+    circle.selectAll('text')
+        .classed('display', (d) => d.display);
 
     // remove old nodes
     circle.exit().remove();
 
     // add new nodes
-    const g = circle.enter().append('svg:g');
+    const g = circle.enter().append('svg:g')
+        .attr('class', 'node');
 
     g.append('svg:circle')
-        .attr('class', 'node')
         .attr('r', 12)
         .style('fill', (d) => (d === selectedNode) ? d3.rgb(colors(d.id)).brighter().toString() : colors(d.id))
         .style('stroke', (d) => d3.rgb(colors(d.id)).darker().toString())
         .classed('reflexive', (d) => d.reflexive)
         .on('mouseover', function (d) {
-            if (!mousedownNode || d === mousedownNode) return;
-            // enlarge target node
-            d3.select(this).attr('transform', 'scale(1.1)');
+            // if (!mousedownNode || d === mousedownNode) return;
+            // // enlarge target node
+            // d3.select(this).attr('transform', 'scale(1.1)');
         })
         .on('mouseout', function (d) {
-            if (!mousedownNode || d === mousedownNode) return;
-            // unenlarge target node
-            d3.select(this).attr('transform', '');
+            // if (!mousedownNode || d === mousedownNode) return;
+            // // unenlarge target node
+            // d3.select(this).attr('transform', '');
         })
         .on('mousedown', (d) => {
             if (d3.event.ctrlKey) getNode(d.id);
 
             // select node
             mousedownNode = d;
+            d.display = !d.display;
             selectedNode = (mousedownNode === selectedNode) ? null : mousedownNode;
+
             selectedLink = null;
 
             restart();
@@ -364,11 +370,18 @@ function restart() {
         });
 
     // show node IDs
-    g.append('svg:text')
+    // g.append('svg:text')
+    //     .attr('x', 0)
+    //     .attr('y', 4)
+    //     .attr('class', 'id')
+    //     .text((d) => d.id);
+
+    g.append('text')
         .attr('x', 0)
         .attr('y', 4)
-        .attr('class', 'id')
-        .text((d) => d.id);
+        .text((d) => {
+            return d.id;
+        });
 
     circle = g.merge(circle);
 

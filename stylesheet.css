@@ -5,6 +5,7 @@ svg {
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
+    /*noinspection CssUnknownProperty*/
     -o-user-select: none;
     user-select: none;
 }
@@ -36,22 +37,33 @@ path.link.hidden {
     stroke-width: 0;
 }
 
-circle.node {
-    stroke-width: 1.5px;
+g.node circle {
+    stroke-width: 2px;
     cursor: pointer;
+    transform: scale(1);
 }
 
-circle.node.reflexive {
+g.node:hover circle {
+    transform: scale(1.1);
+}
+
+g.node circle.selected {
     stroke: #000 !important;
     stroke-width: 2.5px;
 }
 
-text {
-    font: 12px sans-serif;
-    pointer-events: none;
+g.node text.display {
+    display:  inline;
 }
 
-text.id {
+g.node:hover text {
+    display: inline;
+}
+
+g.node text {
+    display: none;
+    font: 12px sans-serif;
+    pointer-events: none;
     text-anchor: middle;
     font-weight: bold;
 }
