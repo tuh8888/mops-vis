@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JsonSchemaMappingsProjectConfiguration">
+    <state>
+      <map>
+        <entry key="layout">
+          <value>
+            <SchemaInfo>
+              <option name="name" value="layout" />
+              <option name="relativePathToSchema" value="layout.schema.json" />
+              <option name="patterns">
+                <list>
+                  <Item>
+                    <option name="path" value="layout_config.json" />
+                  </Item>
+                </list>
+              </option>
+            </SchemaInfo>
+          </value>
+        </entry>
+      </map>
+    </state>
+  </component>
+</project>

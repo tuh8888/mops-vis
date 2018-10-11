@@ -27,7 +27,8 @@ class Link {
 }
 
 class Graph {
-    constructor() {
+    constructor(restart) {
+        this.restart = restart;
         this.nodes = [];
         this.links = [];
     }
@@ -52,7 +53,7 @@ class Graph {
                 })
             }
             console.log(newGraphData);
-            restart();
+            this.restart();
         }
     };
 
@@ -79,7 +80,7 @@ class Graph {
                 xmlhttp.open("GET", "graph.json", true);
                 xmlhttp.send();
             }
-            restart();
+            graph.restart();
         }, 2000)
 
     };
@@ -109,13 +110,13 @@ class Graph {
     removeNode(nodeId) {
         this.nodes = this.nodes.filter(node => node.id !== nodeId);
         this.links = this.links.filter(link => link.source.id !== nodeId && link.target.id !== nodeId);
-        restart();
+        this.restart();
     };
 
     searchNode() {
         const idToSearchFor = document.getElementById("search-text-field").value;
         console.log(idToSearchFor);
         this.getNode(idToSearchFor);
-        restart();
+        this.restart();
     };
 }

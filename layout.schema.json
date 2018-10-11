@@ -1,0 +1,185 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/root.json",
+  "type": "object",
+  "title": "The Root Schema",
+  "required": [
+    "width",
+    "height",
+    "link",
+    "charge",
+    "x",
+    "y",
+    "alphaTarget"
+  ],
+  "properties": {
+    "width": {
+      "$id": "#/properties/width",
+      "type": "integer",
+      "title": "The Width Schema",
+      "default": 0,
+      "examples": [
+        960
+      ]
+    },
+    "height": {
+      "$id": "#/properties/height",
+      "type": "integer",
+      "title": "The Height Schema",
+      "default": 0,
+      "examples": [
+        500
+      ]
+    },
+    "link": {
+      "$id": "#/properties/link",
+      "type": "object",
+      "title": "The Link Schema",
+      "required": [
+        "func",
+        "distance"
+      ],
+      "properties": {
+        "func": {
+          "$id": "#/properties/link/properties/func",
+          "type": "string",
+          "title": "The Func Schema",
+          "default": "",
+          "examples": [
+            "forceLink"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "distance": {
+          "$id": "#/properties/link/properties/distance",
+          "type": "integer",
+          "title": "The Distance Schema",
+          "default": 0,
+          "examples": [
+            150
+          ]
+        }
+      }
+    },
+    "charge": {
+      "$id": "#/properties/charge",
+      "type": "object",
+      "title": "The Charge Schema",
+      "required": [
+        "func",
+        "strength"
+      ],
+      "properties": {
+        "func": {
+          "$id": "#/properties/charge/properties/func",
+          "type": "string",
+          "title": "The Func Schema",
+          "default": "",
+          "examples": [
+            "forceManyBody"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "strength": {
+          "$id": "#/properties/charge/properties/strength",
+          "type": "integer",
+          "title": "The Strength Schema",
+          "default": 0,
+          "examples": [
+            -500
+          ]
+        }
+      }
+    },
+    "x": {
+      "$id": "#/properties/x",
+      "type": "object",
+      "title": "The X Schema",
+      "required": [
+        "func",
+        "scale"
+      ],
+      "properties": {
+        "func": {
+          "$id": "#/properties/x/properties/func",
+          "type": "string",
+          "title": "The Func Schema",
+          "default": "",
+          "examples": [
+            "forceX"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "scale": {
+          "$id": "#/properties/x/properties/scale",
+          "type": "number",
+          "title": "The Scale Schema",
+          "default": 0.0,
+          "examples": [
+            0.5
+          ]
+        }
+      }
+    },
+    "y": {
+      "$id": "#/properties/y",
+      "type": "object",
+      "title": "The Y Schema",
+      "required": [
+        "func",
+        "scale"
+      ],
+      "properties": {
+        "func": {
+          "$id": "#/properties/y/properties/func",
+          "type": "string",
+          "title": "The Func Schema",
+          "default": "",
+          "examples": [
+            "forceY"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "scale": {
+          "$id": "#/properties/y/properties/scale",
+          "type": "number",
+          "title": "The Scale Schema",
+          "default": 0.0,
+          "examples": [
+            0.5
+          ]
+        }
+      }
+    },
+    "alphaTarget": {
+      "$id": "#/properties/alphaTarget",
+      "type": "object",
+      "title": "The Alphatarget Schema",
+      "required": [
+        "hot",
+        "cool"
+      ],
+      "properties": {
+        "hot": {
+          "$id": "#/properties/alphaTarget/properties/hot",
+          "type": "number",
+          "title": "The Hot Schema",
+          "default": 0.0,
+          "examples": [
+            0.3
+          ]
+        },
+        "cool": {
+          "$id": "#/properties/alphaTarget/properties/cool",
+          "type": "integer",
+          "title": "The Cool Schema",
+          "default": 0,
+          "examples": [
+            0
+          ]
+        }
+      }
+    }
+  }
+}
