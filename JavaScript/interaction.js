@@ -1,6 +1,5 @@
 class Interactor {
-    constructor(restart) {
-        this.restart = restart;
+    constructor() {
         this.selectedNode = null;
         this.mousedownNode = null;
         this.mouseupNode = null;
@@ -22,7 +21,7 @@ class Interactor {
         this.mousedownLink = d;
         this.selectedLink = (this.mousedownLink === this.selectedLink) ? null : this.mousedownLink;
         this.selectedNode = null;
-        this.restart();
+        restart();
     }
 
     isSelectedLink (d) {
@@ -40,7 +39,7 @@ class Interactor {
     }
 
     nodeMouseDown(d) {
-        if (!d3.event.ctrlKey) graph.getNode(d.id);
+        if (d3.event.ctrlKey) graph.getNode(d.id);
 
         // select node
         this.mousedownNode = d;
@@ -49,10 +48,11 @@ class Interactor {
 
         this.selectedLink = null;
 
-        this.restart();
+        restart();
     }
 
     nodeMouseUp(d) {
+        'use strict';
         if (!this.mousedownNode) return;
 
         // check for drag-to-self
@@ -68,7 +68,7 @@ class Interactor {
         // unenlarge target node
         d3.select(this).attr('transform', '');
 
-        this.restart();
+        restart();
     }
 
     nodeMouseOver(d) {
@@ -81,13 +81,13 @@ class Interactor {
         // because :active only works in WebKit?
         svg.classed('active', true);
         if (d3.event.ctrlKey || this.mousedownNode || this.mousedownLink) return;
-        this.restart();
+        restart();
     }
 
     // noinspection JSUnusedLocalSymbols
     svgMouseMove(svg) {
         if (!this.mousedownNode) return;
-        this.restart();
+        restart();
     }
 
     svgMouseUp(svg) {
@@ -97,8 +97,9 @@ class Interactor {
         this.resetMouseVars();
     }
 
-    bodyKeyDown(svg, drag) {
-        d3.event.preventDefault();
+    // noinspection JSUnusedLocalSymbols
+    bodyKeyDown(svg) {
+        // d3.event.preventDefault();
 
         if (this.lastKeyDown !== -1) return;
         this.lastKeyDown = d3.event.key;
@@ -111,19 +112,17 @@ class Interactor {
             }
         }
         if (d3.event.ctrlKey) {
-            node.call(drag);
-            svg.classed('ctrl', true)
+            node.on('.drag', null);
+            svg.classed('ctrl', false);
         }
     }
 
-
     bodyKeyUp(svg) {
         this.lastKeyDown = -1;
-
         // ctrl
         if (d3.event.key === "Control") {
-            node.on('.drag', null);
-            svg.classed('ctrl', false);
+            node.call(drag);
+            svg.classed('ctrl', true)
         }
     }
 }

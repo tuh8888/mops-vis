@@ -8,11 +8,11 @@ function setupNode(svg) {
 
 /**
  *
- * @param {!Interactor} interactor
  * @returns {*}
  */
-function updateLinks(interactor) {
+function updateLinks() {
     // path (link) group
+    // noinspection ES6ModulesDependencies
     path = path.data(graph.links);
 
     // update existing links
@@ -44,11 +44,9 @@ function updateLinks(interactor) {
 
 /**
  *
- * @param colors
- * @param {!Interactor} interactor
  * @returns {*}
  */
-function updateNodes(colors, interactor) {
+function updateNodes() {
     // circle (node) group
     // NB: the function arg is crucial here! nodes are known by id, not by index!
     node = node.data(graph.nodes, (d) => d.id);
@@ -72,10 +70,10 @@ function updateNodes(colors, interactor) {
         .attr('r', 12)
         .style('fill', (d) => (interactor.isSelectedNode(d)) ? d3.rgb(colors(d.id)).brighter().toString() : colors(d.id))
         .style('stroke', (d) => d3.rgb(colors(d.id)).darker().toString())
-        .on('mouseover', interactor.nodeMouseOver)
-        .on('mouseout', interactor.nodeMouseOut)
-        .on('mousedown', interactor.nodeMouseDown)
-        .on('mouseup', interactor.nodeMouseUp);
+        .on('mouseover', (d) => interactor.nodeMouseOver.call(interactor, d))
+        .on('mouseout', (d) => interactor.nodeMouseOut.call(interactor, d))
+        .on('mousedown', (d) => interactor.nodeMouseDown.call(interactor, d))
+        .on('mouseup', (d) => interactor.nodeMouseUp.call(interactor, d));
 
     // show node IDs
     g.append('text')

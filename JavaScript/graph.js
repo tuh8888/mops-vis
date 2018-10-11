@@ -27,10 +27,11 @@ class Link {
 }
 
 class Graph {
-    constructor(restart) {
-        this.restart = restart;
+
+    constructor() {
         this.nodes = [];
         this.links = [];
+        this.defaultData = null;
     }
 
     addGraphData(newGraphData) {
@@ -53,7 +54,7 @@ class Graph {
                 })
             }
             console.log(newGraphData);
-            this.restart();
+            restart();
         }
     };
 
@@ -61,26 +62,26 @@ class Graph {
         console.log("Graph requested");
         smackjack.checkIfSmackjackExists();
 
-        const graph = this;
+        const that = this;
 
         // Give server a chance to respond and let head load properly
         setTimeout(function () {
             if (smackjack.exists) {
                 console.log("Using server data");
-                smackjack.getInitialGraph(graph.addGraphData);
+                smackjack.getInitialGraph(that.addGraphData);
             } else {
                 console.log("Using default data");
                 const xmlhttp = new XMLHttpRequest();
                 xmlhttp.onreadystatechange = function () {
                     if (this.readyState === 4 && this.status === 200) {
-                        const data = JSON.parse(this.responseText);
-                        graph.addGraphData(data);
+                        that.defaultData = JSON.parse(this.responseText);
+                        that.addGraphData(that.defaultData);
                     }
                 };
                 xmlhttp.open("GET", "graph.json", true);
                 xmlhttp.send();
             }
-            graph.restart();
+            restart();
         }, 2000)
 
     };
@@ -90,7 +91,7 @@ class Graph {
         if (smackjack.exists) {
             smackjack.getNode(nodeId, this.addGraphData);
         } else {
-            const linksToReturn = this.links.filter(link => link.source === nodeId || link.target === nodeId || link.target.id === nodeId || link.source.id === nodeId);
+            const linksToReturn = this.defaultData.links.filter(link => link.source === nodeId || link.target === nodeId || link.target.id === nodeId || link.source.id === nodeId);
 
             const nodesToReturn = [];
             for (let i = 0; i < linksToReturn.length; i++) {
@@ -110,13 +111,13 @@ class Graph {
     removeNode(nodeId) {
         this.nodes = this.nodes.filter(node => node.id !== nodeId);
         this.links = this.links.filter(link => link.source.id !== nodeId && link.target.id !== nodeId);
-        this.restart();
+        restart();
     };
 
     searchNode() {
         const idToSearchFor = document.getElementById("search-text-field").value;
         console.log(idToSearchFor);
         this.getNode(idToSearchFor);
-        this.restart();
+        restart();
     };
 }

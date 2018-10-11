@@ -24,7 +24,13 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 /*
 author: Harrison Pielke-Lombardo
  */
+
+/*
+GLOBAL variables
+ */
 let graph, path, node;
+let interactor, colors;
+let force, drag;
 /**
  * @global
  * @param layoutConfig          Parameters about the initial state of the force layout and display area.
@@ -46,41 +52,44 @@ let graph, path, node;
  * @param layoutConfig.alphaTarget.cool:string   Coldest state of layout
  */
 function initialSetup(layoutConfig) {
-    const interactor = new Interactor(restart);
+    graph = new Graph();
+
+    //Setup D3
+    force = setupForceLayout(layoutConfig);
+    drag = setupDrag(layoutConfig, force);
+
+    interactor = new Interactor(restart);
 
     // set up SVG for D3
-    let colors = d3.scaleOrdinal(d3.schemeCategory10);
+    colors = d3.scaleOrdinal(d3.schemeCategory10);
     const svg = setupSVG(layoutConfig, interactor);
 
-
-
     // handles to link and node element groups
-    graph = new Graph(restart);
     path = setupPath(svg);
     node = setupNode(svg);
 
-    let force = setupForceLayout(layoutConfig);
-    let drag = setupDrag(layoutConfig, force);
-
+    // handle key events
     d3.select(window)
-        .on('keydown', () => interactor.bodyKeyDown(svg, drag))
+        .on('keydown', () => interactor.bodyKeyDown(svg))
         .on('keyup', () => interactor.bodyKeyUp(svg));
 
     graph.getInitialGraph();
 
-    // update graph (called when needed)
-    function restart() {
-        path = updateLinks(interactor);
-        node = updateNodes(colors, interactor);
 
-        // set the graph in motion
-        force
-            .nodes(graph.nodes)
-            .force('link')
-            .links(graph.links);
+}
 
-        force.alphaTarget(layoutConfig.alphaTarget.hot).restart();
-    }
+// update graph (called when needed)
+function restart() {
+    path = updateLinks();
+    node = updateNodes();
+
+    // set the graph in motion
+    force
+        .nodes(graph.nodes)
+        .force('link')
+        .links(graph.links);
+
+    force.alphaTarget(0.3).restart();
 }
 
 function main() {
