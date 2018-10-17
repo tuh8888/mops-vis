@@ -37,9 +37,9 @@ function setupSVG(layoutConfig, interactor) {
         .attr('d', 'M10,-5L0,0L10,5')
         .attr('fill', '#000');
 
-    svg.append("defs").append("path")
-        .attr("id", "textPath")
-        .attr("d", 'M10,-5L0,0L10,5');
+    // svg.append("defs").append("path")
+    //     .attr("id", "textPath")
+    //     .attr("d", 'M10,-5L0,0L10,5');
 
 
 

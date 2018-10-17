@@ -70,31 +70,32 @@ function setupZoom() {
     zoom = d3.zoom().scaleExtent([min_zoom, max_zoom])
         .on("zoom", function () {
 
-            node.attr("transform", d3.zoomTransform(this));
+            const transform = d3.zoomTransform(this);
+            svg.attr("transform", transform);
         });
     svg.call(zoom);
 }
 
 function setupSlider() {
-    const slider1 = d3.sliderHorizontal()
-        .min(0)
-        .max(1)
-        .width(100)
-        .ticks(2)
-        .default(0.015)
-        .on('onchange', val => {
-            d3.select("p#value1").text(val);
-        });
-
-    const group1 = d3.select("div#slider1").append("svg")
-        .append("g")
-        .attr("transform", "translate(30,30)");
-
-    group1.call(slider1);
-
-    d3.select("p#value1").text(d3.format('.2%')(slider1.value()));
-    d3.select("a#setValue1").on("click", () => {
-        slider1.value(0.015);
-        d3.event.preventDefault();
-    });
+    // const slider1 = d3.sliderHorizontal()
+    //     .min(0)
+    //     .max(1)
+    //     .width(100)
+    //     .ticks(2)
+    //     .default(0.015)
+    //     .on('onchange', val => {
+    //         d3.select("p#value1").text(val);
+    //     });
+    //
+    // const group1 = d3.select("div#slider1").append("svg")
+    //     .append("g")
+    //     .attr("transform", "translate(30,30)");
+    //
+    // group1.call(slider1);
+    //
+    // d3.select("p#value1").text(d3.format('.2%')(slider1.value()));
+    // d3.select("a#setValue1").on("click", () => {
+    //     slider1.value(0.015);
+    //     d3.event.preventDefault();
+    // });
 }

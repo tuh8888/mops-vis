@@ -1,13 +1,13 @@
 let path, node, pathText;
 
-function setupPath(svg) {
+function setupPath() {
     path = svg.append('svg:g').selectAll('path');
 
     // Get text elements to use as path labels
     pathText = path.selectAll('text');
 }
 
-function setupNode(svg) {
+function setupNode() {
     node = svg.append('svg:g').selectAll('g.node');
 }
 
@@ -23,8 +23,7 @@ function updateLinks() {
 
     // update existing links
     path.classed('selected', interactor.isSelectedLink)
-        .style('marker-start', '')
-        .style('marker-end', 'url(#end-arrow)');
+        .style('marker-end', "url(#end-arrow)");
 
     // remove old links
     path.exit().remove();
@@ -37,14 +36,12 @@ function updateLinks() {
     const paths = gLink.append('path')
     // .attr('class', 'link')
         .classed('selected', interactor.isSelectedLink)
-        .style('marker-start', '')
-        .attr('marker-end', 'url(#end-arrow)')
+        .style('marker-end', "url(#end-arrow)")
         .on('mousedown', interactor.pathMouseDown);
 
     //TODO: figure out why paths aren't showing
     const pathTexts = gLink.append("text")
         .text((d) => d.label);
-
 
 
     path = paths.merge(path);
@@ -84,7 +81,7 @@ function updateNodes() {
         .on('mouseout', (d) => interactor.nodeMouseOut.call(interactor, d))
         .on('mousedown', (d) => interactor.nodeMouseDown.call(interactor, d))
         .on('mouseup', (d) => interactor.nodeMouseUp.call(interactor, d))
-    .on("dblclick.zoom", (d) => interactor.centerNode.call(interactor, d));
+        .on("dblclick.zoom", (d) => interactor.centerNode.call(interactor, d));
 
     // show node IDs
     g.append('text')
