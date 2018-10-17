@@ -63,6 +63,7 @@ function updateNodes() {
     // update existing nodes (reflexive & selected visual states)
     node.selectAll('circle')
         .style('fill', (d) => (interactor.isSelectedNode(d)) ? d3.rgb(colors(d.id)).brighter().toString() : colors(d.id))
+        .style('stroke-width', (d) => (interactor.isSelectedNode(d)) ? 2 * stroke : stroke)
         .classed('selected', interactor.isSelectedNode);
 
     node.selectAll('text')
@@ -82,7 +83,8 @@ function updateNodes() {
         .on('mouseover', (d) => interactor.nodeMouseOver.call(interactor, d))
         .on('mouseout', (d) => interactor.nodeMouseOut.call(interactor, d))
         .on('mousedown', (d) => interactor.nodeMouseDown.call(interactor, d))
-        .on('mouseup', (d) => interactor.nodeMouseUp.call(interactor, d));
+        .on('mouseup', (d) => interactor.nodeMouseUp.call(interactor, d))
+    .on("dblclick.zoom", (d) => interactor.centerNode.call(interactor, d));
 
     // show node IDs
     g.append('text')

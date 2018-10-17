@@ -9,15 +9,29 @@
 </head>
 
 <body>
-<h1>MOPs display</h1>
+<h1>MOPs Visualization</h1>
 </body>
-<input type="text" id="search-text-field" title="MOPs Search">
-<button onclick="graph.searchNode()">Search</button>
-<script src="http://d3js.org/d3.v5.min.js"></script>
-<script src="JavaScript/update.js"></script>
-<script src="JavaScript/graph.js"></script>
-<script src="JavaScript/svg.js"></script>
-<script src="JavaScript/interaction.js"></script>
-<script src="JavaScript/layout.js"></script>
-<script src="JavaScript/display.js"></script>
+<div id="search" class="panel">
+    <input type="text" id="search-text-field" title="MOPs Search">
+    <button onclick="graph.searchNode()">Search</button>
+</div>
+
+<div id="display">
+    <svg></svg>
+    <script src="http://d3js.org/d3.v5.min.js"></script>
+    <script src="JavaScript/update.js"></script>
+    <script src="JavaScript/graph.js"></script>
+    <script src="JavaScript/svg.js"></script>
+    <script src="JavaScript/interaction.js"></script>
+    <script src="JavaScript/layout.js"></script>
+    <script src="JavaScript/main.js"></script>
+</div>
+
+<div id="layout" class="panel">
+    <script src="https://unpkg.com/d3-simple-slider/build/d3-simple-slider.js"></script>
+    <div class="row align-items-center">
+
+        <div id="slider1"><p id="value1"></p></div>
+    </div>
+</div>
 </html>

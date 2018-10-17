@@ -1,14 +1,18 @@
+let svg, display;
+
 /**
  * @param layoutConfig
  * @param {!Interactor} interactor
  * @returns {*}
  */
 function setupSVG(layoutConfig, interactor) {
-    const svg = d3.select('body')
-        .append('svg')
+
+
+    display = d3.select('#display');
+    svg = display.select('svg')
         .attr('oncontextmenu', 'return false;')
-        .attr('width', layoutConfig.width)
-        .attr('height', layoutConfig.height);
+        .attr('height', window.height)
+        .attr('width', window.width);
 
     // define arrow markers for graph links
     svg.append('svg:defs').append('svg:marker')
@@ -42,6 +46,4 @@ function setupSVG(layoutConfig, interactor) {
     svg.on('mousedown', () => interactor.svgMouseDown(svg))
         .on('mousemove', () => interactor.svgMouseMove(svg))
         .on('mouseup', () =>interactor.svgMouseUp(svg));
-
-    return svg;
 }

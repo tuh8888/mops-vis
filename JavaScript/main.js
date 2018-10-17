@@ -30,7 +30,6 @@ GLOBAL variables
  */
 let graph;
 let interactor, colors;
-let force, drag;
 
 /**
  * @global
@@ -56,12 +55,11 @@ function initialSetup(layoutConfig) {
     graph = new Graph();
 
 
-
     interactor = new Interactor(restart);
 
     // set up SVG for D3
     colors = d3.scaleOrdinal(d3.schemeCategory10);
-    const svg = setupSVG(layoutConfig, interactor);
+    setupSVG(layoutConfig, interactor);
 
     // handles to link and node element groups
     setupPath(svg);
@@ -70,15 +68,27 @@ function initialSetup(layoutConfig) {
     //Setup D3
     setupForceLayout(layoutConfig);
     setupDrag(layoutConfig, force);
+    setupZoom();
+
+    setupSlider();
 
     // handle key events
     d3.select(window)
         .on('keydown', () => interactor.bodyKeyDown(svg))
         .on('keyup', () => interactor.bodyKeyUp(svg));
 
+    window.addEventListener("resize", redraw);
+
     graph.getInitialGraph();
 
 
+}
+
+function redraw() {
+    svg.attr('width', display.node().getBoundingClientRect().width);
+    svg.attr('height', display.node().getBoundingClientRect().height);
+    force.force('x', d3.forceX(display.node().getBoundingClientRect().width * 0.5));
+    force.force('y', d3.forceY(display.node().getBoundingClientRect().height * 0.5));
 }
 
 // update graph (called when needed)

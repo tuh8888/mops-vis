@@ -1,6 +1,48 @@
-svg {
-    background-color: #FFF;
+body {
+    height: 500px;
+}
+
+#search {
+    float: left;
+    width: 10%;
+}
+
+#display {
+    float: left;
+    width: 78%;
+    height: 600px;
+    overflow: hidden;
     border: 1px solid black;
+}
+
+#layout {
+    float: right;
+    width: 10%;
+
+}
+
+div#slider1 {
+    align-items: center;
+}
+
+div#slider1 svg {
+    width: 90%;
+
+    float: left;
+}
+
+#value1 {
+    font-size: 16px;
+}
+
+
+
+#display svg {
+    height: 100%;
+    width: 100%;
+
+    background-color: #FFF;
+
     cursor: default;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -10,14 +52,13 @@ svg {
     user-select: none;
 }
 
-svg:not(.active):not(.ctrl) {
+#display svg:not(.active):not(.ctrl) {
     cursor: crosshair;
 }
 
 g.link path {
     fill: none;
     stroke: #000;
-    stroke-width: 4px;
     cursor: default;
 }
 
@@ -38,12 +79,7 @@ g.link path.dragline {
     pointer-events: none;
 }
 
-g.link path.hidden {
-    stroke-width: 0;
-}
-
 g.node circle {
-    stroke-width: 2px;
     cursor: pointer;
     transform: scale(1);
 }
@@ -54,7 +90,6 @@ g.node:hover circle {
 
 g.node circle.selected {
     stroke: #000 !important;
-    stroke-width: 2.5px;
 }
 
 g.node text.display {
