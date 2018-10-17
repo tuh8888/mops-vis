@@ -19,6 +19,7 @@ function updateLinks() {
     // path (link) group
     // noinspection ES6ModulesDependencies
     path = path.data(graph.links);
+    pathText = pathText.data(graph.links);
 
     // update existing links
     path.classed('selected', interactor.isSelectedLink)
@@ -27,6 +28,7 @@ function updateLinks() {
 
     // remove old links
     path.exit().remove();
+    pathText.exit().remove();
 
     // add new links
     const gLink = path.enter().append('svg:g')
