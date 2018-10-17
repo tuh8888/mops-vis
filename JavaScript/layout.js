@@ -18,11 +18,15 @@ function setupForceLayout(layoutConfig) {
             return `M${sourceX},${sourceY}L${targetX},${targetY}`;
         });
 
+        pathText.attr("transform", (d) => {
+            return "translate(" + ((d.source.x + d.target.x)/2) + "," + ((d.source.y + d.target.y)/2) + ")"; });
+
+
         node.attr('transform', (d) => `translate(${d.x},${d.y})`);
     };
 
     // init D3 force layout
-    return d3.forceSimulation()
+    force = d3.forceSimulation()
         .force('link', d3.forceLink().id((d) => d.id).distance(layoutConfig.link.distance))
         .force('charge', d3.forceManyBody().strength(layoutConfig.charge.strength))
         .force('x', d3.forceX(layoutConfig.width * layoutConfig.x.scale))
@@ -32,7 +36,7 @@ function setupForceLayout(layoutConfig) {
 
 function setupDrag(layoutConfig, force) {
     // init D3 drag support
-    return d3.drag()
+    drag = d3.drag()
         .on('start', (d) => {
             if (!d3.event.active) force.alphaTarget(layoutConfig.alphaTarget.hot).restart();
             d.fx = d.x;

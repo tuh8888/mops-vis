@@ -39,7 +39,11 @@ class Interactor {
     }
 
     nodeMouseDown(d) {
-        if (d3.event.ctrlKey) graph.getNode(d.id);
+        if (d3.event.ctrlKey) {
+            graph.getNode(d.id);
+        } else {
+            node.call(drag);
+        }
 
         // select node
         this.mousedownNode = d;

@@ -28,9 +28,10 @@ author: Harrison Pielke-Lombardo
 /*
 GLOBAL variables
  */
-let graph, path, node;
+let graph;
 let interactor, colors;
 let force, drag;
+
 /**
  * @global
  * @param layoutConfig          Parameters about the initial state of the force layout and display area.
@@ -54,9 +55,7 @@ let force, drag;
 function initialSetup(layoutConfig) {
     graph = new Graph();
 
-    //Setup D3
-    force = setupForceLayout(layoutConfig);
-    drag = setupDrag(layoutConfig, force);
+
 
     interactor = new Interactor(restart);
 
@@ -65,8 +64,12 @@ function initialSetup(layoutConfig) {
     const svg = setupSVG(layoutConfig, interactor);
 
     // handles to link and node element groups
-    path = setupPath(svg);
-    node = setupNode(svg);
+    setupPath(svg);
+    setupNode(svg);
+
+    //Setup D3
+    setupForceLayout(layoutConfig);
+    setupDrag(layoutConfig, force);
 
     // handle key events
     d3.select(window)
@@ -80,8 +83,8 @@ function initialSetup(layoutConfig) {
 
 // update graph (called when needed)
 function restart() {
-    path = updateLinks();
-    node = updateNodes();
+    updateLinks();
+    updateNodes();
 
     // set the graph in motion
     force

@@ -1,9 +1,14 @@
+let path, node, pathText;
+
 function setupPath(svg) {
-    return svg.append('svg:g').selectAll('path');
+    path = svg.append('svg:g').selectAll('path');
+
+    // Get text elements to use as path labels
+    pathText = path.selectAll('text');
 }
 
 function setupNode(svg) {
-    return svg.append('svg:g').selectAll('g.node');
+    node = svg.append('svg:g').selectAll('g.node');
 }
 
 /**
@@ -35,11 +40,13 @@ function updateLinks() {
         .on('mousedown', interactor.pathMouseDown);
 
     //TODO: figure out why paths aren't showing
-    gLink.append("text").append("textPath")
-        .attr("xlink:href", "#textPath")
-        .text((d) => d.id);
+    const pathTexts = gLink.append("text")
+        .text((d) => d.label);
 
-    return paths.merge(path);
+
+
+    path = paths.merge(path);
+    pathText = pathTexts.merge(pathText);
 }
 
 /**
@@ -83,6 +90,5 @@ function updateNodes() {
             return d.id;
         });
 
-    return g.merge(node);
-
+    node = g.merge(node);
 }
