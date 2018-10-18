@@ -121,3 +121,31 @@ class Graph {
         restart();
     };
 }
+
+class BigDefaultGraph extends Graph{
+    constructor() {
+        super();
+        this.nodes = d3.range(1000).map(function(i) {
+            return {
+                id: i.toString()
+            };
+        });
+        this.links = d3.range(this.nodes.length - 1).map(function(i) {
+            return {
+                source: Math.floor(Math.sqrt(i)).toString(),
+                target: (i + 1).toString(),
+                label: i.toString()
+            };
+        });
+
+        this.defaultData = {
+            "nodes": this.nodes,
+            "links": this.links
+        };
+    }
+
+    getInitialGraph() {
+        restart();
+    }
+
+}

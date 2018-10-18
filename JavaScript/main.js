@@ -53,7 +53,7 @@ let interactor, colors;
  * @param layoutConfig.alphaTarget.cool:string   Coldest state of layout
  */
 function initialSetup(layoutConfig) {
-    graph = new Graph();
+    graph = new BigDefaultGraph();
 
 
 

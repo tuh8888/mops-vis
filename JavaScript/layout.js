@@ -34,7 +34,7 @@ function setupForceLayout(layoutConfig) {
 
     // init D3 force layout
     force = d3.forceSimulation()
-        .force('link', d3.forceLink().id((d) => d.id).distance(layoutConfig.link.distance))
+        .force('link', d3.forceLink().id((d) => d.id).distance(layoutConfig.link.distance).strength(layoutConfig.link.strength))
         .force('charge', d3.forceManyBody().strength(layoutConfig.charge.strength))
         .force('x', d3.forceX(svg.node().getBoundingClientRect().width * 0.5))
         .force('y', d3.forceY(svg.node().getBoundingClientRect().height * 0.5))
@@ -77,7 +77,10 @@ function setupSlider(layoutConfig) {
     const chargeSliderSVG = d3.select("#layout").append("svg")
         .append("g")
         .attr("transform", "translate(30,30)");
-    const linkSliderSVG = d3.select("#layout").append("svg")
+    const linkDistanceSliderSVG = d3.select("#layout").append("svg")
+        .append("g")
+        .attr("transform", "translate(30,30)");
+    const linkStrengthSliderSVG = d3.select("#layout").append("svg")
         .append("g")
         .attr("transform", "translate(30,30)");
 
@@ -89,6 +92,7 @@ function setupSlider(layoutConfig) {
         .default(layoutConfig.alphaTarget.hot)
         .on('onchange', val => {
             alphaTargetHot = val;
+            force.alphaTarget(alphaTargetHot).restart();
             restart();
         });
     const chargeSlider = d3.sliderHorizontal()
@@ -101,7 +105,7 @@ function setupSlider(layoutConfig) {
             force.force('charge', d3.forceManyBody().strength(val));
             restart()
         });
-    const linkSlider = d3.sliderHorizontal()
+    const linkDistanceSlider = d3.sliderHorizontal()
         .min(0)
         .max(1000)
         .ticks(0)
@@ -112,9 +116,21 @@ function setupSlider(layoutConfig) {
             restart()
         });
 
+    const linkStrengthSlider = d3.sliderHorizontal()
+        .min(0)
+        .max(1)
+        .ticks(0)
+        .width(d3.select("#layout").node().getBoundingClientRect().width)
+        .default(layoutConfig.link.distance)
+        .on('onchange', val => {
+            force.force('link', d3.forceLink().id((d) => d.id).strength(val));
+            restart()
+        });
+
 
     alphaTargetSliderSVG.call(alphaTargetSlider);
     chargeSliderSVG.call(chargeSlider);
-    linkSliderSVG.call(linkSlider);
+    linkDistanceSliderSVG.call(linkDistanceSlider);
+    linkStrengthSliderSVG.call(linkStrengthSlider);
 
 }

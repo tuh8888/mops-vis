@@ -3,7 +3,8 @@
   "height": 500,
   "link": {
     "func": "forceLink",
-    "distance": 150
+    "distance": 20,
+    "strength": 1
   },
   "charge": {
     "func": "forceManyBody",
