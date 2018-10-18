@@ -69,11 +69,11 @@ function initialSetup(layoutConfig) {
 
     //Setup D3
     setupForceLayout(layoutConfig);
-    setupDrag(layoutConfig, force);
+    setupDrag(force);
 
     setupZoom();
 
-    setupSlider();
+    setupSlider(layoutConfig);
 
     // handle key events
     d3.select(window)
@@ -105,7 +105,7 @@ function restart() {
         .force('link')
         .links(graph.links);
 
-    force.alphaTarget(0.3).restart();
+    force.alphaTarget(alphaTargetHot).restart();
 }
 
 function main() {

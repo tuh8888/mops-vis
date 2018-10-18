@@ -1,5 +1,10 @@
 let force, drag, zoom;
+let alphaTargetHot, alphaTargetCool;
+
 function setupForceLayout(layoutConfig) {
+    alphaTargetHot = layoutConfig.alphaTarget.hot;
+    alphaTargetCool = layoutConfig.alphaTarget.cool;
+
     // update force layout (called automatically each iteration)
     const tick = function () {
         // draw directed edges with proper padding from node centers
@@ -20,7 +25,8 @@ function setupForceLayout(layoutConfig) {
         });
 
         pathText.attr("transform", (d) => {
-            return "translate(" + ((d.source.x + d.target.x)/2) + "," + ((d.source.y + d.target.y)/2) + ")"; });
+            return "translate(" + ((d.source.x + d.target.x) / 2) + "," + ((d.source.y + d.target.y) / 2) + ")";
+        });
 
 
         node.attr('transform', (d) => `translate(${d.x},${d.y})`);
@@ -35,11 +41,11 @@ function setupForceLayout(layoutConfig) {
         .on('tick', tick);
 }
 
-function setupDrag(layoutConfig, force) {
+function setupDrag(force) {
     // init D3 drag support
     drag = d3.drag()
         .on('start', (d) => {
-            if (!d3.event.active) force.alphaTarget(layoutConfig.alphaTarget.hot).restart();
+            if (!d3.event.active) force.alphaTarget(alphaTargetHot).restart();
             d.fx = d.x;
             d.fy = d.y;
         })
@@ -48,7 +54,7 @@ function setupDrag(layoutConfig, force) {
             d.fy = d3.event.y;
         })
         .on('end', (d) => {
-            if (!d3.event.active) force.alphaTarget(layoutConfig.alphaTarget.cool);
+            if (!d3.event.active) force.alphaTarget(alphaTargetCool);
             d.fx = null;
             d.fy = null;
         });
@@ -59,31 +65,56 @@ function setupZoom() {
         .on("zoom", function () {
 
             const transform = d3.zoomTransform(this);
-            svg.attr("transform", transform);
+            g.attr("transform", transform);
         });
     svg.call(zoom);
 }
 
-function setupSlider() {
-    // const slider1 = d3.sliderHorizontal()
-    //     .min(0)
-    //     .max(1)
-    //     .width(100)
-    //     .ticks(2)
-    //     .default(0.015)
-    //     .on('onchange', val => {
-    //         d3.select("p#value1").text(val);
-    //     });
-    //
-    // const group1 = d3.select("div#slider1").append("svg")
-    //     .append("g")
-    //     .attr("transform", "translate(30,30)");
-    //
-    // group1.call(slider1);
-    //
-    // d3.select("p#value1").text(d3.format('.2%')(slider1.value()));
-    // d3.select("a#setValue1").on("click", () => {
-    //     slider1.value(0.015);
-    //     d3.event.preventDefault();
-    // });
+function setupSlider(layoutConfig) {
+    const alphaTargetSliderSVG = d3.select("#layout").append("svg")
+        .append("g")
+        .attr("transform", "translate(30,30)");
+    const chargeSliderSVG = d3.select("#layout").append("svg")
+        .append("g")
+        .attr("transform", "translate(30,30)");
+    const linkSliderSVG = d3.select("#layout").append("svg")
+        .append("g")
+        .attr("transform", "translate(30,30)");
+
+    const alphaTargetSlider = d3.sliderHorizontal()
+        .min(0)
+        .max(1)
+        .ticks(0)
+        .width(d3.select("#layout").node().getBoundingClientRect().width)
+        .default(layoutConfig.alphaTarget.hot)
+        .on('onchange', val => {
+            alphaTargetHot = val;
+            restart();
+        });
+    const chargeSlider = d3.sliderHorizontal()
+        .min(-1000)
+        .max(0)
+        .ticks(0)
+        .width(d3.select("#layout").node().getBoundingClientRect().width)
+        .default(layoutConfig.charge.strength)
+        .on('onchange', val => {
+            force.force('charge', d3.forceManyBody().strength(val));
+            restart()
+        });
+    const linkSlider = d3.sliderHorizontal()
+        .min(0)
+        .max(1000)
+        .ticks(0)
+        .width(d3.select("#layout").node().getBoundingClientRect().width)
+        .default(layoutConfig.link.distance)
+        .on('onchange', val => {
+            force.force('link', d3.forceLink().id((d) => d.id).distance(val));
+            restart()
+        });
+
+
+    alphaTargetSliderSVG.call(alphaTargetSlider);
+    chargeSliderSVG.call(chargeSlider);
+    linkSliderSVG.call(linkSlider);
+
 }
