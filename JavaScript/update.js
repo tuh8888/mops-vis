@@ -23,7 +23,8 @@ function updateLinks() {
 
     // update existing links
     path.classed('selected', interactor.isSelectedLink)
-        .style('marker-end', "url(#end-arrow)");
+        .style('marker-start', '')
+        .style('marker-end', 'url(#end-arrow)');
 
     // remove old links
     path.exit().remove();
@@ -36,7 +37,8 @@ function updateLinks() {
     const paths = gLink.append('path')
     // .attr('class', 'link')
         .classed('selected', interactor.isSelectedLink)
-        .style('marker-end', "url(#end-arrow)")
+        .style('marker-start', '')
+        .attr('marker-end', 'url(#end-arrow)')
         .on('mousedown', interactor.pathMouseDown);
 
     //TODO: figure out why paths aren't showing

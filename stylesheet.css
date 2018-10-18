@@ -11,7 +11,6 @@ body {
     float: left;
     width: 78%;
     height: 600px;
-    overflow: hidden;
     border: 1px solid black;
 }
 

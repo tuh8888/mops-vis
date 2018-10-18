@@ -42,8 +42,8 @@ function setupForceLayout(layoutConfig) {
     force = d3.forceSimulation()
         .force('link', d3.forceLink().id((d) => d.id).distance(layoutConfig.link.distance))
         .force('charge', d3.forceManyBody().strength(layoutConfig.charge.strength))
-        .force('x', d3.forceX(display.node().getBoundingClientRect().width * 0.5))
-        .force('y', d3.forceY(display.node().getBoundingClientRect().height * 0.5))
+        .force('x', d3.forceX(svg.node().getBoundingClientRect().width * 0.5))
+        .force('y', d3.forceY(svg.node().getBoundingClientRect().height * 0.5))
         .on('tick', tick);
 }
 

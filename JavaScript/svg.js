@@ -1,4 +1,4 @@
-let svg, display;
+let svg;
 
 /**
  * @param layoutConfig
@@ -6,10 +6,8 @@ let svg, display;
  * @returns {*}
  */
 function setupSVG(layoutConfig, interactor) {
-
-
-    display = d3.select('#display');
-    svg = display.select('svg')
+    svg = d3.select('#display')
+        .select('svg')
         .attr('oncontextmenu', 'return false;')
         .attr('height', window.height)
         .attr('width', window.width);

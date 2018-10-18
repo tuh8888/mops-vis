@@ -85,10 +85,10 @@ function initialSetup(layoutConfig) {
 }
 
 function redraw() {
-    svg.attr('width', display.node().getBoundingClientRect().width);
-    svg.attr('height', display.node().getBoundingClientRect().height);
-    force.force('x', d3.forceX(display.node().getBoundingClientRect().width * 0.5));
-    force.force('y', d3.forceY(display.node().getBoundingClientRect().height * 0.5));
+    svg.attr('width', svg.node().getBoundingClientRect().width);
+    svg.attr('height', svg.node().getBoundingClientRect().height);
+    force.force('x', d3.forceX(svg.node().getBoundingClientRect().width * 0.5));
+    force.force('y', d3.forceY(svg.node().getBoundingClientRect().height * 0.5));
 }
 
 // update graph (called when needed)
