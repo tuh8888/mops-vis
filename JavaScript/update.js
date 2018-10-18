@@ -1,14 +1,14 @@
 let path, node, pathText;
 
 function setupPath() {
-    path = svg.append('svg:g').selectAll('path');
+    path = g.append('svg:g').selectAll('path');
 
     // Get text elements to use as path labels
     pathText = path.selectAll('text');
 }
 
 function setupNode() {
-    node = svg.append('svg:g').selectAll('g.node');
+    node = g.append('svg:g').selectAll('g.node');
 }
 
 /**
