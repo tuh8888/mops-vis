@@ -123,9 +123,9 @@ class Graph {
 }
 
 class BigDefaultGraph extends Graph{
-    constructor() {
+    constructor(size) {
         super();
-        this.nodes = d3.range(1000).map(function(i) {
+        this.nodes = d3.range(size).map(function(i) {
             return {
                 id: i.toString()
             };

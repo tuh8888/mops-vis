@@ -30,6 +30,7 @@ GLOBAL variables
  */
 let graph;
 let interactor, colors;
+let useWebGL;
 
 
 /**
@@ -53,27 +54,33 @@ let interactor, colors;
  * @param layoutConfig.alphaTarget.cool:string   Coldest state of layout
  */
 function initialSetup(layoutConfig) {
-    graph = new BigDefaultGraph();
+    useWebGL = false;
 
+    graph = new Graph();
 
 
     interactor = new Interactor(restart);
 
     // set up SVG for D3
     colors = d3.scaleOrdinal(d3.schemeCategory10);
-    setupSVG(layoutConfig, interactor);
 
-    // handles to link and node element groups
-    setupPath();
-    setupNode();
+    setupDisplay();
 
     //Setup D3
     setupForceLayout(layoutConfig);
     setupDrag(force);
-
     setupZoom();
 
-    setupSlider(layoutConfig);
+    if (useWebGL) {
+        setupWebGL();
+    } else {
+        setupSVG(layoutConfig, interactor);
+        // handles to link and node element groups
+        setupPath();
+        setupNode();
+    }
+
+    setupSliders(layoutConfig);
 
     // handle key events
     d3.select(window)
@@ -88,8 +95,13 @@ function initialSetup(layoutConfig) {
 }
 
 function redraw() {
-    svg.attr('width', svg.node().getBoundingClientRect().width);
-    svg.attr('height', svg.node().getBoundingClientRect().height);
+    if (useWebGL) {
+        canvas.attr('width', canvas.node().getBoundingClientRect().width);
+        canvas.attr('height', canvas.node().getBoundingClientRect().height);
+    } else {
+        svg.attr('width', svg.node().getBoundingClientRect().width);
+        svg.attr('height', svg.node().getBoundingClientRect().height);
+    }
     force.force('x', d3.forceX(svg.node().getBoundingClientRect().width * 0.5));
     force.force('y', d3.forceY(svg.node().getBoundingClientRect().height * 0.5));
 }

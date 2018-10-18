@@ -4,12 +4,17 @@
     <bookmark url="file://$PROJECT_DIR$/JavaScript/update.js" line="7" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7f07c80c-61d4-4c22-aa47-151c0e2fe143" name="Default Changelist" comment="">
+    <list default="true" id="7f07c80c-61d4-4c22-aa47-151c0e2fe143" name="Default Changelist" comment="Added more sliders and a default large network">
+      <change afterPath="$PROJECT_DIR$/JavaScript/display.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Web-MOPs.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Web-MOPs.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/JavaScript/graph.js" beforeDir="false" afterPath="$PROJECT_DIR$/JavaScript/graph.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/JavaScript/layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/JavaScript/layout.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/JavaScript/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/JavaScript/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/layout_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/layout_config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaScript/svg.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaScript/update.js" beforeDir="false" afterPath="$PROJECT_DIR$/JavaScript/update.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -113,29 +118,29 @@
         <counts>
           <entry key="JavaScript Console" value="49" />
           <entry key="css" value="524" />
-          <entry key="html" value="831" />
-          <entry key="js" value="11887" />
+          <entry key="html" value="841" />
+          <entry key="js" value="13053" />
           <entry key="json" value="257" />
           <entry key="lisp" value="28" />
-          <entry key="txt" value="1001" />
+          <entry key="txt" value="1047" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="525" />
-          <entry key="HTML" value="830" />
+          <entry key="HTML" value="840" />
           <entry key="JSON" value="257" />
-          <entry key="JavaScript" value="11936" />
-          <entry key="PLAIN_TEXT" value="1029" />
+          <entry key="JavaScript" value="13102" />
+          <entry key="PLAIN_TEXT" value="1075" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="css" value="2" />
-          <entry key="js" value="29" />
+          <entry key="js" value="37" />
           <entry key="json" value="12" />
           <entry key="lisp" value="4" />
-          <entry key="ts" value="1" />
+          <entry key="ts" value="2" />
           <entry key="xml" value="1" />
         </counts>
       </usages-collector>
@@ -144,9 +149,9 @@
         <counts>
           <entry key="CSS" value="2" />
           <entry key="JSON" value="12" />
-          <entry key="JavaScript" value="29" />
+          <entry key="JavaScript" value="37" />
           <entry key="PLAIN_TEXT" value="4" />
-          <entry key="TypeScript" value="1" />
+          <entry key="TypeScript" value="2" />
           <entry key="XML" value="1" />
         </counts>
       </usages-collector>
@@ -158,8 +163,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="326">
-              <caret line="20" column="33" lean-forward="true" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
+            <state relative-caret-position="162">
+              <caret line="18" column="18" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -173,11 +178,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/JavaScript/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="156">
-              <caret line="105" column="9" selection-start-line="105" selection-start-column="9" selection-end-line="105" selection-end-column="9" />
+            <state relative-caret-position="309">
+              <caret line="62" lean-forward="true" selection-start-line="62" selection-end-line="62" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -185,29 +190,29 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/JavaScript/display.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="94" column="26" selection-start-line="94" selection-start-column="26" selection-end-line="94" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/JavaScript/update.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="510">
+              <caret line="30" column="20" selection-start-line="30" selection-start-column="20" selection-end-line="30" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/JavaScript/layout.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="196">
-              <caret line="94" column="56" selection-start-line="94" selection-start-column="56" selection-end-line="94" selection-end-column="56" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/layout_config.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="13" lean-forward="true" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/JavaScript/graph.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="417">
-              <caret line="132" column="8" selection-start-line="132" selection-start-column="8" selection-end-line="132" selection-end-column="8" />
+            <state relative-caret-position="306">
+              <caret line="21" column="48" selection-start-line="21" selection-start-column="48" selection-end-line="21" selection-end-column="48" />
             </state>
           </provider>
         </entry>
@@ -271,15 +276,15 @@
         <option value="$PROJECT_DIR$/display.js" />
         <option value="$PROJECT_DIR$/JavaScript/smackjack.js" />
         <option value="$PROJECT_DIR$/JavaScript/interaction.js" />
-        <option value="$PROJECT_DIR$/JavaScript/display.js" />
         <option value="$PROJECT_DIR$/stylesheet.css" />
-        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/layout_config.json" />
+        <option value="$PROJECT_DIR$/JavaScript/graph.js" />
         <option value="$PROJECT_DIR$/JavaScript/svg.js" />
         <option value="$PROJECT_DIR$/JavaScript/update.js" />
-        <option value="$PROJECT_DIR$/layout_config.json" />
-        <option value="$PROJECT_DIR$/JavaScript/main.js" />
-        <option value="$PROJECT_DIR$/JavaScript/graph.js" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/JavaScript/display.js" />
         <option value="$PROJECT_DIR$/JavaScript/layout.js" />
+        <option value="$PROJECT_DIR$/JavaScript/main.js" />
       </list>
     </option>
   </component>
@@ -656,11 +661,18 @@
       <option name="project" value="LOCAL" />
       <updated>1539825141671</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="Added more sliders and a default large network">
+      <created>1539826893143</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1539826893143</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="88773000" />
+    <option name="totallyTimeSpent" value="94693000" />
   </component>
   <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
@@ -750,7 +762,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Match link source and target to nodes" />
     <MESSAGE value="Make all nodes of links" />
     <MESSAGE value="minor fix" />
     <MESSAGE value="Initial graph waits for smackjack to connect" />
@@ -775,10 +786,41 @@
     <MESSAGE value="Migrated display to main" />
     <MESSAGE value="Added graphics container to handle zoom events instead of svg" />
     <MESSAGE value="Added sliders for main force directed layout attributes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added sliders for main force directed layout attributes" />
+    <MESSAGE value="Added more sliders and a default large network" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added more sliders and a default large network" />
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>canvas.width</expression-string>
+        <language-id>JavaScript</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>renderer.call()</expression-string>
+        <language-id>JavaScript</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>canvas.call()</expression-string>
+        <language-id>JavaScript</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>node._groups.length</expression-string>
+        <language-id>JavaScript</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>node._groups[0].length</expression-string>
+        <language-id>JavaScript</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>node.length</expression-string>
+        <language-id>JavaScript</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>d3.range(1000)</expression-string>
         <language-id>JavaScript</language-id>
@@ -791,41 +833,6 @@
       </expression>
       <expression>
         <expression-string>d3.event.key</expression-string>
-        <language-id>JavaScript</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>d3.event.ctrlKey</expression-string>
-        <language-id>JavaScript</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>circle.selectAll('circle')</expression-string>
-        <language-id>JavaScript</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>g.selectAll()</expression-string>
-        <language-id>JavaScript</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>g.selectAll('circle')</expression-string>
-        <language-id>JavaScript</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>g.selectAll('node')</expression-string>
-        <language-id>JavaScript</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>g.selectAll('.node')</expression-string>
-        <language-id>JavaScript</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>circle.enter().selectAll('.node')</expression-string>
         <language-id>JavaScript</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
@@ -888,41 +895,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="http://localhost:63342/mops-vis/JavaScript/layout.js">
-      <provider selected="true" editor-type-id="httpFileEditor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/stylesheet.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="22" column="3" selection-start-line="22" selection-start-column="3" selection-end-line="22" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JavaScript/svg.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="37" lean-forward="true" selection-start-line="12" selection-start-column="37" selection-end-line="12" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JavaScript/update.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="55" lean-forward="true" selection-start-line="24" selection-start-column="55" selection-end-line="24" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/JavaScript/interaction.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1095">
           <caret line="37" column="41" selection-start-line="37" selection-start-column="41" selection-end-line="37" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
-          <caret line="20" column="33" lean-forward="true" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
         </state>
       </provider>
     </entry>
@@ -933,34 +909,75 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/JavaScript/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="105" column="9" selection-start-line="105" selection-start-column="9" selection-end-line="105" selection-end-column="9" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/JavaScript/graph.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="417">
-          <caret line="132" column="8" selection-start-line="132" selection-start-column="8" selection-end-line="132" selection-end-column="8" />
+        <state relative-caret-position="332">
+          <caret line="127" column="34" selection-start-line="127" selection-start-column="34" selection-end-line="127" selection-end-column="34" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/layout_config.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
-          <caret line="8" column="13" lean-forward="true" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
         </state>
       </provider>
     </entry>
+    <entry file="https://cdnjs.cloudflare.com/ajax/libs/three.js/r70/three.min.js">
+      <provider selected="true" editor-type-id="httpFileEditor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="18" column="18" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JavaScript/update.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="30" column="20" selection-start-line="30" selection-start-column="20" selection-end-line="30" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JavaScript/display.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="94" column="26" selection-start-line="94" selection-start-column="26" selection-end-line="94" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.es5.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="163">
+          <caret line="3673" column="4" selection-start-line="3673" selection-start-column="4" selection-end-line="3673" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stylesheet.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="22" column="3" selection-start-line="22" selection-start-column="3" selection-end-line="22" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="http://localhost:63342/mops-vis/JavaScript/layout.js">
+      <provider selected="true" editor-type-id="httpFileEditor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/JavaScript/layout.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="94" column="56" selection-start-line="94" selection-start-column="56" selection-end-line="94" selection-end-column="56" />
+        <state relative-caret-position="306">
+          <caret line="21" column="48" selection-start-line="21" selection-start-column="48" selection-end-line="21" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JavaScript/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="309">
+          <caret line="62" lean-forward="true" selection-start-line="62" selection-end-line="62" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
