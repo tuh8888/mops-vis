@@ -1,15 +1,4 @@
 let force, drag, zoom;
-const nominal_stroke = 1.5;
-const max_stroke = 4.5;
-const max_base_node_size = 36;
-const min_zoom = 0.1;
-const max_zoom = 7;
-const nominal_base_node_size = 8;
-const nominal_text_size = 10;
-const max_text_size = 24;
-const text_center = false;
-let stroke = nominal_stroke;
-
 function setupForceLayout(layoutConfig) {
     // update force layout (called automatically each iteration)
     const tick = function () {
@@ -31,8 +20,7 @@ function setupForceLayout(layoutConfig) {
         });
 
         pathText.attr("transform", (d) => {
-            return "translate(" + ((d.source.x + d.target.x) / 2) + "," + ((d.source.y + d.target.y) / 2) + ")";
-        });
+            return "translate(" + ((d.source.x + d.target.x)/2) + "," + ((d.source.y + d.target.y)/2) + ")"; });
 
 
         node.attr('transform', (d) => `translate(${d.x},${d.y})`);
@@ -67,7 +55,7 @@ function setupDrag(layoutConfig, force) {
 }
 
 function setupZoom() {
-    zoom = d3.zoom().scaleExtent([min_zoom, max_zoom])
+    zoom = d3.zoom().scaleExtent([0.1, 7])
         .on("zoom", function () {
 
             const transform = d3.zoomTransform(this);

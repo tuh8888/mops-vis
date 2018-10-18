@@ -58,6 +58,7 @@ div#slider1 svg {
 g.link path {
     fill: none;
     stroke: #000;
+    stroke-width: 4px;
     cursor: default;
 }
 
@@ -78,7 +79,12 @@ g.link path.dragline {
     pointer-events: none;
 }
 
+g.link path.hidden {
+    stroke-width: 0;
+}
+
 g.node circle {
+    stroke-width: 2px;
     cursor: pointer;
     transform: scale(1);
 }
@@ -89,6 +95,7 @@ g.node:hover circle {
 
 g.node circle.selected {
     stroke: #000 !important;
+    stroke-width: 2.5px;
 }
 
 g.node text.display {

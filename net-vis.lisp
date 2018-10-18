@@ -13,7 +13,7 @@
 (defvar *server*)
 (defvar local-dir "~/code/common-lisp/mops-vis/")
 (defvar index-file  (merge-pathnames "index.html" local-dir))
-(defvar display-file (merge-pathnames "main.js" local-dir))
+(defvar display-file (merge-pathnames "display.js" local-dir))
 (defvar stylesheet-file (merge-pathnames "stylesheet.css" local-dir))
 
 (defun start-website (&key (page-uri "index") (port 8081))
@@ -27,7 +27,7 @@
          "/stylesheet.css" stylesheet-file)
         *dispatch-table*)
   (push (create-static-file-dispatcher-and-handler
-         "/main.js" display-file)
+         "/display.js" display-file)
         *dispatch-table*)
 
   (push (create-static-file-dispatcher-and-handler
@@ -46,7 +46,7 @@
   ;;        (:body
   ;;         (:h1 (str title))
   ;;         (:script :src "https://d3js.org/d3.v4.min.js")
-  ;;         (:script :src "main.js"))))))
+  ;;         (:script :src "display.js"))))))
   (format t "Page: ~a~%Using: ~a~%" page-uri index-file))
 
 ;;;;;;;;; JSON ;;;;;;;;

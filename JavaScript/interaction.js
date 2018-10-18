@@ -24,11 +24,11 @@ class Interactor {
         restart();
     }
 
-    isSelectedLink(d) {
+    isSelectedLink (d) {
         return d === this.selectedLink;
     }
 
-    isSelectedNode(d) {
+    isSelectedNode (d) {
         return d === this.selectedNode;
     }
 

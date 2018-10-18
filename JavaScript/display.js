@@ -31,6 +31,7 @@ GLOBAL variables
 let graph;
 let interactor, colors;
 
+
 /**
  * @global
  * @param layoutConfig          Parameters about the initial state of the force layout and display area.
@@ -55,6 +56,7 @@ function initialSetup(layoutConfig) {
     graph = new Graph();
 
 
+
     interactor = new Interactor(restart);
 
     // set up SVG for D3
@@ -62,12 +64,13 @@ function initialSetup(layoutConfig) {
     setupSVG(layoutConfig, interactor);
 
     // handles to link and node element groups
-    setupPath(svg);
-    setupNode(svg);
+    setupPath();
+    setupNode();
 
     //Setup D3
     setupForceLayout(layoutConfig);
     setupDrag(layoutConfig, force);
+
     setupZoom();
 
     setupSlider();
