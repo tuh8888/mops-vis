@@ -13,5 +13,6 @@
     <orderEntry type="library" name="d3.v5" level="application" />
     <orderEntry type="library" name="d3.v3" level="application" />
     <orderEntry type="library" name="three" level="application" />
+    <orderEntry type="library" name="analytics" level="application" />
   </component>
 </module>

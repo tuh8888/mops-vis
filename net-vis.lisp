@@ -13,7 +13,7 @@
 (defvar *server*)
 (defvar local-dir "~/code/common-lisp/mops-vis/")
 (defvar index-file  (merge-pathnames "index.html" local-dir))
-(defvar display-file (merge-pathnames "main.js" local-dir))
+(defvar display-file (merge-pathnames "/JavaScript/" local-dir))
 (defvar stylesheet-file (merge-pathnames "stylesheet.css" local-dir))
 
 (defun start-website (&key (page-uri "index") (port 8081))
@@ -27,7 +27,7 @@
          "/stylesheet.css" stylesheet-file)
         *dispatch-table*)
   (push (create-static-file-dispatcher-and-handler
-         "/main.js" display-file)
+         "/JavaScript" display-file)
         *dispatch-table*)
 
   (push (create-static-file-dispatcher-and-handler

@@ -7,7 +7,7 @@
           <value>
             <SchemaInfo>
               <option name="name" value="layout" />
-              <option name="relativePathToSchema" value="layout.schema.json" />
+              <option name="relativePathToSchema" value="resources/layout.schema.json" />
               <option name="patterns">
                 <list>
                   <Item>

@@ -17,50 +17,40 @@
 
 ;;;;;;;;; JSON ;;;;;;;;;;
 
-(defun filler-to-string (filler)
-  (cond ((mops:mop-p filler) (symbol-name (mops:mop-name filler)))
-        ((listp filler) (format nil "~{~a~^, ~}" (mapcar (lambda (filler-item)  (symbol-name (mops:mop-name filler-item))) filler)))
-        (t filler)))
+(defun stringify (x)
+  (cond ((stringp x) x)
+	((mops:mop-p x) (symbol-name (mop-name x)))
+	((listp x) (format nil "~{~a~^, ~}" (mapcar #'stringify x)))
+	(t (format nil "~a" x))))
 
+(defun make-link (mop role filler)
+  (net-vis:make-link :source (stringify mop)
+		     :label (stringify role)
+		     :target (stringify filler)))
 
-;;; Conversion of MOPs to JSON
+(defun make-role-links (mop role)
+  (mapcar #'(lambda (filler) (make-link mop role filler)) (role-filler mop role)))
 
-(defun make-filler-link (mop slot filler)
-  (net-vis:make-link :source (symbol-name (mops:mop-name mop))
-                     :label (mops:slot-role slot)
-                     :target (filler-to-string filler)))
-
-(defun make-slot-links (mop slot)
-  (mapcar (lambda (filler) (make-filler-link mop slot filler)) (mops:slot-filler slot)))
-
-
-(defun make-abstraction-link (mop abstraction)
-  (net-vis:make-link :source (symbol-name (mops:mop-name mop))
-                     :label "subclassof"
-                     :target (symbol-name (mops:mop-name abstraction))))
+(defun make-abstraction-links (mop)
+  (mapcar #'(lambda (abstraction) (make-link mop "subClassOf" abstraction)) (mop-abstractions mop)))
 
 (defun make-mop-links (mop)
-  (append (mapcar (lambda (abstraction) (make-abstraction-link mop abstraction)) (mops:mop-abstractions mop))
-          (mapcan (lambda (slot) (make-slot-links mop slot)) (mops:mop-slots mop))))
+  (append (make-abstraction-links mop)
+	  (mapcan #'(lambda (role) (make-role-links mop role)) (mop-roles mop))))
 
-(defun make-filler-node (filler)
-  (net-vis:make-node (filler-to-string filler)))
+(defun make-mop-node (x)
+  (net-vis:make-node (stringify x)))
 
-(defun make-slot-nodes (mop slot)
-  (mapcar #'make-filler-node (mops:slot-filler slot)))
-
-(defun make-mop-node (mop)
-  (net-vis:make-node (symbol-name (mops:mop-name mop))))
+(defun make-filler-nodes (mop role)
+  (mapcar #'make-mop-node (role-filler mop role)))
 
 (defun make-mop-nodes (mop)
-   (cons (make-mop-node mop)
-         (append (mapcar (lambda (abstraction) (make-mop-node abstraction)) (mops:mop-abstractions mop))
-               (mapcan (lambda (slot) (make-slot-nodes mop slot)) (mops:mop-slots mop)))))
+  `(,(make-mop-node mop)
+    ,@(mapcar #'make-mop-node (mop-abstractions mop))
+    ,@(mapcan #'(lambda (role) (make-filler-nodes mop role)) (mop-roles mop))))
 
 (defun mops-to-json (mops)
-  (let ((nodes (mapcan #'make-mop-nodes mops))
-        (links (mapcan #'make-mop-links mops)))
-    (net-vis:make-json-graph nodes links)))
+  (net-vis:make-json-graph (mapcan #'make-mop-nodes mops) (mapcan #'make-mop-links mops)))
 
 (defun find-node-data (node-name)
   (mops-to-json (list (lookup-mop (intern node-name :KaBOB)))))
