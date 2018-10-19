@@ -91,67 +91,43 @@ function setupZoom() {
         });
 }
 
+function makeSlider(name, min, max, start, func) {
+    const div = d3.select("#layout").append("div")
+        .attr("height", 100);
+    div.append("p")
+        .text(name);
+    const sliderSVG = div.append("svg")
+        .attr("class", "slider")
+        .append("g")
+        .attr("transform", "translate(30,30)");
+    const slider = d3.sliderHorizontal()
+        .min(min)
+        .max(max)
+        .ticks(0)
+        .width(100)
+        .default(start)
+        .on('onchange', func);
+    sliderSVG.call(slider);
+}
+
 function setupSliders(layoutConfig) {
-    const alphaTargetSliderSVG = d3.select("#layout").append("svg")
-        .append("g")
-        .attr("transform", "translate(30,30)");
-    const chargeSliderSVG = d3.select("#layout").append("svg")
-        .append("g")
-        .attr("transform", "translate(30,30)");
-    const linkDistanceSliderSVG = d3.select("#layout").append("svg")
-        .append("g")
-        .attr("transform", "translate(30,30)");
-    const linkStrengthSliderSVG = d3.select("#layout").append("svg")
-        .append("g")
-        .attr("transform", "translate(30,30)");
+    makeSlider("Alpha Target", 0, 1, layoutConfig.alphaTarget.hot, (val) => {
+        alphaTargetHot = val;
+        force.alphaTarget(alphaTargetHot).restart();
+        restart();
+    });
 
-    const alphaTargetSlider = d3.sliderHorizontal()
-        .min(0)
-        .max(1)
-        .ticks(0)
-        .width(d3.select("#layout").node().getBoundingClientRect().width)
-        .default(layoutConfig.alphaTarget.hot)
-        .on('onchange', val => {
-            alphaTargetHot = val;
-            force.alphaTarget(alphaTargetHot).restart();
-            restart();
-        });
-    const chargeSlider = d3.sliderHorizontal()
-        .min(-1000)
-        .max(0)
-        .ticks(0)
-        .width(d3.select("#layout").node().getBoundingClientRect().width)
-        .default(layoutConfig.charge.strength)
-        .on('onchange', val => {
-            force.force('charge', d3.forceManyBody().strength(val));
-            restart()
-        });
-    const linkDistanceSlider = d3.sliderHorizontal()
-        .min(0)
-        .max(1000)
-        .ticks(0)
-        .width(d3.select("#layout").node().getBoundingClientRect().width)
-        .default(layoutConfig.link.distance)
-        .on('onchange', val => {
-            force.force('link', d3.forceLink().id((d) => d.id).distance(val));
-            restart()
-        });
+    makeSlider("Charge Strength", -10000, 0, layoutConfig.charge.strength, val => {
+        force.force('charge', d3.forceManyBody().strength(val));
+        restart()
+    });
 
-    const linkStrengthSlider = d3.sliderHorizontal()
-        .min(0)
-        .max(1)
-        .ticks(0)
-        .width(d3.select("#layout").node().getBoundingClientRect().width)
-        .default(layoutConfig.link.distance)
-        .on('onchange', val => {
-            force.force('link', d3.forceLink().id((d) => d.id).strength(val));
-            restart()
-        });
-
-
-    alphaTargetSliderSVG.call(alphaTargetSlider);
-    chargeSliderSVG.call(chargeSlider);
-    linkDistanceSliderSVG.call(linkDistanceSlider);
-    linkStrengthSliderSVG.call(linkStrengthSlider);
-
+    makeSlider("Link Distance", 0, 1000, layoutConfig.link.distance, (val) => {
+        force.force('link', d3.forceLink().id((d) => d.id).distance(val));
+        restart()
+    });
+    makeSlider("Link Strength", 0, 1, layoutConfig.link.strength, (val) => {
+        force.force('link', d3.forceLink().id((d) => d.id).strength(val));
+        restart()
+    });
 }

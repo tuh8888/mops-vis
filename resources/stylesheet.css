@@ -2,32 +2,30 @@ body {
     height: 500px;
 }
 
+h1 {
+    text-align: center;
+}
+
 #search {
     float: left;
-    width: 10%;
+    width: 20%;
 }
 
 #display {
     float: left;
-    width: 78%;
+    width: 58%;
     height: 600px;
     border: 1px solid black;
 }
 
 #layout {
     float: right;
-    width: 10%;
+    width: 20%;
 
 }
 
-div#slider1 {
-    align-items: center;
-}
-
-div#slider1 svg {
-    width: 90%;
-
-    float: left;
+svg.slider {
+    height: 50px;
 }
 
 #value1 {

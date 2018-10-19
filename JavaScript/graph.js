@@ -78,7 +78,7 @@ class Graph {
                         that.addGraphData(that.defaultData);
                     }
                 };
-                xmlhttp.open("GET", "graph.json", true);
+                xmlhttp.open("GET", "resources/graph.json", true);
                 xmlhttp.send();
             }
             restart();

@@ -6,6 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="7f07c80c-61d4-4c22-aa47-151c0e2fe143" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaScript/graph.js" beforeDir="false" afterPath="$PROJECT_DIR$/JavaScript/graph.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaScript/layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/JavaScript/layout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mops.html" beforeDir="false" afterPath="$PROJECT_DIR$/mops.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/stylesheet.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/stylesheet.css" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -110,29 +114,29 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="JavaScript Console" value="49" />
-          <entry key="css" value="616" />
-          <entry key="html" value="892" />
-          <entry key="js" value="13090" />
+          <entry key="css" value="690" />
+          <entry key="html" value="1021" />
+          <entry key="js" value="13572" />
           <entry key="json" value="257" />
           <entry key="lisp" value="28" />
-          <entry key="txt" value="1157" />
+          <entry key="txt" value="1206" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CSS" value="618" />
-          <entry key="HTML" value="890" />
+          <entry key="CSS" value="692" />
+          <entry key="HTML" value="1019" />
           <entry key="JSON" value="257" />
-          <entry key="JavaScript" value="13139" />
-          <entry key="PLAIN_TEXT" value="1185" />
+          <entry key="JavaScript" value="13621" />
+          <entry key="PLAIN_TEXT" value="1234" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="98" value="1" />
-          <entry key="css" value="8" />
+          <entry key="css" value="9" />
           <entry key="html" value="4" />
-          <entry key="js" value="49" />
+          <entry key="js" value="51" />
           <entry key="json" value="12" />
           <entry key="lisp" value="4" />
           <entry key="md" value="1" />
@@ -146,11 +150,11 @@
       <usages-collector id="statistics.js.language.service.starts" />
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CSS" value="8" />
+          <entry key="CSS" value="9" />
           <entry key="HTML" value="4" />
           <entry key="Image" value="1" />
           <entry key="JSON" value="12" />
-          <entry key="JavaScript" value="50" />
+          <entry key="JavaScript" value="52" />
           <entry key="Markdown" value="1" />
           <entry key="PLAIN_TEXT" value="10" />
           <entry key="TypeScript" value="2" />
@@ -163,62 +167,28 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/companyfunding.html">
+        <entry file="file://$PROJECT_DIR$/mops.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="15" selection-start-column="15" selection-end-column="15" />
-              <folding>
-                <element signature="n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-              </folding>
+            <state relative-caret-position="306">
+              <caret line="70" column="51" selection-start-line="70" selection-start-column="45" selection-end-line="70" selection-end-column="51" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/listview/static/js/list/list.js">
+        <entry file="file://$PROJECT_DIR$/resources/stylesheet.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="429" column="47" lean-forward="true" selection-start-line="429" selection-start-column="47" selection-end-line="429" selection-end-column="47" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-246">
-              <caret line="18" column="18" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/JavaScript/main.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="309">
-              <caret line="114" column="9" lean-forward="true" selection-start-line="114" selection-start-column="9" selection-end-line="114" selection-end-column="9" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/JavaScript/graph.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="59" lean-forward="true" selection-start-line="59" selection-end-line="59" />
+            <state relative-caret-position="259">
+              <caret line="27" column="17" selection-start-line="27" selection-start-column="17" selection-end-line="27" selection-end-column="17" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/JavaScript/smackjack.js">
+        <entry file="file://$PROJECT_DIR$/JavaScript/layout.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="587">
-              <caret line="145" selection-start-line="145" selection-end-line="145" />
+            <state relative-caret-position="235">
+              <caret line="102" column="28" lean-forward="true" selection-start-line="102" selection-start-column="28" selection-end-line="102" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -236,9 +206,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>server</find>
-      <find>ajax-processor</find>
-      <find>con</find>
       <find>nodes</find>
       <find>links</find>
       <find>l</find>
@@ -266,6 +233,9 @@
       <find>svg</find>
       <find>list-com</find>
       <find>this</find>
+      <find>ammo</find>
+      <find>width</find>
+      <find>slider</find>
     </findStrings>
     <replaceStrings>
       <replace>ellipse</replace>
@@ -301,7 +271,6 @@
         <option value="$PROJECT_DIR$/JavaScript/update.js" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/JavaScript/display.js" />
-        <option value="$PROJECT_DIR$/JavaScript/layout.js" />
         <option value="$PROJECT_DIR$/Jigsaw/company_funding_test.html" />
         <option value="$PROJECT_DIR$/visualize.html" />
         <option value="$PROJECT_DIR$/jigsaw/static/css/add-visualization.css" />
@@ -312,6 +281,9 @@
         <option value="$PROJECT_DIR$/listview/static/js/list/list.js" />
         <option value="$PROJECT_DIR$/JavaScript/main.js" />
         <option value="$PROJECT_DIR$/JavaScript/graph.js" />
+        <option value="$PROJECT_DIR$/mops.html" />
+        <option value="$PROJECT_DIR$/JavaScript/layout.js" />
+        <option value="$PROJECT_DIR$/resources/stylesheet.css" />
       </list>
     </option>
   </component>
@@ -328,10 +300,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-807" />
-    <option name="y" value="1" />
+    <option name="x" value="364" />
+    <option name="y" value="-18" />
     <option name="width" value="854" />
-    <option name="height" value="906" />
+    <option name="height" value="777" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -353,11 +325,6 @@
               <item name="mops-vis" type="b2602c69:ProjectViewProjectNode" />
               <item name="mops-vis" type="462c0819:PsiDirectoryNode" />
               <item name="JavaScript" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mops-vis" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mops-vis" type="462c0819:PsiDirectoryNode" />
-              <item name="listview" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="mops-vis" type="b2602c69:ProjectViewProjectNode" />
@@ -406,25 +373,25 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.companyfunding.html">
+  <component name="RunManager" selected="JavaScript Debug.mops.html">
     <configuration name="companyfunding.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/mops-vis/companyfunding.html">
       <method v="2" />
     </configuration>
-    <configuration name="index.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/mops-vis/index.html">
+    <configuration name="mops.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/mops-vis/mops.html">
       <method v="2" />
     </configuration>
     <configuration name="main.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/JavaScript/main.js" working-dir="$PROJECT_DIR$">
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="JavaScript Debug.index.html" />
+      <item itemvalue="JavaScript Debug.mops.html" />
       <item itemvalue="JavaScript Debug.companyfunding.html" />
       <item itemvalue="Node.js.main.js" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JavaScript Debug.mops.html" />
         <item itemvalue="JavaScript Debug.companyfunding.html" />
-        <item itemvalue="JavaScript Debug.index.html" />
         <item itemvalue="Node.js.main.js" />
       </list>
     </recent_temporary>
@@ -458,7 +425,7 @@
       <workItem from="1539361173001" duration="598000" />
       <workItem from="1539801354282" duration="5213000" />
       <workItem from="1539875355069" duration="7075000" />
-      <workItem from="1539977963979" duration="3046000" />
+      <workItem from="1539977963979" duration="7408000" />
     </task>
     <task id="LOCAL-00001" summary="Search and delete">
       <created>1539135148013</created>
@@ -761,11 +728,25 @@
       <option name="project" value="LOCAL" />
       <updated>1539981060850</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="Fixed folder names">
+      <created>1539983080324</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1539983080324</updated>
+    </task>
+    <task id="LOCAL-00045" summary="Get all inherited roles">
+      <created>1539987994302</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1539987994302</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="105019000" />
+    <option name="totallyTimeSpent" value="109381000" />
   </component>
   <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
@@ -777,16 +758,16 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1608" y="-7" width="1616" height="916" extended-state="6" />
+    <frame x="-8" y="-8" width="1696" height="1066" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20405577" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19420989" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32939914" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32939914" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49819058" weight="0.4409871" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.49819058" visible="true" weight="0.4409871" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32939914" />
@@ -794,7 +775,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.49758744" weight="0.39653304" />
       <window_info anchor="bottom" id="Terminal" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50241256" side_tool="true" weight="0.39270386" />
-      <window_info anchor="bottom" id="Messages" order="11" weight="0.32939914" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.27575108" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -855,8 +836,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="checking for smackjack is asynchronous" />
-    <MESSAGE value="Wait for smackjack check" />
     <MESSAGE value="changed web-net to net-vis" />
     <MESSAGE value="don't start website on load" />
     <MESSAGE value="Explicitly call package functions" />
@@ -880,7 +859,9 @@
     <MESSAGE value="moved some items to resources" />
     <MESSAGE value="Made package" />
     <MESSAGE value="minor fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="minor fixes" />
+    <MESSAGE value="Fixed folder names" />
+    <MESSAGE value="Get all inherited roles" />
+    <option name="LAST_COMMIT_MESSAGE" value="Get all inherited roles" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1044,13 +1025,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/JavaScript/layout.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="48" selection-start-line="21" selection-start-column="48" selection-end-line="21" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Jigsaw/listView/list-view.html" />
     <entry file="file://$PROJECT_DIR$/Jigsaw/list.css" />
     <entry file="file://$PROJECT_DIR$/jigsaw/_DataURI/data.a2489c1cfa79.txt" />
@@ -1072,13 +1046,6 @@
     <entry file="file://$PROJECT_DIR$/jigsaw/_DataURI/data.9d5d0448b610d.txt" />
     <entry file="file://$PROJECT_DIR$/jigsaw/_DataURI/data.3def9ba3cc841.txt" />
     <entry file="file://$PROJECT_DIR$/jigsaw/_DataURI/data.0d0ff91326ca6.txt" />
-    <entry file="file://$PROJECT_DIR$/resources/stylesheet.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="3" selection-start-line="22" selection-start-column="3" selection-end-line="22" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/jigsaw/static/images/list.png" />
     <entry file="file://$PROJECT_DIR$/jigsaw/static/css/base.css" />
     <entry file="file://$PROJECT_DIR$/jigsaw/static/css/add-visualization.css" />
@@ -1125,13 +1092,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-246">
-          <caret line="18" column="18" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/listview/static/js/list/main.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
@@ -1139,6 +1099,20 @@
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JavaScript/smackjack.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="122" column="75" selection-start-line="122" selection-start-column="75" selection-end-line="122" selection-end-column="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JavaScript/graph.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="69" column="26" selection-start-line="69" selection-start-column="26" selection-end-line="69" selection-end-column="26" />
         </state>
       </provider>
     </entry>
@@ -1152,17 +1126,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/JavaScript/graph.js">
+    <entry file="file://$APPLICATION_CONFIG_DIR$/javascript/extLibs/http_unpkg.com_d3-simple-slider_build_d3-simple-slider.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="59" lean-forward="true" selection-start-line="59" selection-end-line="59" />
+        <state relative-caret-position="147">
+          <caret line="360" column="16" selection-start-line="360" selection-start-column="11" selection-end-line="360" selection-end-column="16" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/JavaScript/smackjack.js">
+    <entry file="file://$PROJECT_DIR$/mops.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="587">
-          <caret line="145" selection-start-line="145" selection-end-line="145" />
+        <state relative-caret-position="306">
+          <caret line="70" column="51" selection-start-line="70" selection-start-column="45" selection-end-line="70" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/stylesheet.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="259">
+          <caret line="27" column="17" selection-start-line="27" selection-start-column="17" selection-end-line="27" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JavaScript/layout.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="235">
+          <caret line="102" column="28" lean-forward="true" selection-start-line="102" selection-start-column="28" selection-end-line="102" selection-end-column="28" />
         </state>
       </provider>
     </entry>
