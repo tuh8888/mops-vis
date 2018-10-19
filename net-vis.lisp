@@ -13,8 +13,8 @@
 (defvar *server*)
 (defvar local-dir "~/code/common-lisp/mops-vis/")
 (defvar index-file  (merge-pathnames "index.html" local-dir))
-(defvar display-file (merge-pathnames "/JavaScript/" local-dir))
-(defvar stylesheet-file (merge-pathnames "stylesheet.css" local-dir))
+(defvar javascript (merge-pathnames "/JavaScript/" local-dir))
+(defvar resources (merge-pathnames "/resources/" local-dir))
 
 (defun start-website (&key (page-uri "index") (port 8081))
   (let ((ajax-processor (initialize-ajax)))
@@ -23,10 +23,10 @@
     (make-page page-uri ajax-processor)))
 
 (defun make-page (page-uri ajax-processor)
-  (push (create-static-file-dispatcher-and-handler
-         "/stylesheet.css" stylesheet-file)
+  (push (create-folder-dispatcher-and-handler
+         "/resources" stylesheet-file)
         *dispatch-table*)
-  (push (create-static-file-dispatcher-and-handler
+  (push (create-folder-dispatcher-and-handler
          "/JavaScript" display-file)
         *dispatch-table*)
 
