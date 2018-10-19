@@ -40,16 +40,16 @@ class Graph {
             let newNode;
             for (let i = 0; i < newGraphData.nodes.length; i++) {
                 newNode = newGraphData.nodes[i];
-                this.nodes.pushIfDoesNotExist(newNode, function (e) {
+                graph.nodes.pushIfDoesNotExist(newNode, function (e) {
                     return e.id === newNode.id;
                 })
             }
             let newLink;
             for (let i = 0; i < newGraphData.links.length; i++) {
                 newLink = newGraphData.links[i];
-                newLink.source = typeof newLink.source === 'string' ? this.nodes.find(node => node.id === newLink.source) : newLink.source;
-                newLink.target = typeof newLink.target === 'string' ? this.nodes.find(node => node.id === newLink.target) : newLink.target;
-                this.links.pushIfDoesNotExist(newLink, function (e) {
+                newLink.source = typeof newLink.source === 'string' ? graph.nodes.find(node => node.id === newLink.source) : newLink.source;
+                newLink.target = typeof newLink.target === 'string' ? graph.nodes.find(node => node.id === newLink.target) : newLink.target;
+                graph.links.pushIfDoesNotExist(newLink, function (e) {
                     return (e.source === newLink.source && e.target === newLink.target) || (e.source.id === newLink.source && e.target.id === newLink.target);
                 })
             }
