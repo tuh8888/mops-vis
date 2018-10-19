@@ -12,6 +12,7 @@ Visualization for KaBOB Mops interface
     - +V-ASN1-IASTRING+ => +v-asn1-iastring+
     - +V-ASN1-UNIVERALSTRING+ => +v-asn1-univeralstring+
     - +V-ASN1-BMPSTRING+ => +v-asn1-bmpstring+
+  
   -Make this change to Parenscript/src/package.lisp
     - remove the statement (:case :invert) from line 9 in src/package.lisp
   -Now reattempt the installations
