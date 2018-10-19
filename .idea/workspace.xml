@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="7f07c80c-61d4-4c22-aa47-151c0e2fe143" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaScript/graph.js" beforeDir="false" afterPath="$PROJECT_DIR$/JavaScript/graph.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -133,7 +132,7 @@
           <entry key="98" value="1" />
           <entry key="css" value="8" />
           <entry key="html" value="4" />
-          <entry key="js" value="48" />
+          <entry key="js" value="49" />
           <entry key="json" value="12" />
           <entry key="lisp" value="4" />
           <entry key="md" value="1" />
@@ -151,7 +150,7 @@
           <entry key="HTML" value="4" />
           <entry key="Image" value="1" />
           <entry key="JSON" value="12" />
-          <entry key="JavaScript" value="49" />
+          <entry key="JavaScript" value="50" />
           <entry key="Markdown" value="1" />
           <entry key="PLAIN_TEXT" value="10" />
           <entry key="TypeScript" value="2" />
@@ -206,11 +205,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/JavaScript/graph.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="200">
               <caret line="59" lean-forward="true" selection-start-line="59" selection-end-line="59" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/JavaScript/smackjack.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="587">
+              <caret line="145" selection-start-line="145" selection-end-line="145" />
             </state>
           </provider>
         </entry>
@@ -228,7 +236,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>mouse</find>
       <find>server</find>
       <find>ajax-processor</find>
       <find>con</find>
@@ -258,6 +265,7 @@
       <find>listView</find>
       <find>svg</find>
       <find>list-com</find>
+      <find>this</find>
     </findStrings>
     <replaceStrings>
       <replace>ellipse</replace>
@@ -266,6 +274,7 @@
       <replace>this</replace>
       <replace />
       <replace>listView</replace>
+      <replace>graph</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -449,7 +458,7 @@
       <workItem from="1539361173001" duration="598000" />
       <workItem from="1539801354282" duration="5213000" />
       <workItem from="1539875355069" duration="7075000" />
-      <workItem from="1539977963979" duration="2047000" />
+      <workItem from="1539977963979" duration="3046000" />
     </task>
     <task id="LOCAL-00001" summary="Search and delete">
       <created>1539135148013</created>
@@ -745,11 +754,18 @@
       <option name="project" value="LOCAL" />
       <updated>1539979984709</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="minor fixes">
+      <created>1539981060850</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1539981060850</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="104020000" />
+    <option name="totallyTimeSpent" value="105019000" />
   </component>
   <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
@@ -986,13 +1002,6 @@
     <entry file="https://d3js.org/d3.v5.min.js">
       <provider selected="true" editor-type-id="httpFileEditor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/JavaScript/smackjack.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="502">
-          <caret line="145" selection-start-line="145" selection-end-line="145" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/JavaScript/interaction.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1095">
@@ -1147,6 +1156,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
           <caret line="59" lean-forward="true" selection-start-line="59" selection-end-line="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JavaScript/smackjack.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="587">
+          <caret line="145" selection-start-line="145" selection-end-line="145" />
         </state>
       </provider>
     </entry>
