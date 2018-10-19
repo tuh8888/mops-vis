@@ -1,10 +1,3 @@
-(ql:quickload '("hunchentoot" "cl-who" "smackjack"))
-
-(defpackage :net-vis
-  (:use :hunchentoot :cl-who :cl-json :cl :smackjack)
-  (:export :start-website :make-node :make-link :make-json-graph :*server* :send-node-data
-           :send-initial-graph))
-
 (in-package :net-vis)
 
 ;;;;;;;;; Site ;;;;;;;;;
@@ -24,10 +17,10 @@
 
 (defun make-page (page-uri ajax-processor)
   (push (create-folder-dispatcher-and-handler
-         "/resources" stylesheet-file)
+         "/resources" resources)
         *dispatch-table*)
   (push (create-folder-dispatcher-and-handler
-         "/JavaScript" display-file)
+         "/JavaScript" javascript)
         *dispatch-table*)
 
   (push (create-static-file-dispatcher-and-handler
