@@ -127,7 +127,7 @@ function main() {
             initialSetup(JSON.parse(this.responseText));
         }
     };
-    xmlhttp.open("GET", "layout_config.json", true);
+    xmlhttp.open("GET", "resources/layout_config.json", true);
     xmlhttp.send();
 }
 
