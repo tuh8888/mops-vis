@@ -23,31 +23,41 @@
 	((listp x) (format nil "~{~a~^, ~}" (mapcar #'stringify x)))
 	(t (format nil "~a" x))))
 
-(defun make-link (mop role filler)
+(defun make-data (inherited)
+  (format nil "~a=~a" "inherited" (if inherited "true" "false")))
+
+(defun make-link (mop role filler &key inherited)
   (net-vis:make-link :source (stringify mop)
 		     :label (stringify role)
-		     :target (stringify filler)))
+		     :target (stringify filler)
+                     :data (make-data inherited)))
 
-(defun make-role-links (mop role)
-  (mapcar #'(lambda (filler) (make-link mop role filler)) (role-filler mop role)))
+(defun make-role-links (mop role &key inherited)
+  (let ((fillers (inherit-filler mop role)))
+    (cond ((listp fillers) (mapcar #'(lambda (filler) (make-link mop role filler :inherited inherited)) (inherit-filler mop role)))
+          (t (list (make-link mop role fillers :inherited inherited))))))
 
-(defun make-abstraction-links (mop)
-  (mapcar #'(lambda (abstraction) (make-link mop "subClassOf" abstraction)) (mop-abstractions mop)))
+(defun make-inherited-role-links (mop role)
+  (mapcar #'(lambda)))
 
 (defun make-mop-links (mop)
-  (append (make-abstraction-links mop)
-	  (mapcan #'(lambda (role) (make-role-links mop role)) (mop-roles mop))))
+  `(,@(make-abstraction-links mop)
+    ,@(mapcan #'(lambda (role) (make-role-links mop role :inherited nil)) (mop-roles mop))
+    ,@(mapcan #'(lambda (role) (make-role-links mop role :inherited t)) (inheritable-roles mop))))
 
 (defun make-mop-node (x)
   (net-vis:make-node (stringify x)))
 
 (defun make-filler-nodes (mop role)
-  (mapcar #'make-mop-node (role-filler mop role)))
+  (let ((fillers (inherit-filler mop role)))
+    (cond ((listp fillers) (mapcar #'make-mop-node fillers))
+          (t (list (make-mop-node fillers))))))
 
 (defun make-mop-nodes (mop)
   `(,(make-mop-node mop)
     ,@(mapcar #'make-mop-node (mop-abstractions mop))
-    ,@(mapcan #'(lambda (role) (make-filler-nodes mop role)) (mop-roles mop))))
+    ,@(mapcan #'(lambda (role) (make-filler-nodes mop role)) (mop-roles mop))
+    ,@(mapcan #'(lambda (role) (make-filler-nodes mop role)) (inheritable-roles mop)))))
 
 (defun mops-to-json (mops)
   (net-vis:make-json-graph (mapcan #'make-mop-nodes mops) (mapcan #'make-mop-links mops)))

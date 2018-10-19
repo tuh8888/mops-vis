@@ -5,7 +5,7 @@
 (setq cl-who:*attribute-quote-char* #\")
 (defvar *server*)
 (defvar local-dir "~/code/common-lisp/mops-vis/")
-(defvar index-file  (merge-pathnames "index.html" local-dir))
+(defvar index-file  (merge-pathnames "mops.html" local-dir))
 (defvar javascript (merge-pathnames "JavaScript/" local-dir))
 (defvar resources (merge-pathnames "resources/" local-dir))
 
@@ -24,22 +24,8 @@
         *dispatch-table*)
 
   (push (create-static-file-dispatcher-and-handler
-         "/index" index-file)
+         "/mops" index-file)
         *dispatch-table*)
-  
-  
-  ;; (let ((title "Network Visualization"))
-  ;;   (define-easy-handler (network-display :uri (concatenate 'string "/" page-uri)) ()
-  ;;     (with-html-output-to-string (s)
-  ;;       (:html
-  ;;        (:head
-  ;;         (:link :rel "stylesheet" :href "stylesheet.css")
-  ;;         (:title (str title)))
-
-  ;;        (:body
-  ;;         (:h1 (str title))
-  ;;         (:script :src "https://d3js.org/d3.v4.min.js")
-  ;;         (:script :src "main.js"))))))
   (format t "Page: ~a~%Using: ~a~%" page-uri index-file))
 
 ;;;;;;;;; JSON ;;;;;;;;
@@ -53,8 +39,8 @@
 (defun make-node (name)
   (pairlis '("id" "name") (list name name) (list)))
 
-(defun make-link (&key source label target)
-  (pairlis '("source" "label" "target") (list source label target)))
+(defun make-link (&key source label target data)
+  (pairlis '("source" "label" "target" "data") (list source label target data)))
 
 ;;;;;;;; AJAX ;;;;;;;;
 

@@ -122,15 +122,15 @@ class Graph {
     };
 }
 
-class BigDefaultGraph extends Graph{
+class BigDefaultGraph extends Graph {
     constructor(size) {
         super();
-        this.nodes = d3.range(size).map(function(i) {
+        this.nodes = d3.range(size).map(function (i) {
             return {
                 id: i.toString()
             };
         });
-        this.links = d3.range(this.nodes.length - 1).map(function(i) {
+        this.links = d3.range(this.nodes.length - 1).map(function (i) {
             return {
                 source: Math.floor(Math.sqrt(i)).toString(),
                 target: (i + 1).toString(),
