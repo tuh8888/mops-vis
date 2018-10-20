@@ -1,4 +1,7 @@
 let path, node, pathText;
+const rectHeight = 16;
+const charWidth = 10;
+const textYOffset = 13;
 
 function setupPath() {
     path = g.append('svg:g').selectAll('path');
@@ -80,7 +83,7 @@ function updateNodes() {
         node = node.data(graph.nodes, (d) => d.id);
 
         // update existing nodes (reflexive & selected visual states)
-        node.selectAll('circle')
+        node.selectAll('rect')
             .style('fill', (d) => (interactor.isSelectedNode(d)) ? d3.rgb(colors(d.id)).brighter().toString() : colors(d.id))
             .classed('selected', interactor.isSelectedNode);
 
@@ -94,8 +97,23 @@ function updateNodes() {
         const g = node.enter().append('svg:g')
             .attr('class', 'node');
 
-        g.append('svg:circle')
-            .attr('r', 12)
+        // show node IDs
+        g.append('text')
+            .attr('x', (d) => d.id.length * charWidth / 2)
+            .attr('y', textYOffset)
+            .text((d) => { return d.id; });
+
+        g.append('svg:rect')
+            .attr('width', (d) => {
+                const width = d.id.length * charWidth;
+                d.width = width;
+                return width;
+            })
+            .attr('height', (d) => {
+                const height = rectHeight;
+                d.height = height;
+                return height;
+            })
             .style('fill', (d) => (interactor.isSelectedNode(d)) ? d3.rgb(colors(d.id)).brighter().toString() : colors(d.id))
             .style('stroke', (d) => d3.rgb(colors(d.id)).darker().toString())
             .on('mouseover', (d) => interactor.nodeMouseOver.call(interactor, d))
@@ -103,13 +121,9 @@ function updateNodes() {
             .on('mousedown', (d) => interactor.nodeMouseDown.call(interactor, d))
             .on('mouseup', (d) => interactor.nodeMouseUp.call(interactor, d));
 
-        // show node IDs
-        g.append('text')
-            .attr('x', 0)
-            .attr('y', 4)
-            .text((d) => {
-                return d.id;
-            });
+
+
+
 
         node = g.merge(node);
     }

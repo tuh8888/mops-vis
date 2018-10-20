@@ -24,23 +24,13 @@ function setupForceLayout(layoutConfig) {
         } else {
             // draw directed edges with proper padding from node centers
             path.attr('d', (d) => {
-                const deltaX = d.target.x - d.source.x;
-                const deltaY = d.target.y - d.source.y;
-                const dist = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
-                const normX = deltaX / dist;
-                const normY = deltaY / dist;
-                const sourcePadding = 12;
-                const targetPadding = 12;
-                const sourceX = d.source.x + (sourcePadding * normX);
-                const sourceY = d.source.y + (sourcePadding * normY);
-                const targetX = d.target.x - (targetPadding * normX);
-                const targetY = d.target.y - (targetPadding * normY);
-
-                return `M${sourceX},${sourceY}L${targetX},${targetY}`;
+                [p1, p2] = getPath(d);
+                return `M${p1[0]},${p1[1]}L${p2[0]},${p2[1]}`;
             });
 
             pathText.attr("transform", (d) => {
-                return "translate(" + ((d.source.x + d.target.x) / 2) + "," + ((d.source.y + d.target.y) / 2) + ")";
+                [p1, p2] = getPath(d);
+                return "translate(" + ((p1[0] + p2[0]) / 2) + "," + ((p1[1] + p2[1]) / 2) + ")";
             });
 
 
@@ -48,13 +38,161 @@ function setupForceLayout(layoutConfig) {
         }
     };
 
+    function getIntersection(dx, dy, cx, cy, w, h) {
+        if (Math.abs(dy / dx) < h / w) {
+            // Hit vertical edge of box1
+            return [cx + (dx > 0 ? w : -w), cy + dy * w / Math.abs(dx)];
+        } else {
+            // Hit horizontal edge of box1
+            return [cx + dx * h / Math.abs(dy), cy + (dy > 0 ? h : -h)];
+        }
+    }
+
+    function getPath(d) {
+        const w1 = d.source.width / 2;
+        const w2 = d.target.width / 2;
+        const h1 = d.source.height / 2;
+        const h2 = d.target.height / 2;
+
+        const x1 = d.source.x;
+        const y1 = d.source.y;
+        const x2 = d.target.x;
+        const y2 = d.target.y;
+
+        // Center coordinates
+        const cx1 = x1 + w1;
+        const cy1 = y1 + h1;
+        const cx2 = x2 + w2;
+        const cy2 = y2 + h2;
+
+        // Distance between centers
+        const dx = cx2 - cx1;
+        const dy = cy2 - cy1;
+
+        let p1, p2;
+        if (!dx) {
+            p1 = [cx1, y1 + h2 * 2];
+            p2 = [cx1, y2];
+        } else {
+            p1 = getIntersection(dx, dy, cx1, cy1, w1, h1);
+            p2 = getIntersection(-dx, -dy, cx2, cy2, w2, h2);
+        }
+        return [p1, p2]
+    }
+
+
     // init D3 force layout
     force = d3.forceSimulation()
         .force('link', d3.forceLink().id((d) => d.id).distance(layoutConfig.link.distance).strength(layoutConfig.link.strength))
         .force('charge', d3.forceManyBody().strength(layoutConfig.charge.strength))
+        .force('collide', rectCollide().size((d) => {return [d.width, d.height]}))
         .force('x', d3.forceX(display.node().getBoundingClientRect().width * 0.5))
         .force('y', d3.forceY(display.node().getBoundingClientRect().height * 0.5))
         .on('tick', tick);
+
+    function constant(_) {
+        return function () { return _ }
+    }
+    function rectCollide() {
+        let nodes, sizes, masses;
+        let size = constant([0, 0]);
+        let strength = 1;
+        let iterations = 1;
+
+        function force() {
+            let node, size, mass, xi, yi;
+            let i = -1;
+            while (++i < iterations) { iterate() }
+
+            function iterate() {
+                let j = -1;
+                const tree = d3.quadtree(nodes, xCenter, yCenter).visitAfter(prepare);
+
+                while (++j < nodes.length) {
+                    node = nodes[j];
+                    size = sizes[j];
+                    mass = masses[j];
+                    xi = xCenter(node);
+                    yi = yCenter(node);
+
+                    tree.visit(apply)
+                }
+            }
+
+            function apply(quad, x0, y0, x1, y1) {
+                const data = quad.data;
+                const xSize = (size[0] + quad.size[0]) / 2;
+                const ySize = (size[1] + quad.size[1]) / 2;
+                if (data) {
+                    if (data.index <= node.index) { return }
+
+                    let x = xi - xCenter(data);
+                    let y = yi - yCenter(data);
+                    const xd = Math.abs(x) - xSize;
+                    // noinspection JSSuspiciousNameCombination
+                    const yd = Math.abs(y) - ySize;
+
+                    if (xd < 0 && yd < 0) {
+                        const l = Math.sqrt(x * x + y * y);
+                        const m = masses[data.index] / (mass + masses[data.index]);
+
+                        if (Math.abs(xd) < Math.abs(yd)) {
+                            node.vx -= (x *= xd / l * strength) * m;
+                            data.vx += x * (1 - m)
+                        } else {
+                            node.vy -= (y *= yd / l * strength) * m;
+                            data.vy += y * (1 - m)
+                        }
+                    }
+                }
+
+                return x0 > xi + xSize || y0 > yi + ySize ||
+                    x1 < xi - xSize || y1 < yi - ySize
+            }
+
+            function prepare(quad) {
+                if (quad.data) {
+                    quad.size = sizes[quad.data.index]
+                } else {
+                    quad.size = [0, 0];
+                    let i = -1;
+                    while (++i < 4) {
+                        if (quad[i] && quad[i].size) {
+                            quad.size[0] = Math.max(quad.size[0], quad[i].size[0]);
+                            quad.size[1] = Math.max(quad.size[1], quad[i].size[1])
+                        }
+                    }
+                }
+            }
+        }
+
+        function xCenter(d) { return d.x + d.vx + sizes[d.index][0] / 2 }
+        function yCenter(d) { return d.y + d.vy + sizes[d.index][1] / 2 }
+
+        force.initialize = function (_) {
+            sizes = (nodes = _).map(size);
+            masses = sizes.map(function (d) { return d[0] * d[1] })
+        };
+
+        force.size = function (_) {
+            // noinspection CommaExpressionJS
+            return (arguments.length
+                ? (size = typeof _ === 'function' ? _ : constant(_), force)
+                : size)
+        };
+
+        force.strength = function (_) {
+            // noinspection CommaExpressionJS
+            return (arguments.length ? (strength = +_, force) : strength)
+        };
+
+        force.iterations = function (_) {
+            // noinspection CommaExpressionJS
+            return (arguments.length ? (iterations = +_, force) : iterations)
+        };
+
+        return force
+    }
 }
 
 function setupDrag(force) {

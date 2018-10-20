@@ -1,19 +1,20 @@
 {
   "nodes": [
-    {"id": "1"},
-    {"id": "2"},
+    {"id": "first node"},
+    {"id": "second node"},
     {"id": "3"},
     {"id": "4"},
     {"id": "5"},
     {"id": "6"},
-    {"id": "7"}
+    {"id": "7"},
+    {"id": "YOYOYOYOYOYOY"}
   ],
   "links": [
-    {"source": "1", "target": "2", "label": "A"},
-    {"source": "1", "target": "3", "label": "B"},
-    {"source": "2", "target": "4", "label": "C"},
-    {"source": "2", "target": "5", "label": "D"},
-    {"source": "5", "target": "1", "label": "E"},
+    {"source": "first node", "target": "second node", "label": "A"},
+    {"source": "first node", "target": "3", "label": "B"},
+    {"source": "second node", "target": "4", "label": "C"},
+    {"source": "second node", "target": "5", "label": "D"},
+    {"source": "5", "target": "first node", "label": "E"},
     {"source": "5", "target": "6", "label": "F"},
     {"source": "6", "target": "7", "label": "G"}
   ]
