@@ -9,7 +9,7 @@
 (defvar javascript (merge-pathnames "JavaScript/" local-dir))
 (defvar resources (merge-pathnames "resources/" local-dir))
 
-(defun start-website (&key (page-uri "index") (port 8081))
+(defun start-website (&key (page-uri "mops") (port 8081))
   (let ((ajax-processor (initialize-ajax)))
     (setq *server* (make-instance 'easy-acceptor :port port))
     (start *server*)
@@ -49,8 +49,8 @@
 (defun initialize-ajax ()
   (let ((ajax-processor (make-instance 'ajax-processor :server-uri "/ajax-process")))
 
-    (defun-ajax GET-NODE (node-name) (ajax-processor :callback-data :json)
-      (send-node-data node-name))
+    (defun-ajax GET-NODE (node-name get-inherited) (ajax-processor :callback-data :json)
+      (send-node-data node-name get-inherited))
 
     (defun-ajax GET-INITIAL-GRAPH () (ajax-processor :callback-data :json)
       (send-initial-graph))

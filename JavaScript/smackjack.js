@@ -129,7 +129,7 @@ const smackjack = {"exists": false};
     }
 
     function getNode(nodeName, callback, errorHandler) {
-        return ajaxCall('GET-NODE', [nodeName], 'GET', callback, errorHandler, responseJson);  //arguments go in the brackets
+        return ajaxCall('GET-NODE', [nodeName, inherited], 'GET', callback, errorHandler, responseJson);  //arguments go in the brackets
     }
 
     smackjack.checkIfSmackjackExists = function() {

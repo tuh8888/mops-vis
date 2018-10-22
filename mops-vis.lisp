@@ -26,24 +26,28 @@
 (defun make-data (inherited)
   (format nil "~a=~a" "inherited" (if inherited "true" "false")))
 
-(defun make-link (mop role filler &key inherited)
+(defun inherited-role? (mop role)
+  (if (find role (mop-roles mop)) t nil))
+
+(defun make-link (mop role filler inherited)
   (net-vis:make-link :source (stringify mop)
 		     :label (stringify role)
 		     :target (stringify filler)
                      :data (make-data inherited)))
 
-(defun make-role-links (mop role &key inherited)
+(defun make-role-links (mop role)
   (let ((fillers (inherit-filler mop role)))
-    (cond ((listp fillers) (mapcar #'(lambda (filler) (make-link mop role filler :inherited inherited)) (inherit-filler mop role)))
-          (t (list (make-link mop role fillers :inherited inherited))))))
+    (cond ((listp fillers) (mapcar #'(lambda (filler) (make-link mop role filler (inherited-role? mop role))) (inherit-filler mop role)))
+          (t (list (make-link mop role fillers (inherited-role? mop role)))))))
 
-(defun make-inherited-role-links (mop role)
-  (mapcar #'(lambda)))
+(defun make-abstraction-links (mop)
+  (mapcar #'(lambda (abstraction) (make-link mop "subClassOf" abstraction nil)) (mop-abstractions mop)))
 
-(defun make-mop-links (mop)
+(defun make-mop-links (mop get-inherited)
   `(,@(make-abstraction-links mop)
-    ,@(mapcan #'(lambda (role) (make-role-links mop role :inherited nil)) (mop-roles mop))
-    ,@(mapcan #'(lambda (role) (make-role-links mop role :inherited t)) (inheritable-roles mop))))
+    ,@(mapcan #'(lambda (role) (make-role-links mop role)) (if get-inherited
+                                                               (mop-roles mop)
+                                                               (inheritable-roles mop)))))
 
 (defun make-mop-node (x)
   (net-vis:make-node (stringify x)))
@@ -53,17 +57,18 @@
     (cond ((listp fillers) (mapcar #'make-mop-node fillers))
           (t (list (make-mop-node fillers))))))
 
-(defun make-mop-nodes (mop)
+(defun make-mop-nodes (mop get-inherited)
   `(,(make-mop-node mop)
     ,@(mapcar #'make-mop-node (mop-abstractions mop))
-    ,@(mapcan #'(lambda (role) (make-filler-nodes mop role)) (mop-roles mop))
-    ,@(mapcan #'(lambda (role) (make-filler-nodes mop role)) (inheritable-roles mop)))))
+    ,@(mapcan #'(lambda (role) (make-filler-nodes mop role)) (if get-inherited
+                                                                 (mop-roles mop)
+                                                                 (inheritable-roles mop)))))
 
-(defun mops-to-json (mops)
-  (net-vis:make-json-graph (mapcan #'make-mop-nodes mops) (mapcan #'make-mop-links mops)))
+(defun mops-to-json (mops get-inherited)
+  (net-vis:make-json-graph (mapcan #'(lambda (mop) (make-mop-nodes mop get-inherited)) mops) (mapcan #'(lambda (mop) (make-mop-links mop get-inherited)) mops)))
 
 (defun find-node-data (node-name)
-  (mops-to-json (list (lookup-mop (intern node-name :KaBOB)))))
+  (lookup-mop (intern node-name :KaBOB)))
 
 ;;; Overriding methods
 (in-package :net-vis)
@@ -72,6 +77,6 @@
   (format t "graph requested~%")
   (KaBOB::mops-to-json (list KaBOB::initial-mop)))
 
-(defun send-node-data (node-name)
+(defun send-node-data (node-name get-inherited)
   (format t "node requested: ~a~%" node-name)
-  (KaBOB::find-node-data node-name))
+  (KaBOB::mops-to-json (list (KaBOB::find-node-data node-name)) get-inherited))

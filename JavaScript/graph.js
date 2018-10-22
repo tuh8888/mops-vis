@@ -1,3 +1,5 @@
+let inherited = false;
+
 // Make some extensions to Array to prevent adding if items are already in the graph
 Array.prototype.inArray = function (comparer) {
     for (let i = 0; i < this.length; i++) {
@@ -89,7 +91,7 @@ class Graph {
 //TODO Either send nodes that are known or process what is returned
     getNode(nodeId) {
         if (smackjack.exists) {
-            smackjack.getNode(nodeId, this.addGraphData);
+            smackjack.getNode(nodeId, inherited, this.addGraphData);
         } else {
             const linksToReturn = this.defaultData.links.filter(link => link.source === nodeId || link.target === nodeId || link.target.id === nodeId || link.source.id === nodeId);
 
@@ -148,4 +150,12 @@ class BigDefaultGraph extends Graph {
         restart();
     }
 
+}
+
+function setInherited() {
+    inherited = document.getElementById("inheritedCheckBox").checked
+}
+
+function getP53() {
+    graph.getNode("tumor antigen p53 (human)");
 }

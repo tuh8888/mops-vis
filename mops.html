@@ -15,6 +15,10 @@
 <div id="search" class="panel">
     <input type="text" id="search-text-field" title="MOPs Search">
     <button onclick="graph.searchNode()">Search</button>
+    <br>
+    <label for="inheritedCheckBox">Get inherited roles</label><input type="checkbox" id="inheritedCheckBox" onclick="setInherited()">
+    <br>
+    <button onclick="graph.getP53()">Get P53</button>
 </div>
 
 <div id="display">
