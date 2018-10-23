@@ -2,11 +2,10 @@ g.link path {
     fill: none;
     stroke: #000;
     stroke-width: 4px;
-    cursor: default;
 }
 
 svg:not(.active):not(.ctrl) g.link path {
-    cursor: pointer;
+
 }
 
 g.link path.dragline {

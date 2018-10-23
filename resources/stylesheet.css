@@ -56,10 +56,9 @@ button {
 #display svg {
     height: 100%;
     width: 100%;
-
+    cursor: crosshair;
     background-color: #ffffff;
 
-    cursor: default;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;

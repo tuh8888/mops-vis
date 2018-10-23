@@ -46,6 +46,7 @@ class Interactor {
     nodeMouseDown(d) {
         if (d3.event.ctrlKey) {
             graph.getNode(d.id);
+            return;
         } else {
             node.call(drag);
         }
@@ -67,9 +68,6 @@ class Interactor {
         // check for drag-to-self
         this.mouseupNode = d;
         if (this.mouseupNode === this.mousedownNode) {
-            if (this.mouseupNode) {
-                graph.getNode(this.mouseupNode.id);
-            }
             this.resetMouseVars();
             return;
         }
