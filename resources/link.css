@@ -1,0 +1,32 @@
+g.link path {
+    fill: none;
+    stroke: #000;
+    stroke-width: 4px;
+    cursor: default;
+}
+
+svg:not(.active):not(.ctrl) g.link path {
+    cursor: pointer;
+}
+
+g.link path.dragline {
+    pointer-events: none;
+}
+
+g.link path.hidden {
+    stroke-width: 0;
+}
+
+g.link text.display {
+    display:  inline;
+}
+
+g.link:hover text {
+    display: inline;
+}
+
+g.link text {
+    display: none;
+    font-size: 16px;
+    fill: #000000;
+}
