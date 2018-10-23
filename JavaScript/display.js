@@ -14,8 +14,8 @@ function setupSVG(layoutConfig, interactor) {
     svg = display
         .append('svg')
         .attr('oncontextmenu', 'return false;')
-        .attr('height', window.height)
-        .attr('width', window.width);
+        .attr('height', "100%")
+        .attr('width', "100%");
     g = svg.append("svg:g");
 
     // define arrow markers for graph links

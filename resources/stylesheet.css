@@ -1,9 +1,16 @@
 body {
     height: 500px;
+    background-color: #afd4e3;
 }
 
 h1 {
     text-align: center;
+}
+
+.divider{
+    width:inherit;
+    height:5px;
+    display:inline-block;
 }
 
 #search {
@@ -11,17 +18,36 @@ h1 {
     width: 20%;
 }
 
-#display {
-    float: left;
-    width: 58%;
-    height: 600px;
-    border: 1px solid black;
-}
-
 #layout {
     float: right;
     width: 20%;
 }
+
+#display {
+    float: left;
+    width: 58%;
+    height: 100%;
+}
+
+
+input[type=text] {
+    background-color: #f1f1f1;
+    width: 80%;
+}
+input {
+    border: 1px solid transparent;
+    background-color: #f1f1f1;
+    padding: 10px;
+    font-size: 16px;
+}
+button {
+    border: 1px solid transparent;
+    padding: 10px;
+    font-size: 16px;
+    background-color: DodgerBlue;
+    color: #fff;
+}
+
 
 .slider {
     height: 50px;
@@ -31,7 +57,7 @@ h1 {
     height: 100%;
     width: 100%;
 
-    background-color: #FFF;
+    background-color: #ffffff;
 
     cursor: default;
     -webkit-user-select: none;

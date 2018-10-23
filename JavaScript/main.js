@@ -56,7 +56,7 @@ let useWebGL;
 function initialSetup(layoutConfig) {
     useWebGL = false;
 
-    graph = new BigDefaultGraph(1000);
+    graph = new Graph();
 
 
     interactor = new Interactor(restart);

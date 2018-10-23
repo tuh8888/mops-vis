@@ -5,6 +5,7 @@
     <title>MOPs</title>
     <link rel="stylesheet" href="resources/stylesheet.css">
     <link rel="stylesheet" href="resources/checkslider.css">
+    <link rel="stylesheet" href="resources/autocomplete.css">
     <link rel="stylesheet" href="resources/node.css">
     <link rel="stylesheet" href="resources/link.css">
     <!--suppress JSUnusedLocalSymbols, ES6ConvertVarToLetConst -->
@@ -13,17 +14,31 @@
 </head>
 
 <body>
-<h1>MOPs display</h1>
+<h1>MOPs</h1>
 </body>
 <div id="search" class="panel">
-    <input type="text" id="search-text-field" title="MOPs Search">
-    <button onclick="graph.searchNode()">Search</button>
+    <h2>Search</h2>
+    <div class="autocomplete">
+        <input type="text" id="search-text-field" title="MOPs Search">
+    </div>
     <br>
-    <label for="inheritedCheckBox">Get inherited roles</label><input type="checkbox" id="inheritedCheckBox"
-                                                                     onclick="setInherited()">
+    <button onclick="graph.searchNode()">Search</button>
+
+    <label class="switch">
+        <input type="checkbox" id="inheritedCheckBox" onclick="setInherited()">
+        <!--suppress HtmlUnknownTag -->
+        <div class="checkslider round">
+            <span class="abstractions">Get inherited</span>
+        </div>
+    </label>
+
+    <br>
+    <div class="divider"></div>
     <br>
 
     <button onclick="getP53()">Get P53</button>
+
+    <script src="JavaScript/search.js"></script>
 </div>
 
 <div id="display">
@@ -100,5 +115,7 @@
 
 </div>
 
-<div id="layout" class="panel"></div>
+<div id="layout" class="panel">
+    <h2>Layout</h2>
+</div>
 </html>
