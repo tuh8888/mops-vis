@@ -4,12 +4,10 @@
     <bookmark url="file://$PROJECT_DIR$/JavaScript/update.js" line="10" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7f07c80c-61d4-4c22-aa47-151c0e2fe143" name="Default Changelist" comment="Added autocomplete to">
-      <change afterPath="$PROJECT_DIR$/JavaScript/search.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/autocomplete.css" afterDir="false" />
+    <list default="true" id="7f07c80c-61d4-4c22-aa47-151c0e2fe143" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaScript/display.js" beforeDir="false" afterPath="$PROJECT_DIR$/JavaScript/display.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaScript/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/JavaScript/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaScript/graph.js" beforeDir="false" afterPath="$PROJECT_DIR$/JavaScript/graph.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaScript/search.js" beforeDir="false" afterPath="$PROJECT_DIR$/JavaScript/search.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mops.html" beforeDir="false" afterPath="$PROJECT_DIR$/mops.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/stylesheet.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/stylesheet.css" afterDir="false" />
     </list>
@@ -117,32 +115,32 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="JavaScript Console" value="49" />
-          <entry key="css" value="1049" />
-          <entry key="html" value="1668" />
-          <entry key="js" value="18603" />
+          <entry key="css" value="1073" />
+          <entry key="html" value="1845" />
+          <entry key="js" value="18834" />
           <entry key="json" value="290" />
           <entry key="lisp" value="29" />
           <entry key="md" value="103" />
-          <entry key="txt" value="1631" />
+          <entry key="txt" value="1687" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CSS" value="1055" />
-          <entry key="HTML" value="1662" />
+          <entry key="CSS" value="1079" />
+          <entry key="HTML" value="1839" />
           <entry key="JSON" value="290" />
-          <entry key="JavaScript" value="18652" />
+          <entry key="JavaScript" value="18883" />
           <entry key="Markdown" value="103" />
-          <entry key="PLAIN_TEXT" value="1660" />
+          <entry key="PLAIN_TEXT" value="1716" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="" value="1" />
           <entry key="98" value="1" />
-          <entry key="css" value="19" />
+          <entry key="css" value="23" />
           <entry key="html" value="6" />
-          <entry key="js" value="72" />
+          <entry key="js" value="77" />
           <entry key="json" value="14" />
           <entry key="lisp" value="9" />
           <entry key="md" value="2" />
@@ -156,11 +154,11 @@
       <usages-collector id="statistics.js.language.service.starts" />
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CSS" value="19" />
+          <entry key="CSS" value="23" />
           <entry key="HTML" value="7" />
           <entry key="Image" value="1" />
           <entry key="JSON" value="14" />
-          <entry key="JavaScript" value="73" />
+          <entry key="JavaScript" value="78" />
           <entry key="Markdown" value="2" />
           <entry key="PLAIN_TEXT" value="15" />
           <entry key="TypeScript" value="3" />
@@ -179,8 +177,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mops.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="42" lean-forward="true" selection-start-line="11" selection-start-column="42" selection-end-line="11" selection-end-column="42" />
+            <state relative-caret-position="191">
+              <caret line="43" column="54" selection-start-line="43" selection-start-column="35" selection-end-line="43" selection-end-column="67" />
               <folding>
                 <element signature="n#script#0;n#div#0;n#div#1;n#html#0;n#!!top" />
                 <element signature="n#script#1;n#div#0;n#div#1;n#html#0;n#!!top" />
@@ -192,47 +190,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/stylesheet.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="23" lean-forward="true" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
+            <state relative-caret-position="224">
+              <caret line="44" column="18" lean-forward="true" selection-start-line="44" selection-start-column="18" selection-end-line="44" selection-end-column="18" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/JavaScript/layout.js">
+        <entry file="file://$PROJECT_DIR$/JavaScript/search.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
-              <caret line="84" column="32" lean-forward="true" selection-start-line="84" selection-start-column="32" selection-end-line="84" selection-end-column="32" />
-              <folding>
-                <element signature="e#326#956#0" />
-              </folding>
+            <state relative-caret-position="289">
+              <caret line="17" column="70" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="70" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/JavaScript/search.js">
+        <entry file="file://$PROJECT_DIR$/JavaScript/graph.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-13">
-              <caret line="131" column="7" lean-forward="true" selection-start-line="131" selection-start-column="7" selection-end-line="131" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/JavaScript/display.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="31" lean-forward="true" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/JavaScript/main.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="258">
-              <caret line="104" column="55" selection-start-line="104" selection-start-column="55" selection-end-line="104" selection-end-column="55" />
+            <state relative-caret-position="198">
+              <caret line="103" column="51" selection-start-line="103" selection-start-column="51" selection-end-line="103" selection-end-column="51" />
             </state>
           </provider>
         </entry>
@@ -250,9 +227,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>call(dr</find>
-      <find>force</find>
-      <find>alphaTarget</find>
       <find>_DataURI</find>
       <find>list.p</find>
       <find>my-j</find>
@@ -279,6 +253,9 @@
       <find>getIni</find>
       <find>data</find>
       <find>sv</find>
+      <find>font</find>
+      <find>cursor</find>
+      <find>curs</find>
       <find>d</find>
     </findStrings>
     <replaceStrings>
@@ -329,22 +306,22 @@
         <option value="$PROJECT_DIR$/JavaScript/layout.js" />
         <option value="$PROJECT_DIR$/resources/graph.json" />
         <option value="$PROJECT_DIR$/resources/slider.css" />
-        <option value="$PROJECT_DIR$/resources/node.css" />
         <option value="$PROJECT_DIR$/resources/checkslider.css" />
-        <option value="$PROJECT_DIR$/JavaScript/interaction.js" />
-        <option value="$PROJECT_DIR$/resources/link.css" />
         <option value="$PROJECT_DIR$/JavaScript/update.js" />
-        <option value="$PROJECT_DIR$/JavaScript/graph.js" />
         <option value="$PROJECT_DIR$/net-vis.lisp" />
         <option value="$PROJECT_DIR$/JavaScript/smackjack.js" />
         <option value="$PROJECT_DIR$/mops-vis.lisp" />
         <option value="$PROJECT_DIR$/package.lisp" />
         <option value="$PROJECT_DIR$/JavaScript/main.js" />
-        <option value="$PROJECT_DIR$/JavaScript/search.js" />
         <option value="$PROJECT_DIR$/resources/autocomplete.css" />
         <option value="$PROJECT_DIR$/JavaScript/display.js" />
-        <option value="$PROJECT_DIR$/resources/stylesheet.css" />
+        <option value="$PROJECT_DIR$/JavaScript/interaction.js" />
+        <option value="$PROJECT_DIR$/resources/link.css" />
+        <option value="$PROJECT_DIR$/resources/node.css" />
+        <option value="$PROJECT_DIR$/JavaScript/search.js" />
         <option value="$PROJECT_DIR$/mops.html" />
+        <option value="$PROJECT_DIR$/resources/stylesheet.css" />
+        <option value="$PROJECT_DIR$/JavaScript/graph.js" />
       </list>
     </option>
   </component>
@@ -495,21 +472,7 @@
       <workItem from="1540002855057" duration="691000" />
       <workItem from="1540247607345" duration="1381000" />
       <workItem from="1540249931612" duration="599000" />
-      <workItem from="1540317318189" duration="15095000" />
-    </task>
-    <task id="LOCAL-00006" summary="minor fixes">
-      <created>1539144216431</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1539144216431</updated>
-    </task>
-    <task id="LOCAL-00007" summary="minor fixes">
-      <created>1539144678261</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1539144678261</updated>
+      <workItem from="1540317318189" duration="17445000" />
     </task>
     <task id="LOCAL-00008" summary="Match link source and target to nodes">
       <created>1539149345336</created>
@@ -840,11 +803,25 @@
       <option name="project" value="LOCAL" />
       <updated>1540325986409</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="Added autocomplete to search text field">
+      <created>1540332617192</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1540332617192</updated>
+    </task>
+    <task id="LOCAL-00056" summary="Cursor is always crosshair">
+      <created>1540333784863</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1540333784863</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="138564000" />
+    <option name="totallyTimeSpent" value="140914000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -934,8 +911,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Reorganized display into functions" />
-    <MESSAGE value="Further reorganization" />
     <MESSAGE value="Moved smackjack into its own file" />
     <MESSAGE value="Made some vars and funcs global" />
     <MESSAGE value="Edge arrows, zoom, and window resizing" />
@@ -959,7 +934,9 @@
     <MESSAGE value="Toggle node and edge labels" />
     <MESSAGE value="Forgot to commit new csss" />
     <MESSAGE value="Removed initial graph methods" />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed initial graph methods" />
+    <MESSAGE value="Added autocomplete to search text field" />
+    <MESSAGE value="Cursor is always crosshair" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cursor is always crosshair" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -981,15 +958,31 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/JavaScript/search.js</url>
-          <line>134</line>
+          <line>69</line>
           <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="33" />
+          <option name="timeStamp" value="34" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/JavaScript/interaction.js</url>
+          <line>65</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="41" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>e.key</expression-string>
+        <language-id>JavaScript</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>e.key()</expression-string>
+        <language-id>JavaScript</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>d3.select(d)</expression-string>
         <language-id>JavaScript</language-id>
@@ -1025,22 +1018,9 @@
         <language-id>JavaScript</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
-      <expression>
-        <expression-string>node._groups[0].length</expression-string>
-        <language-id>JavaScript</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>node.length</expression-string>
-        <language-id>JavaScript</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="http://localhost:63342/mops-vis/display.js">
-      <provider selected="true" editor-type-id="httpFileEditor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/package.json" />
     <entry file="file://$PROJECT_DIR$/.idea/dictionaries/pielkelh.xml">
       <provider selected="true" editor-type-id="text-editor" />
@@ -1155,27 +1135,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/checkslider.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="71" column="1" selection-start-line="71" selection-start-column="1" selection-end-line="71" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/node.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="13" lean-forward="true" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/link.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="8" column="20" lean-forward="true" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/package.lisp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -1204,20 +1163,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/JavaScript/graph.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="127" column="17" selection-start-line="127" selection-start-column="11" selection-end-line="127" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JavaScript/interaction.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="88" column="23" lean-forward="true" selection-start-line="88" selection-start-column="23" selection-end-line="88" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.dom.d.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
@@ -1229,13 +1174,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="107" lean-forward="true" selection-start-column="18" selection-end-column="107" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JavaScript/update.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="26" column="68" selection-start-line="26" selection-start-column="68" selection-end-line="26" selection-end-column="68" />
         </state>
       </provider>
     </entry>
@@ -1253,24 +1191,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/stylesheet.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="23" lean-forward="true" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mops.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="42" lean-forward="true" selection-start-line="11" selection-start-column="42" selection-end-line="11" selection-end-column="42" />
-          <folding>
-            <element signature="n#script#0;n#div#0;n#div#1;n#html#0;n#!!top" />
-            <element signature="n#script#1;n#div#0;n#div#1;n#html#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/autocomplete.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -1278,9 +1198,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="http://localhost:63342/mops-vis/JavaScript/search.js">
+      <provider selected="true" editor-type-id="httpFileEditor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/checkslider.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="54" column="6" lean-forward="true" selection-start-line="54" selection-start-column="6" selection-end-line="54" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/JavaScript/layout.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
+        <state relative-caret-position="-394">
           <caret line="84" column="32" lean-forward="true" selection-start-line="84" selection-start-column="32" selection-end-line="84" selection-end-column="32" />
           <folding>
             <element signature="e#326#956#0" />
@@ -1288,10 +1218,63 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/link.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/node.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JavaScript/interaction.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="14" column="5" lean-forward="true" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JavaScript/update.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="173">
+          <caret line="159" column="45" selection-start-line="159" selection-start-column="45" selection-end-line="159" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/stylesheet.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="44" column="18" lean-forward="true" selection-start-line="44" selection-start-column="18" selection-end-line="44" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/JavaScript/search.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-13">
-          <caret line="131" column="7" lean-forward="true" selection-start-line="131" selection-start-column="7" selection-end-line="131" selection-end-column="7" />
+        <state relative-caret-position="289">
+          <caret line="17" column="70" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mops.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="43" column="54" selection-start-line="43" selection-start-column="35" selection-end-line="43" selection-end-column="67" />
+          <folding>
+            <element signature="n#script#0;n#div#0;n#div#1;n#html#0;n#!!top" />
+            <element signature="n#script#1;n#div#0;n#div#1;n#html#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JavaScript/graph.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="103" column="51" selection-start-line="103" selection-start-column="51" selection-end-line="103" selection-end-column="51" />
         </state>
       </provider>
     </entry>

@@ -1,88 +1,22 @@
 const n = 5;
 /*number of completions to display*/
 const test = ["hello", "there", "appletree", "how", "are", "the", "ants", "and", "their", "apples", "there", "?"];
-const autocompleteData =
-    {
-        "?": {
-            "stop": null
-        },
-        "h": {
-            "o": {
-                "w": {
-                    "stop": null
-                }
-            },
-            "e": {
-                "l": {
-                    "l": {
-                        "o": {
-                            "stop": null
-                        }
-                    }
-                }
-            }
-        },
-        "t": {
-            "h": {
-                "e": {
-                    "stop": null,
-                    "r": {
-                        "e": {
-                            "stop": null
-                        }
-                    },
-                    "i": {
-                        "r": {
-                            "stop": null
-                        }
-                    }
-                }
-            }
-        },
-        "a": {
-            "n": {
-                "t": {
-                    "s": {
-                        "stop": null
-                    }
-                },
-                "d": {
-                    "stop": null
-                }
-
-            },
-            "p": {
-                "p": {
-                    "l": {
-                        "e": {
-                            "s": {
-                                "stop": null
-                            },
-                            "t": {
-                                "r": {
-                                    "e": {
-                                        "e": {
-                                            "stop": null
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            },
-            "r": {
-                "e": {
-                    "stop": null
-                }
-            }
-        }
-
-    };
+const autocompleteData = {
+    "?": {"stop": null},
+    "h": {"o": {"w": {"stop": null}}, "e": {"l": {"l": {"o": {"stop": null}}}}},
+    "t": {"h": {"e": {"stop": null, "r": {"e": {"stop": null}}, "i": {"r": {"stop": null}}}}},
+    "a": {
+        "n": {"t": {"s": {"stop": null}}, "d": {"stop": null}},
+        "p": {"p": {"l": {"e": {"s": {"stop": null}, "t": {"r": {"e": {"e": {"stop": null}}}}}}}},
+        "r": {"e": {"stop": null}}
+    }
+};
 // const x = findCompletetions("a", autocompleteData);
 // console.log(x);
 
 autocomplete(document.getElementById("search-text-field"), autocompleteData);
+autocomplete(document.getElementById("intersection-search-1-text-field"), autocompleteData);
+autocomplete(document.getElementById("intersection-search-2-text-field"), autocompleteData);
 
 function autocomplete(inp, data) {
     /*the autocomplete function takes two arguments,

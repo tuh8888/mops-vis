@@ -19,7 +19,7 @@
 <div id="search" class="panel">
     <h2>Search</h2>
     <div class="autocomplete">
-        <input type="text" id="search-text-field" title="MOPs Search">
+        <input type="text" id="search-text-field" title="search">
     </div>
     <br>
     <button onclick="graph.searchNode()">Search</button>
@@ -37,6 +37,20 @@
     <br>
 
     <button onclick="getP53()">Get P53</button>
+
+    <div>
+        <h3>Intersection Search</h3>
+        <div class="autocomplete">
+            <input type="text" id="intersection-search-1-text-field" title="intersection-search">
+        </div>
+        <br>
+        <div class="autocomplete">
+            <input type="text" id="intersection-search-2-text-field" title="intersection-search">
+        </div>
+        <br>
+        <button class="addTextField" onclick="addSearchTextField()">+</button>
+        <button onclick="graph.intersectionSearch()">Run search</button>
+    </div>
 
     <script src="JavaScript/search.js"></script>
 </div>

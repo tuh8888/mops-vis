@@ -100,6 +100,16 @@ class Graph {
         this.getNode(idToSearchFor);
         restart();
     };
+
+    //TODO: Finish intersection search on lisp side
+    intersectionSearch() {
+        const firstIdToSearchFor = document.getElementById("intersection-search-1-text-field").value;
+        const secondIdToSearchFor = document.getElementById("intersection-search-2-text-field).value");
+        if (smackjack.exists) {
+            smackjack.getIntersectionSearch(firstIdToSearchFor, secondIdToSearchFor, this.addGraphData);
+        }
+        restart();
+    }
 }
 
 class BigDefaultGraph extends Graph {

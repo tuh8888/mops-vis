@@ -47,6 +47,9 @@ button {
     background-color: DodgerBlue;
     color: #fff;
 }
+button.addTextField {
+    background-color: #ff9728;
+}
 
 
 .slider {
