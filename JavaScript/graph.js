@@ -1,5 +1,7 @@
 let inherited = false;
 let displayAbstractions = false;
+let displayAllNodeLabels = false;
+let displayAllEdgeLabels = false;
 
 // Make some extensions to Array to prevent adding if items are already in the graph
 Array.prototype.inArray = function (comparer) {
@@ -159,6 +161,16 @@ function setInherited() {
 
 function setDisplayAbstractions() {
     displayAbstractions = document.getElementById("abstractionsCheckBox").checked;
+    restart();
+}
+
+function setNodeLabelsAbstractions() {
+    displayAllNodeLabels = document.getElementById("nodeLabelsCheckBox").checked;
+    restart();
+}
+
+function setEdgeLabelsAbstractions() {
+    displayAllEdgeLabels = document.getElementById("edgeLabelsCheckBox").checked;
     restart();
 }
 

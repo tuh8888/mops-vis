@@ -21,18 +21,11 @@ h1 {
 #layout {
     float: right;
     width: 20%;
-
 }
 
-svg.slider {
+.slider {
     height: 50px;
 }
-
-#value1 {
-    font-size: 16px;
-}
-
-
 
 #display svg {
     height: 100%;
@@ -51,63 +44,4 @@ svg.slider {
 
 #display svg:not(.active):not(.ctrl) {
     cursor: crosshair;
-}
-
-g.link path {
-    fill: none;
-    stroke: #000;
-    stroke-width: 4px;
-    cursor: default;
-}
-
-g.link text {
-    font-size: 16px;
-    fill: #000000;
-}
-
-svg:not(.active):not(.ctrl) g.link path {
-    cursor: pointer;
-}
-
-g.link path.selected {
-    stroke-dasharray: 10,2;
-}
-
-g.link path.dragline {
-    pointer-events: none;
-}
-
-g.link path.hidden {
-    stroke-width: 0;
-}
-
-g.node circle {
-    stroke-width: 2px;
-    cursor: pointer;
-    transform: scale(1);
-}
-
-g.node:hover circle {
-    transform: scale(1.1);
-}
-
-g.node circle.selected {
-    stroke: #000 !important;
-    stroke-width: 2.5px;
-}
-
-g.node text.display {
-    display:  inline;
-}
-
-g.node:hover text {
-    display: inline;
-}
-
-g.node text {
-    display: none;
-    font: 12px sans-serif;
-    pointer-events: none;
-    text-anchor: middle;
-    font-weight: bold;
 }

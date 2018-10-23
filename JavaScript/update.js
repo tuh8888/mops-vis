@@ -36,8 +36,6 @@ function updateLinks() {
 
         // update existing links
         path.classed('selected', interactor.isSelectedLink)
-            .style('marker-start', '')
-            .style('marker-end', 'url(#end-arrow)')
             .style('display', (d) => {
                 if (!displayAbstractions && Interactor.isSubClassOf(d)) {
                     return "none";
@@ -46,11 +44,11 @@ function updateLinks() {
                 }
             });
 
-        pathText.style('display', (d) => {
-            if (!displayAbstractions && Interactor.isSubClassOf(d)) {
-                return "none";
+        pathText.classed('display', (d) => {
+            if (displayAllEdgeLabels) {
+                return displayAbstractions ? true : !Interactor.isSubClassOf(d);
             } else {
-                return "inline";
+                return displayAbstractions || !Interactor.isSubClassOf(d) ? d.display : false;
             }
         });
 
@@ -63,15 +61,27 @@ function updateLinks() {
             .attr('class', 'link');
 
         const paths = gLink.append('path')
-        // .attr('class', 'link')
-            .classed('selected', interactor.isSelectedLink)
             .style('marker-start', '')
             .attr('marker-end', 'url(#end-arrow)')
-            .on('mousedown', interactor.pathMouseDown);
+            .on('mousedown', interactor.pathMouseDown)
+            .style('display', (d) => {
+                if (!displayAbstractions && Interactor.isSubClassOf(d)) {
+                    return "none";
+                } else {
+                    return "inline";
+                }
+            });
 
         //TODO: figure out why paths aren't showing
         const pathTexts = gLink.append("text")
-            .text((d) => d.label);
+            .text((d) => d.label)
+            .classed('display', (d) => {
+                if (displayAllEdgeLabels) {
+                    return displayAbstractions ? true : !Interactor.isSubClassOf(d);
+                } else {
+                    return displayAbstractions || !Interactor.isSubClassOf(d) ? d.display : false;
+                }
+            });
 
         path = paths.merge(path);
         pathText = pathTexts.merge(pathText);
@@ -85,7 +95,7 @@ function updateLinks() {
 function updateNodes() {
     if (useWebGL) {
         graph.nodes.forEach((node) => {
-            if (! node.circle) {
+            if (!node.circle) {
                 node.geometry = new THREE.CircleGeometry(5, 32);
                 node.material = new THREE.MeshBasicMaterial({color: colors(node.id)});
                 node.circle = new THREE.Mesh(node.geometry, node.material);
@@ -99,11 +109,26 @@ function updateNodes() {
 
         // update existing nodes (reflexive & selected visual states)
         node.selectAll('rect')
+            .attr('width', (d) => {
+                if (displayAllNodeLabels || d.display) {
+                    const width =
+                    d.width = d.id.length * charWidth;
+                } else {
+                    d.width = charWidth;
+                }
+                return d.width;
+            })
             .style('fill', (d) => (interactor.isSelectedNode(d)) ? d3.rgb(colors(d.id)).brighter().toString() : colors(d.id))
             .classed('selected', interactor.isSelectedNode);
 
         node.selectAll('text')
-            .classed('display', (d) => d.display);
+            .classed('display', (d) => {
+                if (displayAllNodeLabels) {
+                    return true;
+                } else {
+                    return d.display;
+                }
+            });
 
         // remove old nodes
         node.exit().remove();
@@ -113,17 +138,19 @@ function updateNodes() {
             .attr('class', 'node');
 
 
-
         g.append('svg:rect')
             .attr('width', (d) => {
-                const width = d.id.length * charWidth;
-                d.width = width;
-                return width;
+                if (displayAllNodeLabels || d.display) {
+                    const width =
+                        d.width = d.id.length * charWidth;
+                } else {
+                    d.width = charWidth;
+                }
+                return d.width;
             })
             .attr('height', (d) => {
-                const height = rectHeight;
-                d.height = height;
-                return height;
+                d.height = rectHeight;
+                return d.height;
             })
             .style('fill', (d) => (interactor.isSelectedNode(d)) ? d3.rgb(colors(d.id)).brighter().toString() : colors(d.id))
             .style('stroke', (d) => d3.rgb(colors(d.id)).darker().toString())
@@ -136,8 +163,9 @@ function updateNodes() {
         g.append('text')
             .attr('x', (d) => d.id.length * charWidth / 2)
             .attr('y', textYOffset)
-            .text((d) => { return d.id; });
-
+            .text((d) => {
+                return d.id;
+            });
 
 
         node = g.merge(node);

@@ -4,6 +4,9 @@
     <meta charset="utf-8">
     <title>MOPs</title>
     <link rel="stylesheet" href="resources/stylesheet.css">
+    <link rel="stylesheet" href="resources/checkslider.css">
+    <link rel="stylesheet" href="resources/node.css">
+    <link rel="stylesheet" href="resources/link.css">
     <!--suppress JSUnusedLocalSymbols, ES6ConvertVarToLetConst -->
     <script src="JavaScript/smackjack.js"></script>
     <script src="https://unpkg.com/d3-simple-slider/build/d3-simple-slider.js"></script>
@@ -16,14 +19,40 @@
     <input type="text" id="search-text-field" title="MOPs Search">
     <button onclick="graph.searchNode()">Search</button>
     <br>
-    <label for="inheritedCheckBox">Get inherited roles</label><input type="checkbox" id="inheritedCheckBox" onclick="setInherited()">
+    <label for="inheritedCheckBox">Get inherited roles</label><input type="checkbox" id="inheritedCheckBox"
+                                                                     onclick="setInherited()">
     <br>
 
     <button onclick="graph.getP53()">Get P53</button>
 </div>
 
 <div id="display">
-    <script type="x-shader/x-vertex" id="vertexshader">
+    <label class="switch">
+        <input type="checkbox" id="abstractionsCheckBox" onclick="setDisplayAbstractions()">
+        <!--suppress HtmlUnknownTag -->
+        <div class="checkslider round">
+            <span class="abstractions">Abstractions</span>
+        </div>
+    </label>
+
+    <label class="switch" for="nodeLabelsCheckBox">
+        <input type="checkbox" id="nodeLabelsCheckBox" onclick="setNodeLabelsAbstractions()">
+        <!--suppress HtmlUnknownTag -->
+        <div class="checkslider round">
+            <span class="abstractions">Node labels</span>
+        </div>
+    </label>
+
+    <label class="switch">
+        <input type="checkbox" id="edgeLabelsCheckBox" onclick="setEdgeLabelsAbstractions()">
+        <!--suppress HtmlUnknownTag -->
+        <div class="checkslider round">
+            <span class="abstractions">Edge labels</span>
+        </div>
+    </label>
+
+    <div id="graph-display">
+        <script type="x-shader/x-vertex" id="vertexshader">
   attribute float size;
   uniform float pointSize;
   uniform vec3 color;
@@ -40,9 +69,9 @@
   }
 
 
-    </script>
 
-    <script type="x-shader/x-fragment" id="fragmentshader">
+        </script>
+        <script type="x-shader/x-fragment" id="fragmentshader">
   varying vec4 vColor;
   varying vec2 myPosition;
   varying float mySize;
@@ -60,21 +89,19 @@
   }
 
 
-    </script>
-    <script src="http://d3js.org/d3.v5.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r70/three.min.js" charset="utf-8"></script>
-    <script src="JavaScript/update.js"></script>
-    <script src="JavaScript/graph.js"></script>
-    <script src="JavaScript/display.js"></script>
-    <script src="JavaScript/interaction.js"></script>
-    <script src="JavaScript/layout.js"></script>
-    <script src="JavaScript/main.js"></script>
 
+        </script>
+        <script src="http://d3js.org/d3.v5.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r70/three.min.js" charset="utf-8"></script>
+        <script src="JavaScript/update.js"></script>
+        <script src="JavaScript/graph.js"></script>
+        <script src="JavaScript/display.js"></script>
+        <script src="JavaScript/interaction.js"></script>
+        <script src="JavaScript/layout.js"></script>
+        <script src="JavaScript/main.js"></script>
+    </div>
 
 </div>
 
-<div id="layout" class="panel">
-    <label for="abstractionsCheckBox">Display abstractions</label><input type="checkbox" id="abstractionsCheckBox" onclick="setDisplayAbstractions()">
-    <br>
-</div>
+<div id="layout" class="panel"></div>
 </html>

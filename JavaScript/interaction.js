@@ -21,6 +21,7 @@ class Interactor {
         this.mousedownLink = d;
         this.selectedLink = (this.mousedownLink === this.selectedLink) ? null : this.mousedownLink;
         this.selectedNode = null;
+        d.display = !d.display;
         restart();
     }
 
@@ -82,7 +83,7 @@ class Interactor {
     nodeMouseOver(d) {
         // if (!mousedownNode || d === mousedownNode) return;
         // // enlarge target node
-        // d3.select(this).attr('transform', 'scale(1.1)');
+        // d3.select(d).attr('transform', 'scale(1.1)');
     }
 
     svgMouseDown(svg) {
