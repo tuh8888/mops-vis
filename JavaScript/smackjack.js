@@ -124,10 +124,6 @@ const smackjack = {"exists": false};
     }
 
     //TODO edit these according to the corresponding ajax calls under "initialize-ajax" in network-visualization-website.lisp
-    function getInitialGraph(callback, errorHandler) {
-        return ajaxCall('GET-INITIAL-GRAPH', [], 'GET', callback, errorHandler, responseJson);  //GET-INITIAL-GRAPH is the way to call get-initial-graph
-    }
-
     function getNode(nodeName, callback, errorHandler) {
         return ajaxCall('GET-NODE', [nodeName, inherited], 'GET', callback, errorHandler, responseJson);  //arguments go in the brackets
     }
@@ -139,12 +135,11 @@ const smackjack = {"exists": false};
                 smackjack.exists = request.status !== 404;
             }
         };
-        request.open('GET', "http://" + location.hostname + ":" + location.port + "/ajax-process/GET-INITIAL-GRAPH", true);
+        request.open('GET', "http://" + location.hostname + ":" + location.port + "/ajax-process/GET-NODE", true);
         request.send();
     };
 
     smackjack.ajaxCall = ajaxCall;
-    smackjack.getInitialGraph = getInitialGraph;
     smackjack.getNode = getNode;
     return null;
 })();

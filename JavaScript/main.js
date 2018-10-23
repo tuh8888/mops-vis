@@ -56,7 +56,7 @@ let useWebGL;
 function initialSetup(layoutConfig) {
     useWebGL = false;
 
-    graph = new Graph();
+    graph = new BigDefaultGraph(1000);
 
 
     interactor = new Interactor(restart);
@@ -89,7 +89,7 @@ function initialSetup(layoutConfig) {
 
     window.addEventListener("resize", redraw);
 
-    graph.getInitialGraph();
+    Graph.getInitialGraph();
 
 
 }

@@ -52,9 +52,6 @@
     (defun-ajax GET-NODE (node-name get-inherited) (ajax-processor :callback-data :json)
       (send-node-data node-name get-inherited))
 
-    (defun-ajax GET-INITIAL-GRAPH () (ajax-processor :callback-data :json)
-      (send-initial-graph))
-
     (setq *dispatch-table* (list 'dispatch-easy-handlers
                                  (create-ajax-dispatcher ajax-processor)))
 
@@ -89,10 +86,3 @@
 (defun send-node-data (node-name)
   (let ((node-data (assoc node-name full-data :test #'string=)))
     (make-json-graph (make-nodes node-data) (make-links node-data))))
-
-(defun send-initial-graph ()
-  (format t "graph requested~%")
-
-  (let ((nodes (mapcan #'make-nodes initial-data))
-        (links (mapcan #'make-links initial-data)))
-    (make-json-graph nodes links)))

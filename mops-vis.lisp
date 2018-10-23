@@ -73,10 +73,6 @@
 ;;; Overriding methods
 (in-package :net-vis)
 
-(defun send-initial-graph ()
-  (format t "graph requested~%")
-  (KaBOB::mops-to-json (list KaBOB::initial-mop)))
-
 (defun send-node-data (node-name get-inherited)
   (format t "node requested: ~a~%" node-name)
   (KaBOB::mops-to-json (list (KaBOB::find-node-data node-name)) get-inherited))

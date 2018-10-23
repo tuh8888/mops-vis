@@ -63,35 +63,10 @@ class Graph {
         }
     };
 
-    getInitialGraph() {
-        console.log("Graph requested");
-        smackjack.checkIfSmackjackExists();
-
-        const that = this;
-
-        // Give server a chance to respond and let head load properly
-        setTimeout(function () {
-            if (smackjack.exists) {
-                console.log("Using server data");
-                smackjack.getInitialGraph(that.addGraphData);
-            } else {
-                console.log("Using default data");
-                const xmlhttp = new XMLHttpRequest();
-                xmlhttp.onreadystatechange = function () {
-                    if (this.readyState === 4 && this.status === 200) {
-                        that.defaultData = JSON.parse(this.responseText);
-                        that.addGraphData(that.defaultData);
-                    }
-                };
-                xmlhttp.open("GET", "resources/graph.json", true);
-                xmlhttp.send();
-            }
-            restart();
-        }, 2000)
-
+    static getInitialGraph() {
+        getP53()
     };
 
-//TODO Either send nodes that are known or process what is returned
     getNode(nodeId) {
         if (smackjack.exists) {
             smackjack.getNode(nodeId, inherited, this.addGraphData);
@@ -147,9 +122,10 @@ class BigDefaultGraph extends Graph {
             "nodes": this.nodes,
             "links": this.links
         };
+        console.log(this);
     }
 
-    getInitialGraph() {
+    static getInitialGraph() {
         restart();
     }
 
@@ -175,5 +151,25 @@ function setEdgeLabelsAbstractions() {
 }
 
 function getP53() {
-    graph.getNode("tumor antigen p53 (human)");
+    smackjack.checkIfSmackjackExists();
+
+    // Give server a chance to respond and let head load properly
+    setTimeout(function () {
+        if (smackjack.exists) {
+            console.log("Using server data");
+            graph.getNode("cellular tumor antigen p53 (human)");
+        } else {
+            console.log("Using default data");
+            const xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function () {
+                if (this.readyState === 4 && this.status === 200) {
+                    graph.defaultData = JSON.parse(this.responseText);
+                    graph.addGraphData(graph.defaultData);
+                }
+            };
+            xmlhttp.open("GET", "resources/graph.json", true);
+            xmlhttp.send();
+        }
+        restart();
+    }, 2000);
 }
