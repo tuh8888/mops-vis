@@ -16,6 +16,6 @@
     {"source": "second node", "target": "5", "label": "D"},
     {"source": "5", "target": "first node", "label": "E"},
     {"source": "5", "target": "6", "label": "F"},
-    {"source": "6", "target": "7", "label": "G"}
+    {"source": "6", "target": "7", "label": "subClassOf"}
   ]
 }

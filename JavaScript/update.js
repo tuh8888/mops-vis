@@ -37,7 +37,22 @@ function updateLinks() {
         // update existing links
         path.classed('selected', interactor.isSelectedLink)
             .style('marker-start', '')
-            .style('marker-end', 'url(#end-arrow)');
+            .style('marker-end', 'url(#end-arrow)')
+            .style('display', (d) => {
+                if (!displayAbstractions && Interactor.isSubClassOf(d)) {
+                    return "none";
+                } else {
+                    return "inline";
+                }
+            });
+
+        pathText.style('display', (d) => {
+            if (!displayAbstractions && Interactor.isSubClassOf(d)) {
+                return "none";
+            } else {
+                return "inline";
+            }
+        });
 
         // remove old links
         path.exit().remove();
@@ -97,11 +112,7 @@ function updateNodes() {
         const g = node.enter().append('svg:g')
             .attr('class', 'node');
 
-        // show node IDs
-        g.append('text')
-            .attr('x', (d) => d.id.length * charWidth / 2)
-            .attr('y', textYOffset)
-            .text((d) => { return d.id; });
+
 
         g.append('svg:rect')
             .attr('width', (d) => {
@@ -121,7 +132,11 @@ function updateNodes() {
             .on('mousedown', (d) => interactor.nodeMouseDown.call(interactor, d))
             .on('mouseup', (d) => interactor.nodeMouseUp.call(interactor, d));
 
-
+        // show node IDs
+        g.append('text')
+            .attr('x', (d) => d.id.length * charWidth / 2)
+            .attr('y', textYOffset)
+            .text((d) => { return d.id; });
 
 
 

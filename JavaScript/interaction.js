@@ -28,6 +28,10 @@ class Interactor {
         return d === this.selectedLink;
     }
 
+    static isSubClassOf(d) {
+        return d.label === "subClassOf";
+    }
+
     isSelectedNode (d) {
         return d === this.selectedNode;
     }

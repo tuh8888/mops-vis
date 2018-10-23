@@ -1,4 +1,5 @@
 let inherited = false;
+let displayAbstractions = false;
 
 // Make some extensions to Array to prevent adding if items are already in the graph
 Array.prototype.inArray = function (comparer) {
@@ -153,7 +154,12 @@ class BigDefaultGraph extends Graph {
 }
 
 function setInherited() {
-    inherited = document.getElementById("inheritedCheckBox").checked
+    inherited = document.getElementById("inheritedCheckBox").checked;
+}
+
+function setDisplayAbstractions() {
+    displayAbstractions = document.getElementById("abstractionsCheckBox").checked;
+    restart();
 }
 
 function getP53() {
