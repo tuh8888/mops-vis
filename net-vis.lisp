@@ -4,29 +4,35 @@
 
 (setq cl-who:*attribute-quote-char* #\")
 (defvar *server*)
-(defvar local-dir "c:/Users/pielkelh/Drive/code/common-lisp/mops-vis/")
-(defvar index-file  (merge-pathnames "mops.html" local-dir))
-(defvar javascript (merge-pathnames "JavaScript/" local-dir))
-(defvar resources (merge-pathnames "resources/" local-dir))
 
-(defun start-website (&key (page-uri "mops") (port 8081))
-  (initialize-ajax)
-  (setq *server* (make-instance 'easy-acceptor :port port))
-  (start *server*)
-  (make-page page-uri))
+(defun start-server (&key (port 8081) (dir "~/code/common-lisp/mops-vis/"))
+  (let ((index-file  (merge-pathnames "mops.html" dir))
+        (javascript (merge-pathnames "JavaScript/" dir))
+        (resources (merge-pathnames "resources/" dir)))
 
-(defun make-page (page-uri)
-  (push (create-folder-dispatcher-and-handler
-         "/resources/" resources)
-        *dispatch-table*)
-  (push (create-folder-dispatcher-and-handler
-         "/JavaScript/" javascript)
-        *dispatch-table*)
+    (initialize-ajax)
+    (setq *server* (make-instance 'easy-acceptor :port port))
+    (start *server*)
 
-  (push (create-static-file-dispatcher-and-handler
-         "/mops" index-file)
-        *dispatch-table*)
-  (format t "Page: ~a~%Using: ~a~%" page-uri index-file))
+    (push (create-folder-dispatcher-and-handler
+           "/resources/" resources)
+          *dispatch-table*)
+    (push (create-folder-dispatcher-and-handler
+           "/JavaScript/" javascript)
+          *dispatch-table*)
+
+    (push (create-static-file-dispatcher-and-handler
+           "/mops" index-file)
+          *dispatch-table*)
+    (format t "Using: ~a~%~a:~a/mops"
+            index-file
+            (if (acceptor-address *server*)
+                (acceptor-address *server*)
+                "localhost")
+            (acceptor-port *server))))
+
+(defun stop-server ()
+  (stop *server*))
 
 ;;;;;;;;; JSON ;;;;;;;;
 
