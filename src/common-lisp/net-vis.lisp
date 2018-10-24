@@ -7,7 +7,7 @@
 
 (defun start-server (&key (port 8081) (dir "~/code/common-lisp/mops-vis/"))
   (let ((index-file  (merge-pathnames "mops.html" dir))
-        (javascript (merge-pathnames "JavaScript/" dir))
+        (javascript (merge-pathnames "src/js/" dir))
         (resources (merge-pathnames "resources/" dir)))
 
     (initialize-ajax)
@@ -60,6 +60,9 @@
 
     (defun-ajax GET-AUTOCOMPLETE () (ajax-processor :callback-data :json)
       (cl-json:encode-json-to-string *auto-complete-data*))
+
+    (defun-ajax GET-INTERSECTION-SEARCH (ndoes) (ajax-processor :callback-data :json)
+      (KaBOB::intersection))
 
     (setq *dispatch-table* (list 'dispatch-easy-handlers
                                  (create-ajax-dispatcher ajax-processor)))
