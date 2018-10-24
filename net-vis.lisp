@@ -29,7 +29,7 @@
             (if (acceptor-address *server*)
                 (acceptor-address *server*)
                 "localhost")
-            (acceptor-port *server))))
+            (acceptor-port *server*))))
 
 (defun stop-server ()
   (stop *server*))

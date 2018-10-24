@@ -3,12 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="7f07c80c-61d4-4c22-aa47-151c0e2fe143" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaScript/graph.js" beforeDir="false" afterPath="$PROJECT_DIR$/JavaScript/graph.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaScript/search.js" beforeDir="false" afterPath="$PROJECT_DIR$/JavaScript/search.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaScript/smackjack.js" beforeDir="false" afterPath="$PROJECT_DIR$/JavaScript/smackjack.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/autocomplete.lisp" beforeDir="false" afterPath="$PROJECT_DIR$/autocomplete.lisp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/net-vis.lisp" beforeDir="false" afterPath="$PROJECT_DIR$/net-vis.lisp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.lisp" beforeDir="false" afterPath="$PROJECT_DIR$/package.lisp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -117,11 +112,11 @@
           <entry key="JavaScript Console" value="49" />
           <entry key="css" value="1083" />
           <entry key="html" value="2091" />
-          <entry key="js" value="19979" />
+          <entry key="js" value="19980" />
           <entry key="json" value="290" />
           <entry key="lisp" value="29" />
           <entry key="md" value="103" />
-          <entry key="txt" value="1733" />
+          <entry key="txt" value="1866" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -129,9 +124,9 @@
           <entry key="CSS" value="1089" />
           <entry key="HTML" value="2085" />
           <entry key="JSON" value="290" />
-          <entry key="JavaScript" value="20028" />
+          <entry key="JavaScript" value="20029" />
           <entry key="Markdown" value="103" />
-          <entry key="PLAIN_TEXT" value="1762" />
+          <entry key="PLAIN_TEXT" value="1895" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -205,16 +200,16 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/JavaScript/smackjack.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1207">
-              <caret line="123" column="4" lean-forward="true" selection-start-line="123" selection-start-column="4" selection-end-line="123" selection-end-column="4" />
+            <state relative-caret-position="459">
+              <caret line="27" column="25" lean-forward="true" selection-start-line="27" selection-start-column="25" selection-end-line="27" selection-end-column="25" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/JavaScript/graph.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="509">
@@ -328,9 +323,9 @@
         <option value="$PROJECT_DIR$/resources/node.css" />
         <option value="$PROJECT_DIR$/resources/stylesheet.css" />
         <option value="$PROJECT_DIR$/mops.html" />
-        <option value="$PROJECT_DIR$/JavaScript/smackjack.js" />
         <option value="$PROJECT_DIR$/JavaScript/search.js" />
         <option value="$PROJECT_DIR$/JavaScript/graph.js" />
+        <option value="$PROJECT_DIR$/JavaScript/smackjack.js" />
       </list>
     </option>
   </component>
@@ -482,28 +477,7 @@
       <workItem from="1540247607345" duration="1381000" />
       <workItem from="1540249931612" duration="599000" />
       <workItem from="1540317318189" duration="17445000" />
-      <workItem from="1540400333346" duration="6910000" />
-    </task>
-    <task id="LOCAL-00009" summary="Make all nodes of links">
-      <created>1539149646579</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1539149646579</updated>
-    </task>
-    <task id="LOCAL-00010" summary="minor fix">
-      <created>1539150422586</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1539150422586</updated>
-    </task>
-    <task id="LOCAL-00011" summary="Initial graph waits for smackjack to connect">
-      <created>1539150792001</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1539150792001</updated>
+      <workItem from="1540400333346" duration="8197000" />
     </task>
     <task id="LOCAL-00012" summary="Initial graph waits for smackjack to connect">
       <created>1539150978962</created>
@@ -827,11 +801,32 @@
       <option name="project" value="LOCAL" />
       <updated>1540403385522</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="Connected server side autocomplete to client side">
+      <created>1540409355642</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1540409355642</updated>
+    </task>
+    <task id="LOCAL-00059" summary="Untested making mops autocomplete data">
+      <created>1540409510844</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1540409510844</updated>
+    </task>
+    <task id="LOCAL-00060" summary="Simplified server start and stop">
+      <created>1540410665396</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1540410665397</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="148451000" />
+    <option name="totallyTimeSpent" value="149738000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -860,7 +855,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.49758744" weight="0.39592275" />
       <window_info anchor="bottom" id="Terminal" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50241256" side_tool="true" weight="0.39270386" />
-      <window_info anchor="bottom" id="Messages" order="11" weight="0.27575108" />
+      <window_info anchor="bottom" id="Messages" order="11" visible="true" weight="0.27575108" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -921,9 +916,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Made some vars and funcs global" />
-    <MESSAGE value="Edge arrows, zoom, and window resizing" />
-    <MESSAGE value="Migrated display to main" />
     <MESSAGE value="Added graphics container to handle zoom events instead of svg" />
     <MESSAGE value="Added sliders for main force directed layout attributes" />
     <MESSAGE value="Added more sliders and a default large network" />
@@ -946,7 +938,10 @@
     <MESSAGE value="Added autocomplete to search text field" />
     <MESSAGE value="Cursor is always crosshair" />
     <MESSAGE value="Add and remove intersection search items" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add and remove intersection search items" />
+    <MESSAGE value="Connected server side autocomplete to client side" />
+    <MESSAGE value="Untested making mops autocomplete data" />
+    <MESSAGE value="Simplified server start and stop" />
+    <option name="LAST_COMMIT_MESSAGE" value="Simplified server start and stop" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1238,13 +1233,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/JavaScript/smackjack.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1207">
-          <caret line="123" column="4" lean-forward="true" selection-start-line="123" selection-start-column="4" selection-end-line="123" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/JavaScript/search.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="484">
@@ -1256,6 +1244,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="509">
           <caret line="175" column="47" selection-start-line="175" selection-start-column="47" selection-end-line="175" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JavaScript/smackjack.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="27" column="25" lean-forward="true" selection-start-line="27" selection-start-column="25" selection-end-line="27" selection-end-column="25" />
         </state>
       </provider>
     </entry>
