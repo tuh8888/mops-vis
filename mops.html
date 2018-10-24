@@ -40,15 +40,19 @@
 
     <div>
         <h3>Intersection Search</h3>
-        <div class="autocomplete">
-            <input type="text" id="intersection-search-1-text-field" title="intersection-search">
+        <div id="intersection-search-text-fields">
+            <!--<div class="autocomplete">-->
+                <!--<input type="text" class="intersection-search-text-field" title="intersection-search">-->
+            <!--</div>-->
+            <!--<br>-->
+            <!--<div class="autocomplete">-->
+                <!--<input type="text" class="intersection-search-text-field" title="intersection-search">-->
+            <!--</div>-->
         </div>
-        <br>
-        <div class="autocomplete">
-            <input type="text" id="intersection-search-2-text-field" title="intersection-search">
-        </div>
+
         <br>
         <button class="addTextField" onclick="addSearchTextField()">+</button>
+        <button class="removeTextField" onclick="removeSearchTextField()">-</button>
         <button onclick="graph.intersectionSearch()">Run search</button>
     </div>
 
@@ -99,6 +103,13 @@
 
 
 
+
+
+
+
+
+
+
         </script>
         <script type="x-shader/x-fragment" id="fragmentshader">
   varying vec4 vColor;
@@ -116,6 +127,13 @@
       discard;
     }
   }
+
+
+
+
+
+
+
         </script>
         <script src="http://d3js.org/d3.v5.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r70/three.min.js" charset="utf-8"></script>

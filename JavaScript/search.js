@@ -15,8 +15,9 @@ const autocompleteData = {
 // console.log(x);
 
 autocomplete(document.getElementById("search-text-field"), autocompleteData);
-autocomplete(document.getElementById("intersection-search-1-text-field"), autocompleteData);
-autocomplete(document.getElementById("intersection-search-2-text-field"), autocompleteData);
+// document.getElementsByClassName("intersection-search-text-field").forEach((textField) => autocomplete(textField, autocompleteData));
+addSearchTextField();
+addSearchTextField();
 
 function autocomplete(inp, data) {
     /*the autocomplete function takes two arguments,
@@ -161,4 +162,28 @@ function findCompletetions(stringInput, data) {
     }
 
     return completions;
+}
+
+function addSearchTextField() {
+    const div = document.getElementById("intersection-search-text-fields");
+    const autocompleteDiv = document.createElement("div");
+    autocompleteDiv.setAttribute("class", "autocomplete");
+    const input = document.createElement("input");
+    input.setAttribute("type", "text");
+    input.setAttribute("class", "intersection-search-text-field");
+    input.setAttribute("title", "intersection-search");
+    autocomplete(input, autocompleteData);
+    autocompleteDiv.appendChild(input);
+    autocompleteDiv.appendChild(document.createElement("br"));
+    div.appendChild(autocompleteDiv);
+}
+
+function removeSearchTextField() {
+    const div = document.getElementById("intersection-search-text-fields");
+    const childDivs = div.getElementsByClassName("autocomplete");
+    // Don't remove first 2 text fields
+    if (childDivs.length > 2) {
+        //Remove text field
+        div.removeChild(childDivs.item(childDivs.length-1));
+    }
 }

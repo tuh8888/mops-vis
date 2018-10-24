@@ -48,7 +48,10 @@ button {
     color: #fff;
 }
 button.addTextField {
-    background-color: #ff9728;
+    background-color: #00ff67;
+}
+button.removeTextField {
+    background-color: #ff000d;
 }
 
 
