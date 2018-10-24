@@ -76,3 +76,5 @@
 (defun send-node-data (node-name get-inherited)
   (format t "node requested: ~a~%" node-name)
   (KaBOB::mops-to-json (list (KaBOB::find-node-data node-name)) get-inherited))
+
+(setf *auto-complete-data* (make-autocomplete-tree-from-map *mops*))
