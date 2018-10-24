@@ -14,7 +14,9 @@ const smackjack = {"exists": false};
             return httpFactory();
         } else {
             let request = null;
-            let i = 0, l = httpFactories.length, factory = httpFactories[i];
+            let i = 0;
+            const l = httpFactories.length;
+            let factory = httpFactories[i];
             for (; !(request !== null || i >= l); i += 1, factory = httpFactories[i]) {
                 try {
                     request = factory();
@@ -31,22 +33,18 @@ const smackjack = {"exists": false};
             }
         }
     }
-
     // noinspection JSUnusedLocalSymbols
     function identity(x) {
         return x;
     }
-
     // noinspection JSUnusedLocalSymbols
     function responseXml(request) {
         return request.responseXML;
     }
-
     // noinspection JSUnusedLocalSymbols
     function responseText(request) {
         return request.responseText;
     }
-
     // noinspection JSUnusedLocalSymbols
     function responseXmlText(request) {
         let result = '';
@@ -59,11 +57,9 @@ const smackjack = {"exists": false};
         }
         return result;
     }
-
     function responseJson(request) {
         return JSON.parse(request.responseText);
     }
-
     function fetchUri(uri, callback, method, body, errorHandler, process) {
         if (method === undefined) {
             method = 'GET';
@@ -95,7 +91,6 @@ const smackjack = {"exists": false};
         request.send(body);
         return null;
     }
-
     function ajaxEncodeArgs(args) {
         let s = '';
         for (let i = 0; i < args.length; i += 1) {
@@ -106,7 +101,6 @@ const smackjack = {"exists": false};
         }
         return s;
     }
-
     function ajaxCall(func, args, method, callback, errorHandler, process) {
         if (method === undefined) {
             method = 'GET';
@@ -122,11 +116,16 @@ const smackjack = {"exists": false};
         }
         return fetchUri(uri, callback, method, body, errorHandler, process);
     }
-
-    //TODO edit these according to the corresponding ajax calls under "initialize-ajax" in network-visualization-website.lisp
-    function getNode(nodeName, callback, errorHandler) {
-        return ajaxCall('GET-NODE', [nodeName, inherited], 'GET', callback, errorHandler, responseJson);  //arguments go in the brackets
+    function getAutocomplete(callback, errorHandler) {
+        return ajaxCall('GET-AUTOCOMPLETE', [], 'GET', callback, errorHandler, responseJson);
     }
+    function getNode(nodeName, getInherited, callback, errorHandler) {
+        return ajaxCall('GET-NODE', [nodeName, getInherited], 'GET', callback, errorHandler, responseJson);
+    }
+    smackjack.getAutocomplete = getAutocomplete;
+    smackjack.getNode = getNode;
+
+    smackjack.ajaxCall = ajaxCall;
 
     smackjack.checkIfSmackjackExists = function() {
         const request = new XMLHttpRequest();
@@ -138,8 +137,5 @@ const smackjack = {"exists": false};
         request.open('GET', "http://" + location.hostname + ":" + location.port + "/ajax-process/GET-NODE", true);
         request.send();
     };
-
-    smackjack.ajaxCall = ajaxCall;
-    smackjack.getNode = getNode;
     return null;
 })();

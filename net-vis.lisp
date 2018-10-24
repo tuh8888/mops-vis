@@ -4,18 +4,18 @@
 
 (setq cl-who:*attribute-quote-char* #\")
 (defvar *server*)
-(defvar local-dir "~/code/common-lisp/mops-vis/")
+(defvar local-dir "c:/Users/pielkelh/Drive/code/common-lisp/mops-vis/")
 (defvar index-file  (merge-pathnames "mops.html" local-dir))
 (defvar javascript (merge-pathnames "JavaScript/" local-dir))
 (defvar resources (merge-pathnames "resources/" local-dir))
 
 (defun start-website (&key (page-uri "mops") (port 8081))
-  (let ((ajax-processor (initialize-ajax)))
-    (setq *server* (make-instance 'easy-acceptor :port port))
-    (start *server*)
-    (make-page page-uri ajax-processor)))
+  (initialize-ajax)
+  (setq *server* (make-instance 'easy-acceptor :port port))
+  (start *server*)
+  (make-page page-uri))
 
-(defun make-page (page-uri ajax-processor)
+(defun make-page (page-uri)
   (push (create-folder-dispatcher-and-handler
          "/resources/" resources)
         *dispatch-table*)
@@ -52,10 +52,12 @@
     (defun-ajax GET-NODE (node-name get-inherited) (ajax-processor :callback-data :json)
       (send-node-data node-name get-inherited))
 
+    (defun-ajax GET-AUTOCOMPLETE () (ajax-processor :callback-data :json)
+      (cl-json:encode-json-to-string *auto-complete-data*))
+
     (setq *dispatch-table* (list 'dispatch-easy-handlers
                                  (create-ajax-dispatcher ajax-processor)))
-
-    ajax-processor))
+    (generate-prologue ajax-processor)))
 
 ;;; Server side methods (response methods)
 ;;; These should be overridden by the implementation
@@ -74,15 +76,17 @@
                     ("5" ("1" "6"))
                     ("6" ("7"))))
 
-(defun make-nodes (node-data)
+(defun make-nodes (node-data data)
+  (format t "~a~%" data)
   (cons (make-node (car node-data)) (mapcar #'make-node (car (cdr node-data)))))
 
-(defun make-links (node-data)
+(defun make-links (node-data data)
+  (format t "~a~%" data)
   (mapcar (lambda (target) (make-link :source (first node-data)
                                       :label ""
                                       :target target))
           (second node-data)))
 
-(defun send-node-data (node-name)
+(defun send-node-data (node-name &rest data)
   (let ((node-data (assoc node-name full-data :test #'string=)))
-    (make-json-graph (make-nodes node-data) (make-links node-data))))
+    (make-json-graph (make-nodes node-data data) (make-links node-data data))))

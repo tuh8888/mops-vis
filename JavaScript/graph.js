@@ -167,7 +167,7 @@ function getP53() {
     setTimeout(function () {
         if (smackjack.exists) {
             console.log("Using server data");
-            graph.getNode("cellular tumor antigen p53 (human)");
+            graph.getNode("cellular tumor antigen p53 (human)", inherited);
         } else {
             console.log("Using default data");
             const xmlhttp = new XMLHttpRequest();

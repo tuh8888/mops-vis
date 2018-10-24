@@ -1,23 +1,31 @@
 const n = 5;
 /*number of completions to display*/
 const test = ["hello", "there", "appletree", "how", "are", "the", "ants", "and", "their", "apples", "there", "?"];
-const autocompleteData = {
-    "?": {"stop": null},
-    "h": {"o": {"w": {"stop": null}}, "e": {"l": {"l": {"o": {"stop": null}}}}},
-    "t": {"h": {"e": {"stop": null, "r": {"e": {"stop": null}}, "i": {"r": {"stop": null}}}}},
-    "a": {
-        "n": {"t": {"s": {"stop": null}}, "d": {"stop": null}},
-        "p": {"p": {"l": {"e": {"s": {"stop": null}, "t": {"r": {"e": {"e": {"stop": null}}}}}}}},
-        "r": {"e": {"stop": null}}
+let autocompleteData;
+smackjack.checkIfSmackjackExists();
+setTimeout(function () {
+    if (smackjack.exists) {
+        smackjack.getAutocomplete(setAutocompleteData);
+    } else {
+        setAutocompleteData({
+            "?": {"stop": null},
+            "h": {"o": {"w": {"stop": null}}, "e": {"l": {"l": {"o": {"stop": null}}}}},
+            "t": {"h": {"e": {"stop": null, "r": {"e": {"stop": null}}, "i": {"r": {"stop": null}}}}},
+            "a": {
+                "n": {"t": {"s": {"stop": null}}, "d": {"stop": null}},
+                "p": {"p": {"l": {"e": {"s": {"stop": null}, "t": {"r": {"e": {"e": {"stop": null}}}}}}}},
+                "r": {"e": {"stop": null}}
+            }
+        })
     }
-};
-// const x = findCompletetions("a", autocompleteData);
-// console.log(x);
+}, 2000);
 
-autocomplete(document.getElementById("search-text-field"), autocompleteData);
-// document.getElementsByClassName("intersection-search-text-field").forEach((textField) => autocomplete(textField, autocompleteData));
-addSearchTextField();
-addSearchTextField();
+function setAutocompleteData(data) {
+    autocompleteData = data;
+    autocomplete(document.getElementById("search-text-field"), autocompleteData);
+    addSearchTextField();
+    addSearchTextField();
+}
 
 function autocomplete(inp, data) {
     /*the autocomplete function takes two arguments,
@@ -150,6 +158,8 @@ function findCompletetions(stringInput, data) {
                     if (node.hasOwnProperty(key)) {
                         if (key === "stop") {
                             completions.push(completion);
+                        } else if(key === "bar"){
+
                         } else {
                             traverseNode(node[key], completion + key);
                         }
