@@ -41,4 +41,4 @@
 (setf (gethash 'second-key *my-hash*) 'two)
 (setf (gethash 'third-key *my-hash*) 'three)
 
-(defvar *auto-complete-data* (make-autocomplete-from-map *my-hash*))
+(defvar *auto-complete-data* (make-autocomplete-tree-from-map *my-hash*))

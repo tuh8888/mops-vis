@@ -61,8 +61,8 @@
     (defun-ajax GET-AUTOCOMPLETE () (ajax-processor :callback-data :json)
       (cl-json:encode-json-to-string *auto-complete-data*))
 
-    (defun-ajax GET-INTERSECTION-SEARCH (ndoes) (ajax-processor :callback-data :json)
-      (KaBOB::intersection))
+    (defun-ajax GET-SEARCH-RESULTS (ids search-type) (ajax-processor :callback-data :json)
+      (send-search-results ids search-type))
 
     (setq *dispatch-table* (list 'dispatch-easy-handlers
                                  (create-ajax-dispatcher ajax-processor)))
@@ -99,3 +99,6 @@
 (defun send-node-data (node-name &rest data)
   (let ((node-data (assoc node-name full-data :test #'string=)))
     (make-json-graph (make-nodes node-data data) (make-links node-data data))))
+
+(defun send-search-results (ids search-type)
+  (format t "~a, ~a~%" ids search-type))

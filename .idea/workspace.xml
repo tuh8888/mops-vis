@@ -3,18 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="7f07c80c-61d4-4c22-aa47-151c0e2fe143" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaScript/display.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/display.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaScript/graph.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/graph.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaScript/interaction.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/interaction.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaScript/layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/layout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaScript/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaScript/search.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/search.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaScript/smackjack.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/smackjack.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaScript/update.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/update.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/autocomplete.lisp" beforeDir="false" afterPath="$PROJECT_DIR$/src/common-lisp/autocomplete.lisp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mops-vis.lisp" beforeDir="false" afterPath="$PROJECT_DIR$/src/common-lisp/mops-vis.lisp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mops.html" beforeDir="false" afterPath="$PROJECT_DIR$/mops.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/net-vis.lisp" beforeDir="false" afterPath="$PROJECT_DIR$/src/common-lisp/net-vis.lisp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.lisp" beforeDir="false" afterPath="$PROJECT_DIR$/package.lisp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common-lisp/autocomplete.lisp" beforeDir="false" afterPath="$PROJECT_DIR$/src/common-lisp/autocomplete.lisp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common-lisp/mops-vis.lisp" beforeDir="false" afterPath="$PROJECT_DIR$/src/common-lisp/mops-vis.lisp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common-lisp/net-vis.lisp" beforeDir="false" afterPath="$PROJECT_DIR$/src/common-lisp/net-vis.lisp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/smackjack.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/smackjack.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -104,7 +97,7 @@
     <session id="1696761202">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="13" />
+          <entry key="project.closed" value="14" />
           <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.11" value="2" />
           <entry key="project.open.time.12" value="1" />
@@ -112,10 +105,10 @@
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.5" value="1" />
           <entry key="project.open.time.6" value="4" />
-          <entry key="project.open.time.7" value="2" />
+          <entry key="project.open.time.7" value="3" />
           <entry key="project.open.time.8" value="2" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="16" />
+          <entry key="project.opened" value="17" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -123,11 +116,11 @@
           <entry key="JavaScript Console" value="49" />
           <entry key="css" value="1083" />
           <entry key="html" value="2091" />
-          <entry key="js" value="19980" />
+          <entry key="js" value="20184" />
           <entry key="json" value="290" />
           <entry key="lisp" value="35" />
           <entry key="md" value="103" />
-          <entry key="txt" value="1878" />
+          <entry key="txt" value="1929" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -135,9 +128,9 @@
           <entry key="CSS" value="1089" />
           <entry key="HTML" value="2085" />
           <entry key="JSON" value="290" />
-          <entry key="JavaScript" value="20029" />
+          <entry key="JavaScript" value="20233" />
           <entry key="Markdown" value="103" />
-          <entry key="PLAIN_TEXT" value="1913" />
+          <entry key="PLAIN_TEXT" value="1964" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -183,7 +176,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mops.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
+            <state relative-caret-position="204">
               <caret line="12" column="16" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
               <folding>
                 <element signature="n#script#0;n#div#0;n#div#1;n#html#0;n#!!top" />
@@ -194,46 +187,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/common-lisp/mops-vis.lisp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1241">
-              <caret line="73" column="21" selection-start-line="73" selection-start-column="21" selection-end-line="73" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/stylesheet.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="331">
-              <caret line="48" column="1" lean-forward="true" selection-start-line="48" selection-start-column="1" selection-end-line="48" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/js/search.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="484">
+            <state relative-caret-position="2720">
               <caret line="160" column="34" selection-start-line="160" selection-start-column="34" selection-end-line="160" selection-end-column="34" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/js/smackjack.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="28" column="18" lean-forward="true" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/common-lisp/net-vis.lisp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="42" selection-start-line="9" selection-start-column="42" selection-end-line="9" selection-end-column="42" />
+            <state relative-caret-position="547">
+              <caret line="139" column="10" lean-forward="true" selection-start-line="139" selection-start-column="10" selection-end-line="139" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -241,8 +207,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/js/graph.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="509">
-              <caret line="175" column="47" selection-start-line="175" selection-start-column="47" selection-end-line="175" selection-end-column="47" />
+            <state relative-caret-position="135">
+              <caret line="108" column="30" selection-start-line="108" selection-start-column="30" selection-end-line="108" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -355,6 +321,7 @@
         <option value="$PROJECT_DIR$/JavaScript/graph.js" />
         <option value="$PROJECT_DIR$/JavaScript/smackjack.js" />
         <option value="$PROJECT_DIR$/net-vis.lisp" />
+        <option value="$PROJECT_DIR$/src/js/smackjack.js" />
       </list>
     </option>
   </component>
@@ -371,8 +338,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="364" />
-    <option name="y" value="-18" />
+    <option name="x" value="-1497" />
+    <option name="y" value="-14" />
     <option name="width" value="854" />
     <option name="height" value="777" />
   </component>
@@ -390,17 +357,6 @@
             <path>
               <item name="mops-vis" type="b2602c69:ProjectViewProjectNode" />
               <item name="mops-vis" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mops-vis" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mops-vis" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mops-vis" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mops-vis" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="common-lisp" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -420,17 +376,17 @@
     <property name="settings.editor.selected.configurable" value="preferences.editor" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\pielkelh\Drive\code\common-lisp\mops-vis\resources" />
-      <recent name="C:\Users\pielkelh\Drive\code\common-lisp\mops-vis" />
-      <recent name="C:\Users\pielkelh\Drive\code\common-lisp\mops-vis\jigsaw" />
-      <recent name="C:\Users\pielkelh\Drive\code\common-lisp\mops-vis\Jigsaw" />
-      <recent name="C:\Users\pielkelh\Drive\code\common-lisp\mops-vis\JavaScript" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\pielkelh\Drive\code\common-lisp\mops-vis" />
       <recent name="C:\Users\pielkelh\Drive\code\common-lisp\mops-vis\Jigsaw" />
       <recent name="C:\Users\pielkelh\Drive\code\common-lisp\web-net" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\pielkelh\Drive\code\common-lisp\mops-vis\src\common-lisp" />
+      <recent name="C:\Users\pielkelh\Drive\code\common-lisp\mops-vis\src" />
+      <recent name="C:\Users\pielkelh\Drive\code\common-lisp\mops-vis\resources" />
+      <recent name="C:\Users\pielkelh\Drive\code\common-lisp\mops-vis" />
+      <recent name="C:\Users\pielkelh\Drive\code\common-lisp\mops-vis\jigsaw" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -507,14 +463,8 @@
       <workItem from="1540247607345" duration="1381000" />
       <workItem from="1540249931612" duration="599000" />
       <workItem from="1540317318189" duration="17445000" />
-      <workItem from="1540400333346" duration="9497000" />
-    </task>
-    <task id="LOCAL-00013" summary="checking for smackjack is asynchronous">
-      <created>1539151496675</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1539151496675</updated>
+      <workItem from="1540400333346" duration="9578000" />
+      <workItem from="1540592229860" duration="761000" />
     </task>
     <task id="LOCAL-00014" summary="Wait for smackjack check">
       <created>1539151837830</created>
@@ -852,11 +802,18 @@
       <option name="project" value="LOCAL" />
       <updated>1540411125294</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="migrated to js and common-lisp directories">
+      <created>1540414175278</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1540414175278</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="151038000" />
+    <option name="totallyTimeSpent" value="151880000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -868,10 +825,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1696" height="1066" extended-state="6" />
+    <frame x="-1608" y="-6" width="1616" height="916" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19420989" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20405577" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -885,7 +842,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.49758744" weight="0.39592275" />
       <window_info anchor="bottom" id="Terminal" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50241256" side_tool="true" weight="0.39270386" />
-      <window_info anchor="bottom" id="Messages" order="11" visible="true" weight="0.27575108" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.27575108" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -946,7 +903,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added sliders for main force directed layout attributes" />
     <MESSAGE value="Added more sliders and a default large network" />
     <MESSAGE value="Added some support for WebGL" />
     <MESSAGE value="moved some items to resources" />
@@ -971,7 +927,8 @@
     <MESSAGE value="Untested making mops autocomplete data" />
     <MESSAGE value="Simplified server start and stop" />
     <MESSAGE value="Fix typo" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix typo" />
+    <MESSAGE value="migrated to js and common-lisp directories" />
+    <option name="LAST_COMMIT_MESSAGE" value="migrated to js and common-lisp directories" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -995,12 +952,6 @@
           <url>file://$PROJECT_DIR$/src/js/interaction.js</url>
           <line>65</line>
           <option name="timeStamp" value="41" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/js/graph.js</url>
-          <line>107</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="42" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -1190,9 +1141,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-394">
           <caret line="84" column="32" lean-forward="true" selection-start-line="84" selection-start-column="32" selection-end-line="84" selection-end-column="32" />
-          <folding>
-            <element signature="e#326#956#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1231,37 +1179,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/stylesheet.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="48" column="1" lean-forward="true" selection-start-line="48" selection-start-column="1" selection-end-line="48" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/search.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="160" column="34" selection-start-line="160" selection-start-column="34" selection-end-line="160" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/graph.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="509">
-          <caret line="175" column="47" selection-start-line="175" selection-start-column="47" selection-end-line="175" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/smackjack.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="28" column="18" lean-forward="true" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mops.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
+        <state relative-caret-position="204">
           <caret line="12" column="16" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
           <folding>
             <element signature="n#script#0;n#div#0;n#div#1;n#html#0;n#!!top" />
@@ -1277,10 +1197,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/stylesheet.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="816">
+          <caret line="48" column="1" selection-start-line="48" selection-start-column="1" selection-end-line="48" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/search.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2720">
+          <caret line="160" column="34" selection-start-line="160" selection-start-column="34" selection-end-line="160" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/common-lisp/net-vis.lisp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="42" selection-start-line="9" selection-start-column="42" selection-end-line="9" selection-end-column="42" />
+        <state relative-caret-position="206">
+          <caret line="45" column="51" lean-forward="true" selection-start-line="45" selection-start-column="51" selection-end-line="45" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/graph.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="108" column="30" selection-start-line="108" selection-start-column="30" selection-end-line="108" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/smackjack.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="547">
+          <caret line="139" column="10" lean-forward="true" selection-start-line="139" selection-start-column="10" selection-end-line="139" selection-end-column="10" />
         </state>
       </provider>
     </entry>

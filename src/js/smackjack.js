@@ -122,8 +122,12 @@ const smackjack = {"exists": false};
     function getNode(nodeName, getInherited, callback, errorHandler) {
         return ajaxCall('GET-NODE', [nodeName, getInherited], 'GET', callback, errorHandler, responseJson);
     }
+    function getSearchResults(ids, searchType, callback, errorHandler) {
+        return ajaxCall('GET-SEARCH-RESULTS', [ids, searchType], 'GET', callback, errorHandler, responseJson());
+    }
     smackjack.getAutocomplete = getAutocomplete;
     smackjack.getNode = getNode;
+    smackjack.getSearchResults = getSearchResults;
 
     smackjack.ajaxCall = ajaxCall;
 

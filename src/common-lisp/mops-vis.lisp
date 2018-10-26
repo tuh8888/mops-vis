@@ -67,14 +67,44 @@
 (defun mops-to-json (mops get-inherited)
   (net-vis:make-json-graph (mapcan #'(lambda (mop) (make-mop-nodes mop get-inherited)) mops) (mapcan #'(lambda (mop) (make-mop-links mop get-inherited)) mops)))
 
-(defun find-node-data (node-name)
+(defun find-node (node-name)
   (lookup-mop (intern node-name :KaBOB)))
+
+
+(defun search (ids search-type)
+  (cond ((equal search-type "intersection search")
+         (intersection-search (mapcar #'find-node ids) #'mop-neighbors))))
+
+(defun relationship (source target)
+  (let ((relationship nil))
+    (dolist (role (mop-roles source) 'done)
+     (dolist (filler (role-filler mop role) 'done)
+       (when (equal filler target)
+         (setf relationship role))))
+    (unless relationship
+      (dolist (abstraction (mop-abstractions source) 'done)
+        (when (equal abstraction target)
+          (setf-relationship "subClassOf"))))
+    relationship))
 
 ;;; Overriding methods
 (in-package :net-vis)
 
 (defun send-node-data (node-name get-inherited)
   (format t "node requested: ~a~%" node-name)
-  (KaBOB::mops-to-json (list (KaBOB::find-node-data node-name)) get-inherited))
+  (KaBOB::mops-to-json (list (KaBOB::find-node node-name)) get-inherited))
+
+(defun send-search-results (ids search-type)
+  (let ((paths (KaBOB::search ids search-type))
+        (nodes nil)
+        (links nil))
+    (dolist (path paths 'done)
+      (let ((last-mop nil))
+        (dolist (mop path 'done)
+         (push (KaBOB::make-mop-node mop) nodes)
+          (when last-mop
+            (push (KaBOB::make-link last-mop (KaBOB::relationship last-mop mop) mop) links)
+            (setf last-mop mop)))))
+    (make-json-graph nodes links)))
 
 (setf *auto-complete-data* (make-autocomplete-tree-from-map *mops*))
