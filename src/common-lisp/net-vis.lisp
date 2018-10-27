@@ -36,6 +36,12 @@
 
 ;;;;;;;;; JSON ;;;;;;;;
 
+(defun stringify (x)
+  (format nil "~a" x))
+
+(defun make-data (x)
+  (stringify x))
+
 ;;; Making streams
 (defun make-json-graph (nodes links)
   (cl-json:encode-json-to-string
@@ -43,10 +49,13 @@
 
 ;;; Making elements
 (defun make-node (name)
-  (pairlis '("id" "name") (list name name) (list)))
+  (pairlis '("id" "name") (list (stringify name) (stringify name)) (list)))
 
 (defun make-link (&key source label target data)
-  (pairlis '("source" "label" "target" "data") (list source label target data)))
+  (pairlis '("source" "label" "target" "data") (list (stringify source)
+                                                     (stringify label)
+                                                     (stringify target)
+                                                     (make-data data))))
 
 ;;;;;;;; AJAX ;;;;;;;;
 
