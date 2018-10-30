@@ -103,10 +103,10 @@ class Graph {
 
     //TODO: Finish intersection search on lisp side
     intersectionSearch() {
-        const ids = document.getElementsByClassName("intersection-search-text-field").forEach((textField) => textField.value);
+        const ids = [].map.call(document.getElementsByClassName("intersection-search-text-field"), (textField) => textField.value);
 
         if (smackjack.exists) {
-            smackjack.getIntersectionSearch(ids, this.addGraphData);
+            smackjack.getSearchResults(ids, "intersection search", this.addGraphData);
         }
         restart();
     }
