@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7f07c80c-61d4-4c22-aa47-151c0e2fe143" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mops.html" beforeDir="false" afterPath="$PROJECT_DIR$/mops.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/stylesheet.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/stylesheet.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/common-lisp/mops-vis.lisp" beforeDir="false" afterPath="$PROJECT_DIR$/src/common-lisp/mops-vis.lisp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/graph.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/graph.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -115,22 +111,22 @@
         <counts>
           <entry key="JavaScript Console" value="49" />
           <entry key="css" value="1103" />
-          <entry key="html" value="2309" />
+          <entry key="html" value="2318" />
           <entry key="js" value="20507" />
           <entry key="json" value="290" />
           <entry key="lisp" value="35" />
           <entry key="md" value="103" />
-          <entry key="txt" value="2814" />
+          <entry key="txt" value="2845" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="1109" />
-          <entry key="HTML" value="2303" />
+          <entry key="HTML" value="2312" />
           <entry key="JSON" value="290" />
           <entry key="JavaScript" value="20556" />
           <entry key="Markdown" value="103" />
-          <entry key="PLAIN_TEXT" value="2849" />
+          <entry key="PLAIN_TEXT" value="2880" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -173,11 +169,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mops.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
-              <caret line="47" column="41" lean-forward="true" selection-start-line="47" selection-start-column="41" selection-end-line="47" selection-end-column="41" />
+            <state relative-caret-position="276">
+              <caret line="49" column="84" selection-start-line="49" selection-start-column="84" selection-end-line="49" selection-end-column="84" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#input#0;n#div#0;n#div#2;n#div#0;n#html#0;n#!!top" expanded="true" />
@@ -208,11 +204,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/js/graph.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="108" lean-forward="true" selection-start-line="108" selection-end-line="108" />
+            <state relative-caret-position="298">
+              <caret line="110" column="30" lean-forward="true" selection-start-line="110" selection-start-column="30" selection-end-line="110" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -487,14 +483,7 @@
       <workItem from="1540317318189" duration="17445000" />
       <workItem from="1540400333346" duration="9578000" />
       <workItem from="1540592229860" duration="3371000" />
-      <workItem from="1540917096079" duration="8965000" />
-    </task>
-    <task id="LOCAL-00033" summary="Edge arrows, zoom, and window resizing">
-      <created>1539822038047</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1539822038047</updated>
+      <workItem from="1540917096079" duration="9895000" />
     </task>
     <task id="LOCAL-00034" summary="Migrated display to main">
       <created>1539822134504</created>
@@ -832,11 +821,18 @@
       <option name="project" value="LOCAL" />
       <updated>1540929371753</updated>
     </task>
-    <option name="localTasksCounter" value="82" />
+    <task id="LOCAL-00082" summary="Search parameter text fields">
+      <created>1540931177090</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1540931177090</updated>
+    </task>
+    <option name="localTasksCounter" value="83" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="163455000" />
+    <option name="totallyTimeSpent" value="164385000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -851,13 +847,13 @@
     <frame x="-8" y="-8" width="1696" height="1066" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19420989" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19420989" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32939914" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32939914" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49819058" visible="true" weight="0.5246781" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.49819058" visible="true" weight="0.5246781" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32939914" />
@@ -926,7 +922,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Cursor is always crosshair" />
     <MESSAGE value="Add and remove intersection search items" />
     <MESSAGE value="Connected server side autocomplete to client side" />
     <MESSAGE value="Untested making mops autocomplete data" />
@@ -951,7 +946,8 @@
     <MESSAGE value="Reordered functions and fixed path processing" />
     <MESSAGE value="Pass search parameters from client" />
     <MESSAGE value="Link data requested from server is passed as assoc list" />
-    <option name="LAST_COMMIT_MESSAGE" value="Link data requested from server is passed as assoc list" />
+    <MESSAGE value="Search parameter text fields" />
+    <option name="LAST_COMMIT_MESSAGE" value="Search parameter text fields" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1240,17 +1236,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/graph.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="108" lean-forward="true" selection-start-line="108" selection-end-line="108" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mops.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="47" column="41" lean-forward="true" selection-start-line="47" selection-start-column="41" selection-end-line="47" selection-end-column="41" />
+        <state relative-caret-position="276">
+          <caret line="49" column="84" selection-start-line="49" selection-start-column="84" selection-end-line="49" selection-end-column="84" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#input#0;n#div#0;n#div#2;n#div#0;n#html#0;n#!!top" expanded="true" />
@@ -1259,6 +1248,13 @@
             <element signature="n#script#0;n#div#0;n#div#1;n#html#0;n#!!top" />
             <element signature="n#script#1;n#div#0;n#div#1;n#html#0;n#!!top" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/graph.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="110" column="30" lean-forward="true" selection-start-line="110" selection-start-column="30" selection-end-line="110" selection-end-column="30" />
         </state>
       </provider>
     </entry>

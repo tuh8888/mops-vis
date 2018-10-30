@@ -104,8 +104,8 @@ class Graph {
     //TODO: Finish intersection search on lisp side
     intersectionSearch() {
         const ids = [].map.call(document.getElementsByClassName("intersection-search-text-field"), (textField) => textField.value);
-        const maxDepth = document.getElementById("max-depth-text-field").value;
-        const maxFanout = document.getElementById("max-fanout-text-field").value;
+        const maxDepth = parseInt(document.getElementById("max-depth-text-field").value);
+        const maxFanout = parseInt(document.getElementById("max-fanout-text-field").value);
 
         if (smackjack.exists) {
             smackjack.getSearchResults(ids, "intersection search", {"maxDepth": maxDepth, "maxFanout":maxFanout}, this.addGraphData);

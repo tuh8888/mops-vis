@@ -84,8 +84,8 @@
 (defun run-search (mops type parameters)
   (cond ((equal type "intersection search")
          (intersection-search mops #'mop-neighbors
-                              :max-depth (parse-integer (cdr (assoc :MAX-DEPTH parameters :test #'equal)))
-                              :max-fanout (parse-integer (cdr (assoc :MAX-FANOUT parameters :test #'equal)))))))
+                              :max-depth (cdr (assoc :MAX-DEPTH parameters :test #'equal))
+                              :max-fanout (cdr (assoc :MAX-FANOUT parameters :test #'equal))))))
 
 (setq mops (mapcar #'find-node (list "cellular tumor antigen p53 (human)"
                                      "cellular tumor antigen p53")))
