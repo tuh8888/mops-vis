@@ -9,18 +9,18 @@
 
 (defun make-role-links (mop role)
   (let ((fillers (inherit-filler mop role)))
-    (cond ((listp fillers) (mapcar #'(lambda (filler) (make-link :source mop
+    (cond ((listp fillers) (mapcar #'(lambda (filler) (net-vis:make-link :source mop
                                                                  :label role
-                                                                 :taraget filler
+                                                                 :target filler
                                                                  :data (inherited-role? mop role)))
                                    (inherit-filler mop role)))
-          (t (list (make-link :source mop
+          (t (list (net-vis:make-link :source mop
                               :label role
                               :target fillers
                               :data (inherited-role? mop role)))))))
 
 (defun make-abstraction-links (mop)
-  (mapcar #'(lambda (abstraction) (make-link :source mop
+  (mapcar #'(lambda (abstraction) (net-vis:make-link :source mop
                                              :label "subClassOf"
                                              :target abstraction
                                              :data nil))
@@ -34,12 +34,12 @@
 
 (defun make-filler-nodes (mop role)
   (let ((fillers (inherit-filler mop role)))
-    (cond ((listp fillers) (mapcar #'make-node fillers))
-          (t (list (make-node fillers))))))
+    (cond ((listp fillers) (mapcar #'net-vis:make-node fillers))
+          (t (list (net-vis:make-node fillers))))))
 
 (defun make-mop-nodes (mop get-inherited)
-  `(,(make-node mop)
-    ,@(mapcar #'make-node (mop-abstractions mop))
+  `(,(net-vis:make-node mop)
+    ,@(mapcar #'net-vis:make-node (mop-abstractions mop))
     ,@(mapcan #'(lambda (role) (make-filler-nodes mop role)) (if get-inherited
                                                                  (mop-roles mop)
                                                                  (inheritable-roles mop)))))
@@ -84,7 +84,7 @@
 
 (defun stringify (x)
   (cond ((stringp x) x)
-	((mop-p x) (symbol-name (mop-name x)))
+	((KaBOB::mop-p x) (symbol-name (KaBOB::mop-name x)))
 	((listp x) (format nil "~{~a~^, ~}" (mapcar #'stringify x)))
 	(t (format nil "~a" x))))
 

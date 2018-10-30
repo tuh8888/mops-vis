@@ -117,7 +117,7 @@
           <entry key="json" value="290" />
           <entry key="lisp" value="35" />
           <entry key="md" value="103" />
-          <entry key="txt" value="2258" />
+          <entry key="txt" value="2389" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -127,7 +127,7 @@
           <entry key="JSON" value="290" />
           <entry key="JavaScript" value="20233" />
           <entry key="Markdown" value="103" />
-          <entry key="PLAIN_TEXT" value="2293" />
+          <entry key="PLAIN_TEXT" value="2424" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -473,28 +473,7 @@
       <workItem from="1540317318189" duration="17445000" />
       <workItem from="1540400333346" duration="9578000" />
       <workItem from="1540592229860" duration="3371000" />
-      <workItem from="1540917096079" duration="2296000" />
-    </task>
-    <task id="LOCAL-00022" summary="mops vis inside kabob package">
-      <created>1539154513797</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1539154513797</updated>
-    </task>
-    <task id="LOCAL-00023" summary="trying to figure out right packaging">
-      <created>1539155827804</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1539155827804</updated>
-    </task>
-    <task id="LOCAL-00024" summary="arrows">
-      <created>1539177558061</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1539177558061</updated>
+      <workItem from="1540917096079" duration="3220000" />
     </task>
     <task id="LOCAL-00025" summary="arrows">
       <created>1539178022670</created>
@@ -818,11 +797,32 @@
       <option name="project" value="LOCAL" />
       <updated>1540918834564</updated>
     </task>
-    <option name="localTasksCounter" value="71" />
+    <task id="LOCAL-00071" summary="Don't make autocomplete data for KaBOB on load">
+      <created>1540919668279</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1540919668279</updated>
+    </task>
+    <task id="LOCAL-00072" summary="Default dir set to quicklisp local project dir">
+      <created>1540919802112</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1540919802113</updated>
+    </task>
+    <task id="LOCAL-00073" summary="Forgot to change javascript to js">
+      <created>1540919970744</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1540919970744</updated>
+    </task>
+    <option name="localTasksCounter" value="74" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="156786000" />
+    <option name="totallyTimeSpent" value="157710000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -912,9 +912,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Copyable command to install packages" />
-    <MESSAGE value="Changed to rectangles" />
-    <MESSAGE value="Added collision force for rectangles" />
     <MESSAGE value="Started making autocomplete for mops" />
     <MESSAGE value="Toggle getting inherited slots" />
     <MESSAGE value="Toggle abstraction edges" />
@@ -937,7 +934,10 @@
     <MESSAGE value="Using in-package to override methods" />
     <MESSAGE value="minor fix" />
     <MESSAGE value="Load autocomplete first" />
-    <option name="LAST_COMMIT_MESSAGE" value="Load autocomplete first" />
+    <MESSAGE value="Don't make autocomplete data for KaBOB on load" />
+    <MESSAGE value="Default dir set to quicklisp local project dir" />
+    <MESSAGE value="Forgot to change javascript to js" />
+    <option name="LAST_COMMIT_MESSAGE" value="Forgot to change javascript to js" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
