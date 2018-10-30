@@ -18,7 +18,7 @@
            "/resources/" resources)
           *dispatch-table*)
     (push (create-folder-dispatcher-and-handler
-           "/JavaScript/" javascript)
+           "/js/" javascript)
           *dispatch-table*)
 
     (push (create-static-file-dispatcher-and-handler
