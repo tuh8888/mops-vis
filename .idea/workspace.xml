@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7f07c80c-61d4-4c22-aa47-151c0e2fe143" name="Default Changelist" comment="">
+    <list default="true" id="7f07c80c-61d4-4c22-aa47-151c0e2fe143" name="Default Changelist" comment="No more parsing of numbers on server side">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/common-lisp/mops-vis.lisp" beforeDir="false" afterPath="$PROJECT_DIR$/src/common-lisp/mops-vis.lisp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -112,11 +113,11 @@
           <entry key="JavaScript Console" value="49" />
           <entry key="css" value="1103" />
           <entry key="html" value="2318" />
-          <entry key="js" value="20507" />
+          <entry key="js" value="20530" />
           <entry key="json" value="290" />
           <entry key="lisp" value="35" />
           <entry key="md" value="103" />
-          <entry key="txt" value="2845" />
+          <entry key="txt" value="2925" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -124,9 +125,9 @@
           <entry key="CSS" value="1109" />
           <entry key="HTML" value="2312" />
           <entry key="JSON" value="290" />
-          <entry key="JavaScript" value="20556" />
+          <entry key="JavaScript" value="20579" />
           <entry key="Markdown" value="103" />
-          <entry key="PLAIN_TEXT" value="2880" />
+          <entry key="PLAIN_TEXT" value="2960" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -207,8 +208,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/js/graph.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="298">
-              <caret line="110" column="30" lean-forward="true" selection-start-line="110" selection-start-column="30" selection-end-line="110" selection-end-column="30" />
+            <state relative-caret-position="281">
+              <caret line="109" column="31" lean-forward="true" selection-start-line="109" selection-start-column="31" selection-end-line="109" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -322,8 +323,8 @@
         <option value="$PROJECT_DIR$/src/js/main.js" />
         <option value="$PROJECT_DIR$/src/js/smackjack.js" />
         <option value="$PROJECT_DIR$/resources/stylesheet.css" />
-        <option value="$PROJECT_DIR$/src/js/graph.js" />
         <option value="$PROJECT_DIR$/mops.html" />
+        <option value="$PROJECT_DIR$/src/js/graph.js" />
       </list>
     </option>
   </component>
@@ -483,21 +484,7 @@
       <workItem from="1540317318189" duration="17445000" />
       <workItem from="1540400333346" duration="9578000" />
       <workItem from="1540592229860" duration="3371000" />
-      <workItem from="1540917096079" duration="9895000" />
-    </task>
-    <task id="LOCAL-00034" summary="Migrated display to main">
-      <created>1539822134504</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1539822134504</updated>
-    </task>
-    <task id="LOCAL-00035" summary="Added graphics container to handle zoom events instead of svg">
-      <created>1539825101366</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1539825101366</updated>
+      <workItem from="1540917096079" duration="10852000" />
     </task>
     <task id="LOCAL-00036" summary="Added sliders for main force directed layout attributes">
       <created>1539825141671</created>
@@ -828,11 +815,25 @@
       <option name="project" value="LOCAL" />
       <updated>1540931177090</updated>
     </task>
-    <option name="localTasksCounter" value="83" />
+    <task id="LOCAL-00083" summary="Changed parameter retrieval to symbols">
+      <created>1540931970719</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1540931970719</updated>
+    </task>
+    <task id="LOCAL-00084" summary="No more parsing of numbers on server side">
+      <created>1540932183680</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1540932183680</updated>
+    </task>
+    <option name="localTasksCounter" value="85" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="164385000" />
+    <option name="totallyTimeSpent" value="165342000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -922,8 +923,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add and remove intersection search items" />
-    <MESSAGE value="Connected server side autocomplete to client side" />
     <MESSAGE value="Untested making mops autocomplete data" />
     <MESSAGE value="Simplified server start and stop" />
     <MESSAGE value="Fix typo" />
@@ -947,7 +946,9 @@
     <MESSAGE value="Pass search parameters from client" />
     <MESSAGE value="Link data requested from server is passed as assoc list" />
     <MESSAGE value="Search parameter text fields" />
-    <option name="LAST_COMMIT_MESSAGE" value="Search parameter text fields" />
+    <MESSAGE value="Changed parameter retrieval to symbols" />
+    <MESSAGE value="No more parsing of numbers on server side" />
+    <option name="LAST_COMMIT_MESSAGE" value="No more parsing of numbers on server side" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1253,8 +1254,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/js/graph.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="110" column="30" lean-forward="true" selection-start-line="110" selection-start-column="30" selection-end-line="110" selection-end-column="30" />
+        <state relative-caret-position="281">
+          <caret line="109" column="31" lean-forward="true" selection-start-line="109" selection-start-column="31" selection-end-line="109" selection-end-column="31" />
         </state>
       </provider>
     </entry>

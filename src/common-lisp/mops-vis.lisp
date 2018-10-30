@@ -134,5 +134,7 @@
 
 
 ;;; AUTOCOMPLETE ;;;
-;(setf *auto-complete-data* (make-autocomplete-tree-from-map KaBOB::*mops*))
+(format t "Making autocomplete data...")
+(setf *auto-complete-data* (make-autocomplete-tree-from-map KaBOB::*mops*))
+(format t "...finished")
 
