@@ -4,6 +4,6 @@
   :author "Harrison Pielke-Lombardo <harrison.pielke-lombardo@ucdenver.edu>"
   :serial t
   :components ((:file "package")
+               (:file "src/common-lisp/autocomplete")
                (:file "src/common-lisp/net-vis")
-               (:file "src/common-lisp/mops-vis")
-               (:file "src/common-lisp/autocomplete")))
+               (:file "src/common-lisp/mops-vis")))
