@@ -88,10 +88,6 @@ function initialSetup(layoutConfig) {
         .on('keyup', () => interactor.bodyKeyUp(svg));
 
     window.addEventListener("resize", redraw);
-
-    Graph.getInitialGraph();
-
-
 }
 
 function redraw() {

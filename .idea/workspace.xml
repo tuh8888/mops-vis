@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7f07c80c-61d4-4c22-aa47-151c0e2fe143" name="Default Changelist" comment="">
+    <list default="true" id="7f07c80c-61d4-4c22-aa47-151c0e2fe143" name="Default Changelist" comment="Fixed typos and name-space specification on functions">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common-lisp/mops-vis.lisp" beforeDir="false" afterPath="$PROJECT_DIR$/src/common-lisp/mops-vis.lisp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/smackjack.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/smackjack.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -113,11 +114,11 @@
           <entry key="JavaScript Console" value="49" />
           <entry key="css" value="1083" />
           <entry key="html" value="2091" />
-          <entry key="js" value="20184" />
+          <entry key="js" value="20278" />
           <entry key="json" value="290" />
           <entry key="lisp" value="35" />
           <entry key="md" value="103" />
-          <entry key="txt" value="2389" />
+          <entry key="txt" value="2443" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -125,9 +126,9 @@
           <entry key="CSS" value="1089" />
           <entry key="HTML" value="2085" />
           <entry key="JSON" value="290" />
-          <entry key="JavaScript" value="20233" />
+          <entry key="JavaScript" value="20327" />
           <entry key="Markdown" value="103" />
-          <entry key="PLAIN_TEXT" value="2424" />
+          <entry key="PLAIN_TEXT" value="2478" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -136,7 +137,7 @@
           <entry key="98" value="1" />
           <entry key="css" value="24" />
           <entry key="html" value="6" />
-          <entry key="js" value="78" />
+          <entry key="js" value="80" />
           <entry key="json" value="14" />
           <entry key="lisp" value="11" />
           <entry key="md" value="2" />
@@ -154,7 +155,7 @@
           <entry key="HTML" value="7" />
           <entry key="Image" value="1" />
           <entry key="JSON" value="14" />
-          <entry key="JavaScript" value="79" />
+          <entry key="JavaScript" value="81" />
           <entry key="Markdown" value="2" />
           <entry key="PLAIN_TEXT" value="17" />
           <entry key="TypeScript" value="3" />
@@ -183,29 +184,29 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/js/search.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2720">
-              <caret line="160" column="34" selection-start-line="160" selection-start-column="34" selection-end-line="160" selection-end-column="34" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/js/smackjack.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2244">
-              <caret line="132" selection-start-line="132" selection-end-line="132" />
+            <state relative-caret-position="326">
+              <caret line="129" column="5" lean-forward="true" selection-start-line="129" selection-start-column="5" selection-end-line="129" selection-end-column="5" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/js/main.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="89" column="46" selection-start-line="89" selection-start-column="46" selection-end-line="89" selection-end-column="46" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/js/graph.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="170" column="16" lean-forward="true" selection-start-line="170" selection-start-column="16" selection-end-line="170" selection-end-column="16" />
+            <state relative-caret-position="414">
+              <caret line="68" lean-forward="true" selection-start-line="68" selection-end-line="68" />
             </state>
           </provider>
         </entry>
@@ -318,6 +319,7 @@
         <option value="$PROJECT_DIR$/JavaScript/graph.js" />
         <option value="$PROJECT_DIR$/JavaScript/smackjack.js" />
         <option value="$PROJECT_DIR$/net-vis.lisp" />
+        <option value="$PROJECT_DIR$/src/js/main.js" />
         <option value="$PROJECT_DIR$/src/js/smackjack.js" />
       </list>
     </option>
@@ -473,14 +475,7 @@
       <workItem from="1540317318189" duration="17445000" />
       <workItem from="1540400333346" duration="9578000" />
       <workItem from="1540592229860" duration="3371000" />
-      <workItem from="1540917096079" duration="3220000" />
-    </task>
-    <task id="LOCAL-00025" summary="arrows">
-      <created>1539178022670</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1539178022670</updated>
+      <workItem from="1540917096079" duration="4110000" />
     </task>
     <task id="LOCAL-00026" summary="Fixed node retrieval">
       <created>1539181460972</created>
@@ -818,11 +813,18 @@
       <option name="project" value="LOCAL" />
       <updated>1540919970744</updated>
     </task>
-    <option name="localTasksCounter" value="74" />
+    <task id="LOCAL-00074" summary="Fixed typos and name-space specification on functions">
+      <created>1540920749722</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1540920749722</updated>
+    </task>
+    <option name="localTasksCounter" value="75" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="157710000" />
+    <option name="totallyTimeSpent" value="158600000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -912,7 +914,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Started making autocomplete for mops" />
     <MESSAGE value="Toggle getting inherited slots" />
     <MESSAGE value="Toggle abstraction edges" />
     <MESSAGE value="Toggle node and edge labels" />
@@ -937,7 +938,8 @@
     <MESSAGE value="Don't make autocomplete data for KaBOB on load" />
     <MESSAGE value="Default dir set to quicklisp local project dir" />
     <MESSAGE value="Forgot to change javascript to js" />
-    <option name="LAST_COMMIT_MESSAGE" value="Forgot to change javascript to js" />
+    <MESSAGE value="Fixed typos and name-space specification on functions" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed typos and name-space specification on functions" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1122,13 +1124,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="104" column="55" selection-start-line="104" selection-start-column="55" selection-end-line="104" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/js/display.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -1227,17 +1222,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/smackjack.js">
+    <entry file="file://$PROJECT_DIR$/src/js/graph.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2244">
-          <caret line="132" selection-start-line="132" selection-end-line="132" />
+        <state relative-caret-position="414">
+          <caret line="68" lean-forward="true" selection-start-line="68" selection-end-line="68" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/graph.js">
+    <entry file="file://$PROJECT_DIR$/src/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="170" column="16" lean-forward="true" selection-start-line="170" selection-start-column="16" selection-end-line="170" selection-end-column="16" />
+        <state relative-caret-position="360">
+          <caret line="89" column="46" selection-start-line="89" selection-start-column="46" selection-end-line="89" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/smackjack.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="326">
+          <caret line="129" column="5" lean-forward="true" selection-start-line="129" selection-start-column="5" selection-end-line="129" selection-end-column="5" />
         </state>
       </provider>
     </entry>

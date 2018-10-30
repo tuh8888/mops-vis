@@ -125,10 +125,13 @@ const smackjack = {"exists": false};
     function getSearchResults(ids, searchType, callback, errorHandler) {
         return ajaxCall('GET-SEARCH-RESULTS', [ids, searchType], 'GET', callback, errorHandler, responseJson());
     }
+    function testConnection(callback, errorHandler) {
+        return ajaxCall('TEST-CONNECTION', [], 'get', callback, errorHandler, responseJson);
+    }
     smackjack.getAutocomplete = getAutocomplete;
     smackjack.getNode = getNode;
     smackjack.getSearchResults = getSearchResults;
-
+    smackjack.testConnection = testConnection;
     smackjack.ajaxCall = ajaxCall;
 
     smackjack.checkIfSmackjackExists = function() {
@@ -138,7 +141,7 @@ const smackjack = {"exists": false};
                 smackjack.exists = request.status !== 404;
             }
         };
-        request.open('GET', "http://" + location.hostname + ":" + location.port + "/ajax-process/GET-NODE", true);
+        request.open('GET', "http://" + location.hostname + ":" + location.port + "/ajax-process/TEST-CONNECTION", true);
         request.send();
     };
     return null;

@@ -26,7 +26,7 @@
                                              :data nil))
           (mop-abstractions mop)))
 
-(defun make-mop-links (mop get-inherited)
+(defun make-mop-links (mop data)
   `(,@(make-abstraction-links mop)
     ,@(mapcan #'(lambda (role) (make-role-links mop role)) (if get-inherited
                                                                (mop-roles mop)
@@ -37,18 +37,18 @@
     (cond ((listp fillers) (mapcar #'net-vis:make-node fillers))
           (t (list (net-vis:make-node fillers))))))
 
-(defun make-mop-nodes (mop get-inherited)
+(defun make-mop-nodes (mop data)
   `(,(net-vis:make-node mop)
     ,@(mapcar #'net-vis:make-node (mop-abstractions mop))
-    ,@(mapcan #'(lambda (role) (make-filler-nodes mop role)) (if get-inherited
+    ,@(mapcan #'(lambda (role) (make-filler-nodes mop role)) (if (first data)
                                                                  (mop-roles mop)
                                                                  (inheritable-roles mop)))))
 
-(defun make-mops-nodes (mops get-inherited)
-  (mapcan #'(lambda (mop) (make-mop-nodes mop get-inherited)) mops))
+(defun make-mops-nodes (mops data)
+  (mapcan #'(lambda (mop) (make-mop-nodes mop data)) mops))
 
-(defun make-mops-links (mops get-inherited)
-  (mapcan #'(lambda (mop) (make-mop-links mop get-inherited)) mops))
+(defun make-mops-links (mops data)
+  (mapcan #'(lambda (mop) (make-mop-links mop data)) mops))
 
 (defun find-node (node-name)
   (lookup-mop (intern node-name :KaBOB)))
@@ -88,12 +88,13 @@
 	((listp x) (format nil "~{~a~^, ~}" (mapcar #'stringify x)))
 	(t (format nil "~a" x))))
 
-(defun send-node-data (node-name get-inherited)
+(defun send-node-data (node-name &rest data)
   (format t "node requested: ~a~%" node-name)
+  (format t "data requested: ~a~%" data)
   (let ((mops (list (KaBOB::find-node node-name))))
     (make-json-graph
-     (KaBOB::make-mops-nodes mops get-inherited)
-     (KaBOB::make-mops-links mops get-inherited))))
+     (KaBOB::make-mops-nodes mops data)
+     (KaBOB::make-mops-links mops data))))
 
 (defun send-search-results (ids search-type)
   (process-paths (run-search ids search-type)))

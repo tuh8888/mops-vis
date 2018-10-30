@@ -64,6 +64,9 @@
 (defun initialize-ajax ()
   (let ((ajax-processor (make-instance 'ajax-processor :server-uri "/ajax-process")))
 
+    (defun-ajax TEST-CONNECTION () (ajax-processor :callback-data :json)
+      "Connection successful")
+
     (defun-ajax GET-NODE (node-name get-inherited) (ajax-processor :callback-data :json)
       (send-node-data node-name get-inherited))
 
