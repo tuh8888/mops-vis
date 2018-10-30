@@ -67,14 +67,14 @@
     (defun-ajax TEST-CONNECTION () (ajax-processor :callback-data :json)
       "Connection successful")
 
-    (defun-ajax GET-NODE (node-name get-inherited) (ajax-processor :callback-data :json)
-      (send-node-data node-name get-inherited))
+    (defun-ajax GET-NODE (node-name data) (ajax-processor :callback-data :json)
+      (send-node-data node-name data))
 
     (defun-ajax GET-AUTOCOMPLETE () (ajax-processor :callback-data :json)
       (cl-json:encode-json-to-string *auto-complete-data*))
 
-    (defun-ajax GET-SEARCH-RESULTS (ids search-type) (ajax-processor :callback-data :json)
-      (send-search-results ids search-type))
+    (defun-ajax GET-SEARCH-RESULTS (ids search-type search-parameters) (ajax-processor :callback-data :json)
+      (send-search-results ids search-type search-parameters))
 
     (setq *dispatch-table* (list 'dispatch-easy-handlers
                                  (create-ajax-dispatcher ajax-processor)))
@@ -108,9 +108,9 @@
                                       :target target))
           (second node-data)))
 
-(defun send-node-data (node-name &rest data)
+(defun send-node-data (node-name data)
   (let ((node-data (assoc node-name full-data :test #'string=)))
     (make-json-graph (make-nodes node-data data) (make-links node-data data))))
 
-(defun send-search-results (ids search-type)
+(defun send-search-results (ids search-type search-parameters)
   (format t "~a, ~a~%" ids search-type))

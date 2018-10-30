@@ -81,8 +81,8 @@
 
 ;;; SEARCH ;;;
 
-(defun run-search (mops search-type)
-  (cond ((equal search-type "intersection search")
+(defun run-search (mops type parameters)
+  (cond ((equal type "intersection search")
         (intersection-search mops #'mop-neighbors :max-depth 2 :max-fanout 8)
          )))
 
@@ -119,16 +119,16 @@
           path (cdr path)))
 
 ;;; SEND ;;;
-(defun send-node-data (node-name &rest data)
+(defun send-node-data (node-name data)
   (format t "node requested: ~a~%data requested: ~a~%" node-name data)
   (let ((mops (list (KaBOB::find-node node-name))))
     (make-json-graph
      (KaBOB::make-mops-nodes mops data)
      (KaBOB::make-mops-links mops data))))
 
-(defun send-search-results (ids search-type)
-  (format t "search requested: ~a~%search type: ~a~%" ids search-type)
-  (process-paths (KaBOB::run-search (mapcar #'KaBOB::find-node ids) search-type)))
+(defun send-search-results (ids type parameters)
+  (format t "search requested~%ids: ~a~%type: ~a~%parameters: ~a~%" ids type parameters)
+  (process-paths (KaBOB::run-search (mapcar #'KaBOB::find-node ids) type parameters)))
 
 
 ;;; AUTOCOMPLETE ;;;

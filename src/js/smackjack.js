@@ -122,8 +122,8 @@ const smackjack = {"exists": false};
     function getNode(nodeName, getInherited, callback, errorHandler) {
         return ajaxCall('GET-NODE', [nodeName, getInherited], 'GET', callback, errorHandler, responseJson);
     }
-    function getSearchResults(ids, searchType, callback, errorHandler) {
-        return ajaxCall('GET-SEARCH-RESULTS', [ids, searchType], 'GET', callback, errorHandler, responseJson);
+    function getSearchResults(ids, searchType, searchParameters, callback, errorHandler) {
+        return ajaxCall('GET-SEARCH-RESULTS', [ids, searchType, searchParameters], 'GET', callback, errorHandler, responseJson);
     }
     function testConnection(callback, errorHandler) {
         return ajaxCall('TEST-CONNECTION', [], 'get', callback, errorHandler, responseJson);

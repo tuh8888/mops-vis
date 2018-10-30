@@ -113,11 +113,11 @@
           <entry key="JavaScript Console" value="49" />
           <entry key="css" value="1083" />
           <entry key="html" value="2091" />
-          <entry key="js" value="20358" />
+          <entry key="js" value="20383" />
           <entry key="json" value="290" />
           <entry key="lisp" value="35" />
           <entry key="md" value="103" />
-          <entry key="txt" value="2639" />
+          <entry key="txt" value="2694" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -125,9 +125,9 @@
           <entry key="CSS" value="1089" />
           <entry key="HTML" value="2085" />
           <entry key="JSON" value="290" />
-          <entry key="JavaScript" value="20407" />
+          <entry key="JavaScript" value="20432" />
           <entry key="Markdown" value="103" />
-          <entry key="PLAIN_TEXT" value="2674" />
+          <entry key="PLAIN_TEXT" value="2729" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -183,11 +183,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/js/smackjack.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="125" column="108" selection-start-line="125" selection-start-column="108" selection-end-line="125" selection-end-column="108" />
+            <state relative-caret-position="107">
+              <caret line="132" column="4" selection-start-line="132" selection-start-column="4" selection-end-line="132" selection-end-column="4" />
             </state>
           </provider>
         </entry>
@@ -201,11 +201,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/js/graph.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="259">
-              <caret line="111" column="5" lean-forward="true" selection-start-line="111" selection-start-column="5" selection-end-line="111" selection-end-column="5" />
+            <state relative-caret-position="208">
+              <caret line="108" column="66" selection-start-line="108" selection-start-column="66" selection-end-line="108" selection-end-column="66" />
             </state>
           </provider>
         </entry>
@@ -337,8 +337,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="299" />
-    <option name="y" value="-8" />
+    <option name="x" value="-1252" />
+    <option name="y" value="-21" />
     <option name="width" value="854" />
     <option name="height" value="777" />
   </component>
@@ -474,21 +474,7 @@
       <workItem from="1540317318189" duration="17445000" />
       <workItem from="1540400333346" duration="9578000" />
       <workItem from="1540592229860" duration="3371000" />
-      <workItem from="1540917096079" duration="5633000" />
-    </task>
-    <task id="LOCAL-00029" summary="Reorganized display into functions">
-      <created>1539215954306</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1539215954306</updated>
-    </task>
-    <task id="LOCAL-00030" summary="Further reorganization">
-      <created>1539221888169</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1539221888169</updated>
+      <workItem from="1540917096079" duration="6564000" />
     </task>
     <task id="LOCAL-00031" summary="Moved smackjack into its own file">
       <created>1539221925854</created>
@@ -819,11 +805,25 @@
       <option name="project" value="LOCAL" />
       <updated>1540924137321</updated>
     </task>
-    <option name="localTasksCounter" value="78" />
+    <task id="LOCAL-00078" summary="minor fix">
+      <created>1540924291476</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1540924291476</updated>
+    </task>
+    <task id="LOCAL-00079" summary="Reordered functions and fixed path processing">
+      <created>1540928212400</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1540928212400</updated>
+    </task>
+    <option name="localTasksCounter" value="80" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="160123000" />
+    <option name="totallyTimeSpent" value="161054000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -835,16 +835,16 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1696" height="1066" extended-state="6" />
+    <frame x="-1608" y="-5" width="1616" height="916" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19420989" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20405577" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32939914" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32939914" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.49819058" visible="true" weight="0.4409871" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.49819058" visible="true" weight="0.52557546" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32939914" />
@@ -913,7 +913,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Forgot to commit new csss" />
     <MESSAGE value="Removed initial graph methods" />
     <MESSAGE value="Added autocomplete to search text field" />
     <MESSAGE value="Cursor is always crosshair" />
@@ -929,7 +928,6 @@
     <MESSAGE value="Made defsystem file to load with asdf" />
     <MESSAGE value="Added package to asdf files to load" />
     <MESSAGE value="Using in-package to override methods" />
-    <MESSAGE value="minor fix" />
     <MESSAGE value="Load autocomplete first" />
     <MESSAGE value="Don't make autocomplete data for KaBOB on load" />
     <MESSAGE value="Default dir set to quicklisp local project dir" />
@@ -938,7 +936,9 @@
     <MESSAGE value="Smackjack test connection function" />
     <MESSAGE value="Filter roles. Also fixed getting inherited roles" />
     <MESSAGE value="Fixed getting ids from all textfields" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed getting ids from all textfields" />
+    <MESSAGE value="minor fix" />
+    <MESSAGE value="Reordered functions and fixed path processing" />
+    <option name="LAST_COMMIT_MESSAGE" value="Reordered functions and fixed path processing" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1231,17 +1231,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/graph.js">
+    <entry file="file://$PROJECT_DIR$/src/js/smackjack.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="111" column="5" lean-forward="true" selection-start-line="111" selection-start-column="5" selection-end-line="111" selection-end-column="5" />
+        <state relative-caret-position="107">
+          <caret line="132" column="4" selection-start-line="132" selection-start-column="4" selection-end-line="132" selection-end-column="4" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/smackjack.js">
+    <entry file="file://$PROJECT_DIR$/src/js/graph.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="125" column="108" selection-start-line="125" selection-start-column="108" selection-end-line="125" selection-end-column="108" />
+        <state relative-caret-position="208">
+          <caret line="108" column="66" selection-start-line="108" selection-start-column="66" selection-end-line="108" selection-end-column="66" />
         </state>
       </provider>
     </entry>
