@@ -1,7 +1,7 @@
 let path, node, pathText;
-const rectHeight = 16;
-const charWidth = 10;
-const textYOffset = 13;
+const textYOffset = 4;
+const textXOffset = 0;
+const r = 12;
 
 function setupPath() {
     path = g.append('svg:g').selectAll('path');
@@ -108,16 +108,7 @@ function updateNodes() {
         node = node.data(graph.nodes, (d) => d.id);
 
         // update existing nodes (reflexive & selected visual states)
-        node.selectAll('rect')
-            .attr('width', (d) => {
-                if (displayAllNodeLabels || d.display) {
-                    const width =
-                    d.width = d.id.length * charWidth;
-                } else {
-                    d.width = charWidth;
-                }
-                return d.width;
-            })
+        node.selectAll('circle')
             .style('fill', (d) => (interactor.isSelectedNode(d)) ? d3.rgb(colors(d.type)).brighter().toString() : colors(d.type))
             .classed('selected', interactor.isSelectedNode);
 
@@ -138,20 +129,8 @@ function updateNodes() {
             .attr('class', 'node');
 
 
-        g.append('svg:rect')
-            .attr('width', (d) => {
-                if (displayAllNodeLabels || d.display) {
-                    const width =
-                        d.width = d.id.length * charWidth;
-                } else {
-                    d.width = charWidth;
-                }
-                return d.width;
-            })
-            .attr('height', (d) => {
-                d.height = rectHeight;
-                return d.height;
-            })
+        g.append('svg:circle')
+            .attr('r', r)
             .style('fill', (d) => (interactor.isSelectedNode(d)) ? d3.rgb(colors(d.type)).brighter().toString() : colors(d.type))
             .style('stroke', (d) => d3.rgb(colors(d.type)).darker().toString())
             .on('mouseover', (d) => interactor.nodeMouseOver.call(interactor, d))
@@ -162,7 +141,7 @@ function updateNodes() {
         // show node IDs
         g.append('text')
             .text((d) => d.id)
-            .attr('x', (d) => d.id.length * charWidth / 2)
+            .attr('x', textXOffset)
             .attr('y', textYOffset);
 
 
