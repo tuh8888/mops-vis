@@ -119,4 +119,5 @@
       ;; (push (make-path-link previous-mop mop) links))
     ))
 
-(setf *auto-complete-data* (make-autocomplete-tree-from-map KaBOB::*mops*))
+;(setf *auto-complete-data* (make-autocomplete-tree-from-map KaBOB::*mops*))
+

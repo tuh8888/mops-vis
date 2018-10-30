@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7f07c80c-61d4-4c22-aa47-151c0e2fe143" name="Default Changelist" comment="" />
+    <list default="true" id="7f07c80c-61d4-4c22-aa47-151c0e2fe143" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common-lisp/mops-vis.lisp" beforeDir="false" afterPath="$PROJECT_DIR$/src/common-lisp/mops-vis.lisp" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -114,7 +117,7 @@
           <entry key="json" value="290" />
           <entry key="lisp" value="35" />
           <entry key="md" value="103" />
-          <entry key="txt" value="2177" />
+          <entry key="txt" value="2258" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -124,7 +127,7 @@
           <entry key="JSON" value="290" />
           <entry key="JavaScript" value="20233" />
           <entry key="Markdown" value="103" />
-          <entry key="PLAIN_TEXT" value="2212" />
+          <entry key="PLAIN_TEXT" value="2293" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -201,8 +204,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/js/graph.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="172" column="49" lean-forward="true" selection-start-line="172" selection-start-column="49" selection-end-line="172" selection-end-column="49" />
+            <state relative-caret-position="380">
+              <caret line="170" column="16" lean-forward="true" selection-start-line="170" selection-start-column="16" selection-end-line="170" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -470,28 +473,7 @@
       <workItem from="1540317318189" duration="17445000" />
       <workItem from="1540400333346" duration="9578000" />
       <workItem from="1540592229860" duration="3371000" />
-      <workItem from="1540917096079" duration="1527000" />
-    </task>
-    <task id="LOCAL-00019" summary="Explicitly call package functions">
-      <created>1539153101684</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1539153101684</updated>
-    </task>
-    <task id="LOCAL-00020" summary="&#10;minor fixes">
-      <created>1539153234243</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1539153234243</updated>
-    </task>
-    <task id="LOCAL-00021" summary="minor fixes">
-      <created>1539153325376</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1539153325376</updated>
+      <workItem from="1540917096079" duration="2296000" />
     </task>
     <task id="LOCAL-00022" summary="mops vis inside kabob package">
       <created>1539154513797</created>
@@ -815,11 +797,32 @@
       <option name="project" value="LOCAL" />
       <updated>1540918341339</updated>
     </task>
-    <option name="localTasksCounter" value="68" />
+    <task id="LOCAL-00068" summary="Using in-package to override methods">
+      <created>1540918690416</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1540918690416</updated>
+    </task>
+    <task id="LOCAL-00069" summary="minor fix">
+      <created>1540918766524</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1540918766524</updated>
+    </task>
+    <task id="LOCAL-00070" summary="Load autocomplete first">
+      <created>1540918834564</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1540918834564</updated>
+    </task>
+    <option name="localTasksCounter" value="71" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="156017000" />
+    <option name="totallyTimeSpent" value="156786000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -909,9 +912,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fixed folder names" />
-    <MESSAGE value="Get all inherited roles" />
-    <MESSAGE value="Tightened the sliders" />
     <MESSAGE value="Copyable command to install packages" />
     <MESSAGE value="Changed to rectangles" />
     <MESSAGE value="Added collision force for rectangles" />
@@ -934,7 +934,10 @@
     <MESSAGE value="Separated path processing into multiple functions" />
     <MESSAGE value="Made defsystem file to load with asdf" />
     <MESSAGE value="Added package to asdf files to load" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added package to asdf files to load" />
+    <MESSAGE value="Using in-package to override methods" />
+    <MESSAGE value="minor fix" />
+    <MESSAGE value="Load autocomplete first" />
+    <option name="LAST_COMMIT_MESSAGE" value="Load autocomplete first" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1233,8 +1236,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/js/graph.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="172" column="49" lean-forward="true" selection-start-line="172" selection-start-column="49" selection-end-line="172" selection-end-column="49" />
+        <state relative-caret-position="380">
+          <caret line="170" column="16" lean-forward="true" selection-start-line="170" selection-start-column="16" selection-end-line="170" selection-end-column="16" />
         </state>
       </provider>
     </entry>
