@@ -5,7 +5,7 @@
 ;;; UTIL ;;;
 
 (defun vis-roles (mop data)
-  (filter-roles (if (first data)                    
+  (filter-roles (if (assoc "inherited" data :equal)                    
                     (inheritable-roles mop)
                     (mop-roles mop))))
 

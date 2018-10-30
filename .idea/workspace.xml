@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7f07c80c-61d4-4c22-aa47-151c0e2fe143" name="Default Changelist" comment="">
+    <list default="true" id="7f07c80c-61d4-4c22-aa47-151c0e2fe143" name="Default Changelist" comment="Pass search parameters from client">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/smackjack.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/smackjack.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/graph.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/graph.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -113,11 +113,11 @@
           <entry key="JavaScript Console" value="49" />
           <entry key="css" value="1083" />
           <entry key="html" value="2091" />
-          <entry key="js" value="20383" />
+          <entry key="js" value="20434" />
           <entry key="json" value="290" />
           <entry key="lisp" value="35" />
           <entry key="md" value="103" />
-          <entry key="txt" value="2694" />
+          <entry key="txt" value="2728" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -125,9 +125,9 @@
           <entry key="CSS" value="1089" />
           <entry key="HTML" value="2085" />
           <entry key="JSON" value="290" />
-          <entry key="JavaScript" value="20432" />
+          <entry key="JavaScript" value="20483" />
           <entry key="Markdown" value="103" />
-          <entry key="PLAIN_TEXT" value="2729" />
+          <entry key="PLAIN_TEXT" value="2763" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -204,8 +204,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/js/graph.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="108" column="66" selection-start-line="108" selection-start-column="66" selection-end-line="108" selection-end-column="66" />
+            <state relative-caret-position="213">
+              <caret line="72" column="8" selection-start-line="72" selection-start-column="8" selection-end-line="72" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -223,8 +223,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>_Dat</find>
-      <find>/jigsaw/static/</find>
       <find>m</find>
       <find>ngji</find>
       <find>loading.</find>
@@ -253,6 +251,8 @@
       <find>input</find>
       <find>add</find>
       <find>smackjack.get</find>
+      <find>getNode</find>
+      <find>smackjack.getN</find>
     </findStrings>
     <replaceStrings>
       <replace>ellipse</replace>
@@ -319,8 +319,8 @@
         <option value="$PROJECT_DIR$/JavaScript/smackjack.js" />
         <option value="$PROJECT_DIR$/net-vis.lisp" />
         <option value="$PROJECT_DIR$/src/js/main.js" />
-        <option value="$PROJECT_DIR$/src/js/graph.js" />
         <option value="$PROJECT_DIR$/src/js/smackjack.js" />
+        <option value="$PROJECT_DIR$/src/js/graph.js" />
       </list>
     </option>
   </component>
@@ -474,14 +474,7 @@
       <workItem from="1540317318189" duration="17445000" />
       <workItem from="1540400333346" duration="9578000" />
       <workItem from="1540592229860" duration="3371000" />
-      <workItem from="1540917096079" duration="6564000" />
-    </task>
-    <task id="LOCAL-00031" summary="Moved smackjack into its own file">
-      <created>1539221925854</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1539221925855</updated>
+      <workItem from="1540917096079" duration="7309000" />
     </task>
     <task id="LOCAL-00032" summary="Made some vars and funcs global">
       <created>1539225487099</created>
@@ -819,11 +812,18 @@
       <option name="project" value="LOCAL" />
       <updated>1540928212400</updated>
     </task>
-    <option name="localTasksCounter" value="80" />
+    <task id="LOCAL-00080" summary="Pass search parameters from client">
+      <created>1540928711973</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1540928711973</updated>
+    </task>
+    <option name="localTasksCounter" value="81" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="161054000" />
+    <option name="totallyTimeSpent" value="161799000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -835,7 +835,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1608" y="-5" width="1616" height="916" extended-state="6" />
+    <frame x="-1608" y="-5" width="1616" height="916" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20405577" />
@@ -844,7 +844,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32939914" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32939914" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.49819058" visible="true" weight="0.52557546" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49819058" weight="0.52557546" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32939914" />
@@ -913,7 +913,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Removed initial graph methods" />
     <MESSAGE value="Added autocomplete to search text field" />
     <MESSAGE value="Cursor is always crosshair" />
     <MESSAGE value="Add and remove intersection search items" />
@@ -938,7 +937,8 @@
     <MESSAGE value="Fixed getting ids from all textfields" />
     <MESSAGE value="minor fix" />
     <MESSAGE value="Reordered functions and fixed path processing" />
-    <option name="LAST_COMMIT_MESSAGE" value="Reordered functions and fixed path processing" />
+    <MESSAGE value="Pass search parameters from client" />
+    <option name="LAST_COMMIT_MESSAGE" value="Pass search parameters from client" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1240,8 +1240,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/js/graph.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="108" column="66" selection-start-line="108" selection-start-column="66" selection-end-line="108" selection-end-column="66" />
+        <state relative-caret-position="213">
+          <caret line="72" column="8" selection-start-line="72" selection-start-column="8" selection-end-line="72" selection-end-column="8" />
         </state>
       </provider>
     </entry>

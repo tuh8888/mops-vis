@@ -69,7 +69,7 @@ class Graph {
 
     getNode(nodeId) {
         if (smackjack.exists) {
-            smackjack.getNode(nodeId, inherited, this.addGraphData);
+            smackjack.getNode(nodeId, {"inherited": inherited}, this.addGraphData);
         } else {
             const linksToReturn = this.defaultData.links.filter(link => link.source === nodeId || link.target === nodeId || link.target.id === nodeId || link.source.id === nodeId);
 
@@ -167,7 +167,7 @@ function getP53() {
     setTimeout(function () {
         if (smackjack.exists) {
             console.log("Using server data");
-            graph.getNode("cellular tumor antigen p53 (human)", inherited);
+            graph.getNode("cellular tumor antigen p53 (human)");
         } else {
             console.log("Using default data");
             const xmlhttp = new XMLHttpRequest();
