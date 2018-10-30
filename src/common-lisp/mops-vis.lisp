@@ -87,9 +87,6 @@
                               :max-depth (cdr (assoc :MAX-DEPTH parameters :test #'equal))
                               :max-fanout (cdr (assoc :MAX-FANOUT parameters :test #'equal))))))
 
-(setq mops (mapcar #'find-node (list "cellular tumor antigen p53 (human)"
-                                     "cellular tumor antigen p53")))
-(setq paths (run-search mops "intersection search"))
 
 ;;;;;;;;;;;;;;;;;;;;;;; NET-VIS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Override net-vis methods
