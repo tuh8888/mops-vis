@@ -5,7 +5,7 @@
 (setq cl-who:*attribute-quote-char* #\")
 (defvar *server*)
 
-(defun start-server (&key (port 8081) (dir "~/code/common-lisp/mops-vis/"))
+(defun start-server (&key (port 8081) (dir "~/quicklisp/local-projects/mops-vis/"))
   (let ((index-file  (merge-pathnames "mops.html" dir))
         (javascript (merge-pathnames "src/js/" dir))
         (resources (merge-pathnames "resources/" dir)))
