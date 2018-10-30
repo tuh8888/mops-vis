@@ -28,9 +28,12 @@
 
 (defun make-mop-links (mop data)
   `(,@(make-abstraction-links mop)
-    ,@(mapcan #'(lambda (role) (make-role-links mop role)) (if get-inherited
-                                                               (mop-roles mop)
-                                                               (inheritable-roles mop)))))
+    ,@(mapcan #'(lambda (role) (make-role-links mop role)) (vis-roles mop data))))
+
+(defun vis-roles (mop data)
+  (filter-roles (if (first data)                    
+                    (inheritable-roles mop)
+                    (mop-roles mop))))
 
 (defun make-filler-nodes (mop role)
   (let ((fillers (inherit-filler mop role)))
@@ -40,9 +43,10 @@
 (defun make-mop-nodes (mop data)
   `(,(net-vis:make-node mop)
     ,@(mapcar #'net-vis:make-node (mop-abstractions mop))
-    ,@(mapcan #'(lambda (role) (make-filler-nodes mop role)) (if (first data)
-                                                                 (mop-roles mop)
-                                                                 (inheritable-roles mop)))))
+    ,@(mapcan #'(lambda (role) (make-filler-nodes mop role)) (vis-roles mop data))))
+
+(defun filter-roles (roles)
+  (remove-if #'(lambda (role) (equal :kabob-ids role)) roles))
 
 (defun make-mops-nodes (mops data)
   (mapcan #'(lambda (mop) (make-mop-nodes mop data)) mops))
