@@ -5,7 +5,7 @@
 ;;; UTIL ;;;
 
 (defun vis-roles (mop data)
-  (filter-roles (if (assoc "inherited" data :equal)                    
+  (filter-roles (if (assoc "INHERITED" data :test #'equal)                    
                     (inheritable-roles mop)
                     (mop-roles mop))))
 
@@ -83,7 +83,7 @@
 
 (defun run-search (mops type parameters)
   (cond ((equal type "intersection search")
-        (intersection-search mops #'mop-neighbors :max-depth 2 :max-fanout 8)
+         (intersection-search mops #'mop-neighbors :max-depth (assoc "MAX-DEPTH" data :test #'equal) :max-fanout (assoc "MAX-FANOUT" data :test #'equal))
          )))
 
 (setq mops (mapcar #'find-node (list "cellular tumor antigen p53 (human)"
@@ -120,7 +120,8 @@
 
 ;;; SEND ;;;
 (defun send-node-data (node-name data)
-  (format t "node requested: ~a~%data requested: ~a~%" node-name data)
+  (format t "node requested~%id: ~a~%data: ~a~%" node-name data)
+  (format t "inherited: ~a~%" (assoc "INHERITED" data :test #'equal))
   (let ((mops (list (KaBOB::find-node node-name))))
     (make-json-graph
      (KaBOB::make-mops-nodes mops data)

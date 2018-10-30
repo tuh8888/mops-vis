@@ -40,16 +40,17 @@
 
     <div>
         <h3>Intersection Search</h3>
-        <div id="intersection-search-text-fields">
-            <!--<div class="autocomplete">-->
-                <!--<input type="text" class="intersection-search-text-field" title="intersection-search">-->
-            <!--</div>-->
-            <!--<br>-->
-            <!--<div class="autocomplete">-->
-                <!--<input type="text" class="intersection-search-text-field" title="intersection-search">-->
-            <!--</div>-->
+        <div style="white-space: nowrap">
+            <label for="max-depth-text-field">Max Depth</label>
+            <input id="max-depth-text-field" class="search-param" style="width: 10%" type="number" min="0" step="1">
         </div>
-
+        <br>
+        <div style="white-space: nowrap">
+            <label for="max-fanout-text-field">Max Fanout</label>
+            <input id="max-fanout-text-field" class="search-param" style="width: 10%" type="number" min="0" step="1">
+        </div>
+        <br>
+        <div id="intersection-search-text-fields"></div>
         <br>
         <button class="addTextField" onclick="addSearchTextField()">+</button>
         <button class="removeTextField" onclick="removeSearchTextField()">-</button>
@@ -110,6 +111,7 @@
 
 
 
+
         </script>
         <script type="x-shader/x-fragment" id="fragmentshader">
   varying vec4 vColor;
@@ -127,6 +129,7 @@
       discard;
     }
   }
+
 
 
 
