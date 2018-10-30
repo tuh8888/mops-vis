@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7f07c80c-61d4-4c22-aa47-151c0e2fe143" name="Default Changelist" comment="Iterated">
+    <list default="true" id="7f07c80c-61d4-4c22-aa47-151c0e2fe143" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/graph.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/graph.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/smackjack.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/smackjack.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -113,11 +113,11 @@
           <entry key="JavaScript Console" value="49" />
           <entry key="css" value="1083" />
           <entry key="html" value="2091" />
-          <entry key="js" value="20328" />
+          <entry key="js" value="20358" />
           <entry key="json" value="290" />
           <entry key="lisp" value="35" />
           <entry key="md" value="103" />
-          <entry key="txt" value="2594" />
+          <entry key="txt" value="2639" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -125,9 +125,9 @@
           <entry key="CSS" value="1089" />
           <entry key="HTML" value="2085" />
           <entry key="JSON" value="290" />
-          <entry key="JavaScript" value="20377" />
+          <entry key="JavaScript" value="20407" />
           <entry key="Markdown" value="103" />
-          <entry key="PLAIN_TEXT" value="2629" />
+          <entry key="PLAIN_TEXT" value="2674" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -183,11 +183,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/js/smackjack.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="127" column="13" lean-forward="true" selection-start-line="127" selection-start-column="13" selection-end-line="127" selection-end-column="13" />
+            <state relative-caret-position="357">
+              <caret line="125" column="108" selection-start-line="125" selection-start-column="108" selection-end-line="125" selection-end-column="108" />
             </state>
           </provider>
         </entry>
@@ -201,11 +201,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/js/graph.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="293">
-              <caret line="113" lean-forward="true" selection-start-line="113" selection-end-line="113" />
+            <state relative-caret-position="259">
+              <caret line="111" column="5" lean-forward="true" selection-start-line="111" selection-start-column="5" selection-end-line="111" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -319,8 +319,8 @@
         <option value="$PROJECT_DIR$/JavaScript/smackjack.js" />
         <option value="$PROJECT_DIR$/net-vis.lisp" />
         <option value="$PROJECT_DIR$/src/js/main.js" />
-        <option value="$PROJECT_DIR$/src/js/smackjack.js" />
         <option value="$PROJECT_DIR$/src/js/graph.js" />
+        <option value="$PROJECT_DIR$/src/js/smackjack.js" />
       </list>
     </option>
   </component>
@@ -474,14 +474,7 @@
       <workItem from="1540317318189" duration="17445000" />
       <workItem from="1540400333346" duration="9578000" />
       <workItem from="1540592229860" duration="3371000" />
-      <workItem from="1540917096079" duration="5322000" />
-    </task>
-    <task id="LOCAL-00028" summary="Nodes don't drag after releasing control key">
-      <created>1539183815472</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1539183815472</updated>
+      <workItem from="1540917096079" duration="5633000" />
     </task>
     <task id="LOCAL-00029" summary="Reorganized display into functions">
       <created>1539215954306</created>
@@ -819,11 +812,18 @@
       <option name="project" value="LOCAL" />
       <updated>1540923439142</updated>
     </task>
-    <option name="localTasksCounter" value="77" />
+    <task id="LOCAL-00077" summary="Fixed getting ids from all textfields">
+      <created>1540924137321</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1540924137321</updated>
+    </task>
+    <option name="localTasksCounter" value="78" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="159812000" />
+    <option name="totallyTimeSpent" value="160123000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -913,7 +913,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Toggle node and edge labels" />
     <MESSAGE value="Forgot to commit new csss" />
     <MESSAGE value="Removed initial graph methods" />
     <MESSAGE value="Added autocomplete to search text field" />
@@ -938,7 +937,8 @@
     <MESSAGE value="Fixed typos and name-space specification on functions" />
     <MESSAGE value="Smackjack test connection function" />
     <MESSAGE value="Filter roles. Also fixed getting inherited roles" />
-    <option name="LAST_COMMIT_MESSAGE" value="Filter roles. Also fixed getting inherited roles" />
+    <MESSAGE value="Fixed getting ids from all textfields" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed getting ids from all textfields" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -974,6 +974,11 @@
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>ids</expression-string>
+        <language-id>JavaScript</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>document.getElementsByClassName(&quot;intersection-search-text-field&quot;)</expression-string>
         <language-id>JavaScript</language-id>
@@ -1014,11 +1019,6 @@
       </expression>
       <expression>
         <expression-string>e.key()</expression-string>
-        <language-id>JavaScript</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>d3.select(d)</expression-string>
         <language-id>JavaScript</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
@@ -1203,13 +1203,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/smackjack.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="127" column="13" lean-forward="true" selection-start-line="127" selection-start-column="13" selection-end-line="127" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="http://localhost:63342/mops-vis/src/js/graph.js">
       <provider selected="true" editor-type-id="httpFileEditor" />
     </entry>
@@ -1240,8 +1233,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/js/graph.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="113" lean-forward="true" selection-start-line="113" selection-end-line="113" />
+        <state relative-caret-position="259">
+          <caret line="111" column="5" lean-forward="true" selection-start-line="111" selection-start-column="5" selection-end-line="111" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/smackjack.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="125" column="108" selection-start-line="125" selection-start-column="108" selection-end-line="125" selection-end-column="108" />
         </state>
       </provider>
     </entry>
