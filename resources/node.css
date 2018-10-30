@@ -9,7 +9,7 @@ g.node:hover circle {
 
 g.node circle.selected {
     stroke: #000 !important;
-    stroke-width: 2.5px;
+    stroke-width: 3px;
 }
 
 g.node text.display {

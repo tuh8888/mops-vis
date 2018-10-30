@@ -131,7 +131,10 @@
 
 
 ;;; AUTOCOMPLETE ;;;
-(format t "Making autocomplete data...")
-(setf *auto-complete-data* (make-autocomplete-tree-from-map KaBOB::*mops*))
-(format t "...finished")
+
+(defun make-autocomplete-data ()
+  (format t "Making autocomplete data...")
+  (setq *autocomplete-data* (make-autocomplete-tree examples))
+  ;(setq *autocomplete-data* (make-autocomplete-tree-from-map KaBOB::*mops*))
+  (format t "...finished"))
 

@@ -34,11 +34,4 @@
     
     (make-autocomplete-tree keys)))
 
-(defvar examples '("hello" "there" "appletree" "how" "are" "the" "ants" "and" "their" "apples" "there" "?"))
-
-(defparameter *my-hash* (make-hash-table))
-(setf (gethash 'first-key *my-hash*) 'one)
-(setf (gethash 'second-key *my-hash*) 'two)
-(setf (gethash 'third-key *my-hash*) 'three)
-
-(defvar *auto-complete-data* (make-autocomplete-tree-from-map *my-hash*))
+(defvar *autocomplete-data* nil)

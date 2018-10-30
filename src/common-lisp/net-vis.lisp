@@ -11,6 +11,7 @@
         (resources (merge-pathnames "resources/" dir)))
 
     (initialize-ajax)
+    (make-autocomplete-data)
     (setq *server* (make-instance 'easy-acceptor :port port))
     (start *server*)
 
@@ -71,7 +72,7 @@
       (send-node-data node-name data))
 
     (defun-ajax GET-AUTOCOMPLETE () (ajax-processor :callback-data :json)
-      (cl-json:encode-json-to-string *auto-complete-data*))
+      (cl-json:encode-json-to-string *autocomplete-data*))
 
     (defun-ajax GET-SEARCH-RESULTS (ids search-type search-parameters) (ajax-processor :callback-data :json)
       (send-search-results ids search-type search-parameters))
@@ -96,6 +97,11 @@
                     ("4" ())
                     ("5" ("1" "6"))
                     ("6" ("7"))))
+
+(defvar examples '("hello" "there" "appletree" "how" "are" "the" "ants" "and" "their" "apples" "there" "?"))
+
+(defun make-autocomplete-data ()
+  (setq *autocomplete-data* (make-autocomplete-tree examples)))
 
 (defun make-nodes (node-data data)
   (format t "~a~%" data)
