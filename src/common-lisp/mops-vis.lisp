@@ -77,7 +77,7 @@
 
 
 ;;; Override net-vis methods
-(use-package :net-vis)
+(in-package :net-vis)
 
 (defun make-data (inherited)
   (format nil "~a=~a" "inherited" (if inherited "true" "false")))
@@ -92,8 +92,8 @@
   (format t "node requested: ~a~%" node-name)
   (let ((mops (list (KaBOB::find-node node-name))))
     (make-json-graph
-     (make-mops-nodes mops get-inherited)
-     (make-mops-links mops get-inherited))))
+     (KaBOB::make-mops-nodes mops get-inherited)
+     (KaBOB::make-mops-links mops get-inherited))))
 
 (defun send-search-results (ids search-type)
   (process-paths (run-search ids search-type)))
@@ -119,4 +119,4 @@
       ;; (push (make-path-link previous-mop mop) links))
     ))
 
-(setf *auto-complete-data* (make-autocomplete-tree-from-map *mops*))
+(setf *auto-complete-data* (make-autocomplete-tree-from-map KaBOB:*mops*))
