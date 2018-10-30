@@ -97,7 +97,7 @@ function updateNodes() {
         graph.nodes.forEach((node) => {
             if (!node.circle) {
                 node.geometry = new THREE.CircleGeometry(5, 32);
-                node.material = new THREE.MeshBasicMaterial({color: colors(node.id)});
+                node.material = new THREE.MeshBasicMaterial({color: colors(node.type)});
                 node.circle = new THREE.Mesh(node.geometry, node.material);
                 scene.add(node.circle)
             }
@@ -118,7 +118,7 @@ function updateNodes() {
                 }
                 return d.width;
             })
-            .style('fill', (d) => (interactor.isSelectedNode(d)) ? d3.rgb(colors(d.id)).brighter().toString() : colors(d.id))
+            .style('fill', (d) => (interactor.isSelectedNode(d)) ? d3.rgb(colors(d.type)).brighter().toString() : colors(d.type))
             .classed('selected', interactor.isSelectedNode);
 
         node.selectAll('text')
@@ -152,8 +152,8 @@ function updateNodes() {
                 d.height = rectHeight;
                 return d.height;
             })
-            .style('fill', (d) => (interactor.isSelectedNode(d)) ? d3.rgb(colors(d.id)).brighter().toString() : colors(d.id))
-            .style('stroke', (d) => d3.rgb(colors(d.id)).darker().toString())
+            .style('fill', (d) => (interactor.isSelectedNode(d)) ? d3.rgb(colors(d.type)).brighter().toString() : colors(d.type))
+            .style('stroke', (d) => d3.rgb(colors(d.type)).darker().toString())
             .on('mouseover', (d) => interactor.nodeMouseOver.call(interactor, d))
             .on('mouseout', (d) => interactor.nodeMouseOut.call(interactor, d))
             .on('mousedown', (d) => interactor.nodeMouseDown.call(interactor, d))
@@ -161,11 +161,9 @@ function updateNodes() {
 
         // show node IDs
         g.append('text')
+            .text((d) => d.id)
             .attr('x', (d) => d.id.length * charWidth / 2)
-            .attr('y', textYOffset)
-            .text((d) => {
-                return d.id;
-            });
+            .attr('y', textYOffset);
 
 
         node = g.merge(node);

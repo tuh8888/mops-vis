@@ -1,21 +1,73 @@
 {
   "nodes": [
-    {"id": "first node"},
-    {"id": "second node"},
-    {"id": "3"},
-    {"id": "4"},
-    {"id": "5"},
-    {"id": "6"},
-    {"id": "7"},
-    {"id": "YOYOYOYOYOYOY"}
+    {
+      "id": "first node",
+      "type": "protein"
+    },
+    {
+      "id": "second node",
+      "type": "process"
+    },
+    {
+      "id": "3",
+      "type": "gene or gene product"
+    },
+    {
+      "id": "4",
+      "type": "chemical"
+    },
+    {
+      "id": "5",
+      "type": "interaction"
+    },
+    {
+      "id": "6",
+      "type": "anatomical"
+    },
+    {
+      "id": "7",
+      "type": "protein"
+    },
+    {
+      "id": "YOYOYOYOYOYOY",
+      "type": "protein"
+    }
   ],
   "links": [
-    {"source": "first node", "target": "second node", "label": "A"},
-    {"source": "first node", "target": "3", "label": "B"},
-    {"source": "second node", "target": "4", "label": "C"},
-    {"source": "second node", "target": "5", "label": "D"},
-    {"source": "5", "target": "first node", "label": "E"},
-    {"source": "5", "target": "6", "label": "F"},
-    {"source": "6", "target": "7", "label": "subClassOf"}
+    {
+      "source": "first node",
+      "target": "second node",
+      "label": "A"
+    },
+    {
+      "source": "first node",
+      "target": "3",
+      "label": "B"
+    },
+    {
+      "source": "second node",
+      "target": "4",
+      "label": "C"
+    },
+    {
+      "source": "second node",
+      "target": "5",
+      "label": "D"
+    },
+    {
+      "source": "5",
+      "target": "first node",
+      "label": "E"
+    },
+    {
+      "source": "5",
+      "target": "6",
+      "label": "F"
+    },
+    {
+      "source": "6",
+      "target": "7",
+      "label": "subClassOf"
+    }
   ]
 }
