@@ -1,3 +1,4 @@
+
 (asdf:load-system "KaBOB")
 
 (in-package :KaBOB)
@@ -5,7 +6,7 @@
 ;;; UTIL ;;;
 
 (defun vis-roles (mop data)
-  (filter-roles (if (assoc :INHERITED data :test #'equal)                    
+  (filter-roles (if (cdr (assoc :INHERITED data :test #'equal))                    
                     (inheritable-roles mop)
                     (mop-roles mop))))
 
@@ -69,14 +70,22 @@
   (mapcan #'(lambda (mop) (make-mop-nodes mop data)) mops))
 
 (defun make-mop-nodes (mop data)
-  `(,(net-vis:make-node mop)
-    ,@(mapcar #'net-vis:make-node (mop-abstractions mop))
+  `(,(make-mop-node mop)
+    ,@(mapcar #'make-mop-node (mop-abstractions mop))
     ,@(mapcan #'(lambda (role) (make-filler-nodes mop role)) (vis-roles mop data))))
+
+(defun make-mop-node (mop)
+  (net-vis:make-node mop (cond ((protein? mop) "protein")
+                               ((process? mop) "process")
+                               ((interaction? mop) "interaction")
+                               ((ggp-abstraction? mop) "gene or gene product")
+                               ((anatomical? mop) "anatomical")
+                               (t "chemical"))))
 
 (defun make-filler-nodes (mop role)
   (let ((fillers (inherit-filler mop role)))
-    (cond ((listp fillers) (mapcar #'net-vis:make-node fillers))
-          (t (list (net-vis:make-node fillers))))))
+    (cond ((listp fillers) (mapcar #'make-mop-node fillers))
+          (t (list (make-mop-node fillers))))))
 
 
 ;;; SEARCH ;;;
@@ -119,7 +128,7 @@
 ;;; SEND ;;;
 (defun send-node-data (node-name data)
   (format t "node requested~%id: ~a~%data: ~a~%" node-name data)
-  (format t "inherited: ~a~%" (assoc :INHERITED data :test #'equal))
+  (format t "inherited: ~a~%" (cdr (assoc :INHERITED data :test #'equal)))
   (let ((mops (list (KaBOB::find-node node-name))))
     (make-json-graph
      (KaBOB::make-mops-nodes mops data)
@@ -133,8 +142,8 @@
 ;;; AUTOCOMPLETE ;;;
 
 (defun make-autocomplete-data ()
-  (format t "Making autocomplete data...")
+  (format t "Making autocomplete data...~%")
   (setq *autocomplete-data* (make-autocomplete-tree examples))
   ;(setq *autocomplete-data* (make-autocomplete-tree-from-map KaBOB::*mops*))
-  (format t "...finished"))
+  (format t "...finished~%"))
 

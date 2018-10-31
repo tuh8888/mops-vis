@@ -49,8 +49,8 @@
    (pairlis '("nodes" "links") (list nodes links) (list '(bar . t)))))
 
 ;;; Making elements
-(defun make-node (name)
-  (pairlis '("id" "name") (list (stringify name) (stringify name)) (list)))
+(defun make-node (name type)
+  (pairlis '("id" "name" "type") (list (stringify name) (stringify name) (stringify type)) (list)))
 
 (defun make-link (&key source label target data)
   (pairlis '("source" "label" "target" "data") (list (stringify source)
@@ -105,7 +105,7 @@
 
 (defun make-nodes (node-data data)
   (format t "~a~%" data)
-  (cons (make-node (car node-data)) (mapcar #'make-node (car (cdr node-data)))))
+  (cons (make-node (car node-data) "none") (mapcar #'(lambda (id) (make-node id "none")) (car (cdr node-data)))))
 
 (defun make-links (node-data data)
   (format t "~a~%" data)
