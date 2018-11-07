@@ -10,6 +10,7 @@ function setupForceLayout(layoutConfig) {
         if (useWebGL) {
             graph.nodes.forEach((node) => {
                 const {x, y, circle} = node;
+                // noinspection JSCheckFunctionSignatures
                 circle.position.set(x-300, y - 300, 0);
             });
 
@@ -24,39 +25,72 @@ function setupForceLayout(layoutConfig) {
         } else {
             // draw directed edges with proper padding from node centers
             path.attr('d', (d) => {
-                const deltaX = d.target.x - d.source.x;
-                const deltaY = d.target.y - d.source.y;
-                const dist = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
-                const normX = deltaX / dist;
-                const normY = deltaY / dist;
-                const sourcePadding = 12;
-                const targetPadding = 12;
-                const sourceX = d.source.x + (sourcePadding * normX);
-                const sourceY = d.source.y + (sourcePadding * normY);
-                const targetX = d.target.x - (targetPadding * normX);
-                const targetY = d.target.y - (targetPadding * normY);
-                return `M${sourceX},${sourceY}L${targetX},${targetY}`;
+                if (d.target.x === d.source.x && d.target.y === d.source.y) {
+                    const [sourceX, sourceY, targetX, targetY, xRotation, largeArc, sweep, drx, dry] = calculateLoop(d);
+                    return "M" + sourceX + "," + sourceY + "A" + drx + "," + dry + " " + xRotation + "," + largeArc + "," + sweep + " " + targetX + "," + targetY;
+                } else {
+                    const [sourceX, sourceY, targetX, targetY] = calculatePath(d);
+                    return `M${sourceX},${sourceY}L${targetX},${targetY}`;
+                }
             });
 
             pathText.attr("transform", (d) => {
-                const deltaX = d.target.x - d.source.x;
-                const deltaY = d.target.y - d.source.y;
-                const dist = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
-                const normX = deltaX / dist;
-                const normY = deltaY / dist;
-                const sourcePadding = 12;
-                const targetPadding = 12;
-                const sourceX = d.source.x + (sourcePadding * normX);
-                const sourceY = d.source.y + (sourcePadding * normY);
-                const targetX = d.target.x - (targetPadding * normX);
-                const targetY = d.target.y - (targetPadding * normY);
-                return "translate(" + ((sourceX + targetX) / 2) + "," + ((sourceY + targetY) / 2) + ")";
+                if (d.target.x === d.source.x && d.target.y === d.source.y) {
+                    const [sourceX, sourceY, targetX, targetY] = calculateLoop(d);
+                    // The 70 here is to position the tex properly. Could probably calculate it, but this seems to work fine
+                    return "translate(" + ((sourceX + targetX) / 2) + "," + ((sourceY + targetY - 70) / 2) + ")";
+                } else {
+                    const [sourceX, sourceY, targetX, targetY] = calculatePath(d);
+                    return "translate(" + ((sourceX + targetX) / 2) + "," + ((sourceY + targetY) / 2) + ")";
+                }
             });
 
 
             node.attr('transform', (d) => `translate(${d.x},${d.y})`);
         }
     };
+
+    function calculateLoop(d) {
+        // Fiddle with this angle to get loop oriented.
+        const xRotation = -45;
+
+        // Needs to be 1.
+        const largeArc = 1;
+        const sweep = 1;
+
+        // Change sweep to change orientation of loop.
+        //sweep = 0;
+
+        // Make drx and dry different to get an ellipse
+        // instead of a circle.
+        const drx = 20;
+        const dry = 20;
+
+        // For whatever reason the arc collapses to a point if the beginning
+        // and ending points of the arc are the same, so kludge it.
+        const targetX = d.target.x + 1;
+        const targetY = d.target.y + 1;
+        const sourceX = d.source.x;
+        const sourceY = d.source.y;
+
+        return [sourceX, sourceY, targetX, targetY, xRotation, largeArc, sweep, drx, dry];
+    }
+
+    function calculatePath(d) {
+        const deltaX = d.target.x - d.source.x;
+        const deltaY = d.target.y - d.source.y;
+        const dist = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
+        const normX = deltaX / dist;
+        const normY = deltaY / dist;
+        const sourcePadding = 12;
+        const targetPadding = 12;
+        const sourceX = d.source.x + (sourcePadding * normX);
+        const sourceY = d.source.y + (sourcePadding * normY);
+        const targetX = d.target.x - (targetPadding * normX);
+        const targetY = d.target.y - (targetPadding * normY);
+
+        return [sourceX, sourceY, targetX, targetY];
+    }
 
     // function getIntersection(dx, dy, cx, cy, w, h) {
     //     if (Math.abs(dy / dx) < h / w) {
