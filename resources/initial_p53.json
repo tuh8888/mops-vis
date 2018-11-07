@@ -1,0 +1,78 @@
+{
+  "links": [
+    {
+      "data": "inherited=false",
+      "target": "Homo sapiens protein",
+      "label": "subClassOf",
+      "source": "cellular tumor antigen p53 (human)"
+    },
+    {
+      "data": "inherited=false",
+      "target": "cellular tumor antigen p53",
+      "label": "subClassOf",
+      "source": "cellular tumor antigen p53 (human)"
+    },
+    {
+      "data": "inherited=false",
+      "target": "Gene product for TP53",
+      "label": "subClassOf",
+      "source": "cellular tumor antigen p53 (human)"
+    },
+    {
+      "data": "inherited=true",
+      "target": "cellular tumor antigen p53, only_in_taxon Homo sapiens",
+      "label": "intersectionOf",
+      "source": "cellular tumor antigen p53 (human)"
+    },
+    {
+      "data": "inherited=true",
+      "target":  "TP53 (human)",
+      "label": "has_gene_template",
+      "source": "cellular tumor antigen p53 (human)"
+    },
+    {
+      "data": "inherited=true",
+      "target": "Homo sapiens",
+      "label": "only_in_taxon",
+      "source": "cellular tumor antigen p53 (human)"
+    }
+  ],
+  "nodes": [
+    {
+      "type": "protein",
+      "name": "cellular tumor antigen p53 (human)",
+      "id": "cellular tumor antigen p53 (human)"
+    },
+    {
+      "type": "protein",
+      "name": "Homo sapiens protein",
+      "id": "Homo sapiens protein"
+    },
+    {
+      "type": "protein",
+      "name": "cellular tumor antigen p53",
+      "id": "cellular tumor antigen p53"
+    },
+    {
+      "type": "chemical",
+      "name": "Gene product for TP53",
+      "id": "Gene product for TP53"
+    },
+    {
+      "type": "chemical",
+      "name": "cellular tumor antigen p53, only_in_taxon Homo sapiens",
+      "id": "cellular tumor antigen p53, only_in_taxon Homo sapiens"
+    },
+    {
+      "type": "chemical",
+      "name": "TP53 (human)",
+      "id": "TP53 (human)"
+    },
+    {
+      "type": "chemical",
+      "name": "Homo sapiens",
+      "id": "Homo sapiens"
+    }
+  ],
+  "bar": true
+}

@@ -36,7 +36,6 @@ class Graph {
     constructor() {
         this.nodes = [];
         this.links = [];
-        this.defaultData = null;
     }
 
     addGraphData(newGraphData) {
@@ -71,20 +70,15 @@ class Graph {
         if (smackjack.exists) {
             smackjack.getNode(nodeId, {"inherited": inherited}, this.addGraphData);
         } else {
-            const linksToReturn = this.defaultData.links.filter(link => link.source === nodeId || link.target === nodeId || link.target.id === nodeId || link.source.id === nodeId);
-
-            const nodesToReturn = [];
-            for (let i = 0; i < linksToReturn.length; i++) {
-                let link = linksToReturn[i];
-                nodesToReturn.push(typeof link.source === 'string' ? new Node(link.source) : link.source);
-                nodesToReturn.push(typeof link.target === 'string' ? new Node(link.target) : link.target);
-            }
-
-            const graphToReturn = {
-                "links": linksToReturn,
-                "nodes": nodesToReturn
+            console.log("Using default data");
+            const xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function () {
+                if (this.readyState === 4 && this.status === 200) {
+                    graph.addGraphData(JSON.parse(this.responseText));
+                }
             };
-            this.addGraphData(graphToReturn);
+            xmlhttp.open("GET", "resources/homo_sapiens.json", true);
+            xmlhttp.send();
         }
     };
 
@@ -175,11 +169,10 @@ function getP53() {
             const xmlhttp = new XMLHttpRequest();
             xmlhttp.onreadystatechange = function () {
                 if (this.readyState === 4 && this.status === 200) {
-                    graph.defaultData = JSON.parse(this.responseText);
-                    graph.addGraphData(graph.defaultData);
+                    graph.addGraphData(JSON.parse(this.responseText));
                 }
             };
-            xmlhttp.open("GET", "resources/graph.json", true);
+            xmlhttp.open("GET", "resources/initial_p53.json", true);
             xmlhttp.send();
         }
         restart();

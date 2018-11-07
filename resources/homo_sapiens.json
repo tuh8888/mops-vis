@@ -1,0 +1,56 @@
+{
+  "links": [
+    {
+      "data": "inherited=false",
+      "target": "Homo",
+      "label": "subClassOf",
+      "source": "Homo sapiens"
+    },
+    {
+      "data": "inherited=true",
+      "target": "part_of Homo sapiens",
+      "label": "has part",
+      "source": "Homo sapiens"
+    },
+    {
+      "data": "inherited=true",
+      "target": "species",
+      "label": "has_rank",
+      "source": "Homo sapiens"
+    },
+    {
+      "data": "inherited=true",
+      "target": "Homo sapiens",
+      "label": "in taxon",
+      "source": "Homo sapiens"
+    }
+  ],
+  "nodes": [
+    {
+      "type": "chemical",
+      "name": "Homo sapiens",
+      "id": "Homo sapiens"
+    },
+    {
+      "type": "chemical",
+      "name": "Homo",
+      "id": "Homo"
+    },
+    {
+      "type": "chemical",
+      "name": "part_of Homo sapiens",
+      "id": "part_of Homo sapiens"
+    },
+    {
+      "type": "chemical",
+      "name": "species",
+      "id": "species"
+    },
+    {
+      "type": "chemical",
+      "name": "Homo sapiens",
+      "id": "Homo sapiens"
+    }
+  ],
+  "bar": true
+}
